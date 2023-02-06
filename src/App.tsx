@@ -1,22 +1,26 @@
-import logo from './assets/logo.svg';
 import styles from './App.module.scss';
 
 function App() {
     return (
         <div className={styles.App}>
             <header className={styles['App-header']}>
-                <img src={logo} className={styles['App-logo']} alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className={styles['App-link']}
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
+                <span>Biology Research Engine</span>
+                <div className={styles['Bottom-Header']}>
+                    <button className={styles['Home-Button']}>
+                        <img src="./styles/Home_Button.svg" />
+                    </button>
+                    <input className={styles['Search-Bar']} />
+                    <select className={styles['Database-Selection']}>
+                        Fish
+                        <option>All</option>
+                        <option>Mammals</option>
+                        <option></option>
+                        <option>Reptiles</option>
+                        <option>Amphibians</option>
+                        <option>Birds</option>
+                    </select>
+                    <button className={styles['Search-Button']}></button>
+                </div>
             </header>
         </div>
     );
