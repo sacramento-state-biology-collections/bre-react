@@ -42,7 +42,10 @@
   }
 }
 .Home-Button {
-  height: 25px;
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+  margin: 1px 0px -1px 5px;
 }
 .Search-Bar {
   width: 500px;
@@ -53,7 +56,22 @@
 .Database-Selection {
   width: 125px;
   height: 25px;
+  background-color: #2c852c;
+  background-image: none;
 }
 .Search-Button {
-  height: 25px;
+  width: 30px;
+  padding: 0px;
+  height: 30px;
+}
+.HomeButtonImage {
+  height: 26px;
+  width: 26px;
+  position: static;
+  text-align: center;
+  padding: 0px;
+}
+.SearchButtomImage {
+  width: 26px;
+  height: 26px;
 }
