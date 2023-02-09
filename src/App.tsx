@@ -14,15 +14,14 @@ function App() {
                             className={styles.HomeButtonImage}
                         />
                     </button>
-                    <input className={styles['Search-Bar']} />
+                    <input className={styles['Search-Bar']} placeholder={'Search All'} />
                     <select className={styles['Database-Selection']}>
-                        Fish
                         <option>All</option>
                         <option>Mammals</option>
-                        <option></option>
+                        <option>Birds</option>
                         <option>Reptiles</option>
                         <option>Amphibians</option>
-                        <option>Birds</option>
+                        <option>Fish</option>
                     </select>
                     <button className={styles['Search-Button']}>
                         <img
