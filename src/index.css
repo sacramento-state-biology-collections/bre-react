@@ -9,6 +9,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.CommonNameStyles {
+  align-self: center;
+}
 .WelcomePage {
   display: flex;
   grid-auto-flow: row;
