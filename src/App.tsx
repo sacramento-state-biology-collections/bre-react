@@ -1,11 +1,11 @@
-import { WelcomePage } from './components/welcome-page/welcome-page';
-import { LoginRibbon } from './components/login-ribbon/login-ribbon';
+import { WelcomeView } from './components/welcome-view/welcome-view';
+import { DemoView } from './components/demo-view/demo-view';
 
 function App() {
     return (
         <div>
-            <LoginRibbon />
-            <WelcomePage />
+            <WelcomeView />
+            <DemoView />
         </div>
     );
 }
