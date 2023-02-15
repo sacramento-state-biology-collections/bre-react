@@ -6,10 +6,10 @@ function App() {
     const [myBool, setmyBool] = useState(true);
 
     function toggleBool() {
-      setmyBool(!myBool)
+        setmyBool(!myBool);
     }
 
-    return(myBool ? <WelcomeView toggleBool={toggleBool} /> : <DemoView />)
+    return myBool ? <WelcomeView toggleBool={toggleBool} /> : <DemoView toggleBool={toggleBool} />;
 }
 
 export default App;
