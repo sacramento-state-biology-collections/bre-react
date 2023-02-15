@@ -1,2 +1,46 @@
 .root {
+  width: 100vw;
+  height: 20vh;
+  display: grid;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  background-color: #309e3a;
+}
+.Title {
+  text-align: center;
+  font-size: 5vw;
+  color: white;
+}
+.Bottom_Header {
+  margin: 0px;
+  display: flex;
+}
+.Button {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0px;
+  background-color: #0c0c0c;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+.Home_Img {
+  width: 25px;
+  height: 25px;
+  border-radius: 5;
+}
+.Search_bar {
+  width: 40vw;
+}
+.Drop_list {
+  display: flex;
+  background-color: #36b636;
+  width: 12vw;
 }

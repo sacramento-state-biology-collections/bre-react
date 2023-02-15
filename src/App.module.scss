@@ -14,14 +14,21 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #3d913b;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(30px + 2vmin);
   color: white;
+  border: 1px solid #151414;
+  padding: 10px;
+  font-style: normal;
+  font-weight: 600;
+  flex-wrap: wrap;
+  justify-items: center;
+  align-content: center;
+  width: 100vw;
 }
 
 .App-link {
@@ -35,4 +42,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+.Home-Button {
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+  margin: 1px 0px -1px 5px;
+}
+.Search-Bar {
+  width: 400px;
+  height: 20px;
+}
+.Bottom-Header {
+  align-self: center;
+  display: flex;
+}
+.Database-Selection {
+  width: 126px;
+  height: 25px;
+  background-color: #2c852c;
+  background-image: none;
+  margin: 0px;
+  padding: 0px 2px 0px 0px;
+}
+.Search-Button {
+  width: 30px;
+  padding: 0px;
+  height: 30px;
+}
+.HomeButtonImage {
+  height: 26px;
+  width: 26px;
+  position: static;
+  text-align: center;
+  padding: 0px;
+}
+.SearchButtomImage {
+  width: 26px;
+  height: 26px;
 }
