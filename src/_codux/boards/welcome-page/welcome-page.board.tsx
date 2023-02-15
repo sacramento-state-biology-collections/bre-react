@@ -4,7 +4,7 @@ import Classnames from 'classnames';
 
 export default createBoard({
     name: 'WelcomePage',
-    Board: () => <WelcomePage />,
+    Board: () => <WelcomePage toggleBool={()=>{}}/>,
     environmentProps: {
         canvasWidth: 1536,
     },
