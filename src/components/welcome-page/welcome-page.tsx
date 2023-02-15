@@ -4,13 +4,14 @@ import classNames from 'classnames';
 export interface WelcomePageProps {
     className?: string;
     children?: React.ReactNode;
+    toggleBool: () => void;
 }
 
 /**
  * This component was generated using Codux's built-in Default new component template.
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-welcome-pages-and-templates
  */
-export const WelcomePage = ({ className, children = 'WelcomePage' }: WelcomePageProps) => {
+export const WelcomePage = ({ className, children = 'WelcomePage', toggleBool }: WelcomePageProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <div className="RootWelcomePage">
@@ -24,10 +25,10 @@ export const WelcomePage = ({ className, children = 'WelcomePage' }: WelcomePage
                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
                         non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
-                    <button className="WelcomePageBtn">Button</button>
+                    <button className="WelcomePageBtn" onClick={toggleBool}>Button</button>
                 </div>
                 <div className="WelcomePageImg">
-                    <img src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg" />
+                    <img src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg" alt="test-img"/>
                 </div>
             </div>
         </div>
