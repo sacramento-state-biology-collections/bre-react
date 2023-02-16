@@ -32,31 +32,31 @@ export const Intro = ({ className, children = 'Intro', toggleAnimalBool, toggleB
             <div className="intro-components">
                 <button className="button-style" onClick={toggleAnimalBool}>
                     Animal
-                    <button className="sub-button1" hidden={!animalBool}>Birds</button>
-                    <button className="sub-button1" hidden={!animalBool}>Fish</button>
-                    <button className="sub-button1" hidden={!animalBool}>Invertebrates</button>
-                    <button className="sub-button1" hidden={!animalBool}>Mammals</button>
-                    <button className="sub-button1" hidden={!animalBool}>Plants</button>
-                    <button className="sub-button1" hidden={!animalBool}>Reptiles</button>
+                    <button className="sub-button1" onClick={toggleAnimalBool} hidden={animalBool}>Birds</button>
+                    <button className="sub-button1" onClick={toggleAnimalBool} hidden={animalBool}>Fish</button>
+                    <button className="sub-button1" onClick={toggleAnimalBool} hidden={animalBool}>Invertebrates</button>
+                    <button className="sub-button1" onClick={toggleAnimalBool} hidden={animalBool}>Mammals</button>
+                    <button className="sub-button1" onClick={toggleAnimalBool} hidden={animalBool}>Plants</button>
+                    <button className="sub-button1" onClick={toggleAnimalBool} hidden={animalBool}>Reptiles</button>
                 </button>
                 <button className="button-style" onClick={toggleBirdBool}>
                     Birds
-                    <button className="sub-button1" hidden={!birdBool}>Birds</button>
+                    <button className="sub-button1" onClick={toggleBirdBool} hidden={birdBool}>Birds</button>
                 </button>
                 <button className="button-style" onClick={togglefishBool}>
-                    Fish<button className="sub-button1" hidden={!fishBool}>Fish</button>
+                    Fish<button className="sub-button1" onClick={togglefishBool} hidden={fishBool}>Fish</button>
                 </button>
                 <button className="button-style" onClick={toggleInvertBool}>
-                    Invertebrates<button className="sub-button1" hidden={!invertBool}>Invertebrates</button>
+                    Invertebrates<button className="sub-button1" onClick={toggleInvertBool} hidden={invertBool}>Invertebrates</button>
                 </button>
                 <button className="button-style" onClick={toggleMammalBool}>
-                    Mammals<button className="sub-button1" hidden={!mammalBool}>Mammals</button>
+                    Mammals<button className="sub-button1" onClick={toggleMammalBool} hidden={mammalBool}>Mammals</button>
                 </button>
                 <button className="button-style" onClick={togglePlantBool}>
-                    Plants<button className="sub-button1" hidden={!plantBool}>Plants</button>
+                    Plants<button className="sub-button1" onClick={togglePlantBool} hidden={plantBool}>Plants</button>
                 </button>
                 <button className="button-style" onClick={toggleReptileBool}>
-                    Reptiles<button className="sub-button1" hidden={!reptileBool}>Reptiles</button>
+                    Reptiles<button className="sub-button1" onClick={toggleReptileBool} hidden={reptileBool}>Reptiles</button>
                 </button>
             </div>
         </div>
