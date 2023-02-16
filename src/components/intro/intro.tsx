@@ -32,31 +32,60 @@ export const Intro = ({ className, children = 'Intro', toggleAnimalBool, toggleB
             <div className="intro-components">
                 <button className="button-style" onClick={toggleAnimalBool}>
                     Animal
-                    <button className="sub-button1" onClick={toggleAnimalBool} hidden={animalBool}>Birds</button>
-                    <button className="sub-button1" onClick={toggleAnimalBool} hidden={animalBool}>Fish</button>
-                    <button className="sub-button1" onClick={toggleAnimalBool} hidden={animalBool}>Invertebrates</button>
-                    <button className="sub-button1" onClick={toggleAnimalBool} hidden={animalBool}>Mammals</button>
-                    <button className="sub-button1" onClick={toggleAnimalBool} hidden={animalBool}>Plants</button>
-                    <button className="sub-button1" onClick={toggleAnimalBool} hidden={animalBool}>Reptiles</button>
+                    <div hidden={animalBool}>
+                        <button className="sub-button1" onClick={toggleAnimalBool}>Birds</button>
+                    </div>
+                    <div hidden={animalBool}>
+                        <button className="sub-button1" onClick={toggleAnimalBool}>Fish</button>
+                    </div>
+                    <div hidden={animalBool}>
+                        <button className="sub-button1" onClick={toggleAnimalBool}>Invertebrates</button>
+                    </div>
+                    <div hidden={animalBool}>
+                        <button className="sub-button1" onClick={toggleAnimalBool}>Mammals</button>
+                    </div>
+                    <div hidden={animalBool}>
+                        <button className="sub-button1" onClick={toggleAnimalBool}>Plants</button>
+                    </div>
+                    <div hidden={animalBool}>
+                        <button className="sub-button1" onClick={toggleAnimalBool}>Reptiles</button>
+                    </div>
                 </button>
                 <button className="button-style" onClick={toggleBirdBool}>
                     Birds
-                    <button className="sub-button1" onClick={toggleBirdBool} hidden={birdBool}>Birds</button>
+                    <div hidden={birdBool}>
+                        <button className="sub-button1" onClick={toggleBirdBool}>Birds</button>
+                    </div>
                 </button>
                 <button className="button-style" onClick={togglefishBool}>
-                    Fish<button className="sub-button1" onClick={togglefishBool} hidden={fishBool}>Fish</button>
+                    Fish
+                    <div hidden={fishBool}>
+                        <button className="sub-button1" onClick={togglefishBool}>Fish</button>
+                    </div>
                 </button>
                 <button className="button-style" onClick={toggleInvertBool}>
-                    Invertebrates<button className="sub-button1" onClick={toggleInvertBool} hidden={invertBool}>Invertebrates</button>
+                    Invertebrates
+                    <div hidden={invertBool}>
+                        <button className="sub-button1" onClick={toggleInvertBool}>Invertebrates</button>
+                    </div>
                 </button>
                 <button className="button-style" onClick={toggleMammalBool}>
-                    Mammals<button className="sub-button1" onClick={toggleMammalBool} hidden={mammalBool}>Mammals</button>
+                    Mammals
+                    <div hidden={mammalBool}>
+                        <button className="sub-button1" onClick={toggleMammalBool}>Mammals</button>
+                    </div>
                 </button>
                 <button className="button-style" onClick={togglePlantBool}>
-                    Plants<button className="sub-button1" onClick={togglePlantBool} hidden={plantBool}>Plants</button>
+                    Plants
+                    <div hidden={plantBool}>
+                        <button className="sub-button1" onClick={togglePlantBool}>Plants</button>
+                    </div>
                 </button>
                 <button className="button-style" onClick={toggleReptileBool}>
-                    Reptiles<button className="sub-button1" onClick={toggleReptileBool} hidden={reptileBool}>Reptiles</button>
+                    Reptiles
+                    <div hidden={reptileBool}>
+                        <button className="sub-button1" onClick={toggleReptileBool}>Reptiles</button>
+                    </div>
                 </button>
             </div>
         </div>
