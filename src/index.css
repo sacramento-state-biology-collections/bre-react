@@ -32,6 +32,7 @@ code {
   background-color: rgba(255, 255, 255, 0.78);
   border-radius: 1000px;
   font-weight: 700;
+  height: 75px;
 }
 .mid {
   text-align: center;
@@ -41,7 +42,49 @@ code {
   position: sticky;
   height: 0px;
 }
-
+.bre-button {
+}
+.sub-button {
+}
+.sub-button1 {
+  border-radius: 100px;
+  position: relative;
+  align-self: start;
+  height: 40px;
+  top: 35px;
+  width: 175px;
+  right: 125px;
+  flex-grow: 4;
+  order: 1;
+  text-align: center;
+  overflow: auto;
+  display: inline-block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 400px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.button-special-spread {
+  display: grid;
+  flex-direction: row;
+  grid-auto-flow: row;
+  align-items: start;
+  justify-items: start;
+  align-content: center;
+  gap: 1px;
+  overflow: auto;
+  flex-grow: 4;
+  align-self: center;
+  position: absolute;
+  grid-row-start: inherit;
+  top: 200px;
+  right: 750px;
+}
 .card-div {
   display: flex;
   flex-direction: row;
