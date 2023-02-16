@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { WelcomeView } from './components/welcome-view/welcome-view';
 import { DemoView } from './components/demo-view/demo-view';
+import { BREHomeView } from './components/bre-home-view/bre-home-view';
 
 function App() {
     const [myBool, setmyBool] = useState(true);
@@ -9,7 +10,11 @@ function App() {
         setmyBool(!myBool);
     }
 
-    return myBool ? <WelcomeView toggleBool={toggleBool} /> : <DemoView toggleBool={toggleBool} />;
+    return myBool ? (
+        <WelcomeView toggleBool={toggleBool} />
+    ) : (
+        <BREHomeView />
+    );
 }
 
 export default App;
