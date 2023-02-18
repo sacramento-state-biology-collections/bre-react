@@ -12,7 +12,7 @@ export interface TableDataViewProps {
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-table-data-views-and-templates
  */
 
-export const TableDataView = ({ className, children = 'TableDataView' }: TableDataViewProps) => {
+export const TableDataView = ({ className }: TableDataViewProps) => {
     const [data, setData] = useState([]);
 
     const getTable = async () => {
