@@ -3,9 +3,6 @@ import { TableDataView } from '../../../components/table-data-view/table-data-vi
 import TableDataView_module from '../../../components/table-data-view/table-data-view.module.scss';
 
 export default createBoard({
-    name: 'TableDataView',
+    name: 'TableDataComponent',
     Board: () => <TableDataView className={TableDataView_module.root}></TableDataView>,
-    environmentProps: {
-        canvasWidth: 1030,
-    },
 });
