@@ -3,18 +3,22 @@ import { WelcomeView } from './components/welcome-view/welcome-view';
 import { DemoView } from './components/demo-view/demo-view';
 import { BREHomeView } from './components/bre-home-view/bre-home-view';
 
-function App() {
-    const [myBool, setmyBool] = useState(true);
+let view = 0;
 
-    function toggleBool() {
-        setmyBool(!myBool);
+function App() {
+    function toggleView(nextView: number) {
+        view = nextView;
     }
 
-    return myBool ? (
-        <WelcomeView toggleBool={toggleBool} />
-    ) : (
-        <BREHomeView />
-    );
+    switch (view) {
+        case 0: {
+            return <WelcomeView toggleView={toggleView} />;
+        }
+        case 1: {
+            return <DemoView toggleView={toggleView} />;
+        }
+        default:
+    }
 }
 
 export default App;

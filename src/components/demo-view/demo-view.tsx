@@ -6,18 +6,18 @@ import { DemoPage } from '../demo-page/demo-page';
 export interface DemoViewProps {
     className?: string;
     children?: React.ReactNode;
-    toggleBool: () => void;
+    toggleView: (nextView: number) => void;
 }
 
 /**
  * This component was generated using Codux's built-in Default new component template.
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-demo-views-and-templates
  */
-export const DemoView = ({ className, children = 'DemoView', toggleBool }: DemoViewProps) => {
+export const DemoView = ({ className, children = 'DemoView', toggleView }: DemoViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <LoginRibbon />
-            <DemoPage toggleBool={toggleBool} />
+            <DemoPage toggleView={toggleView} />
         </div>
     );
 };
