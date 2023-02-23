@@ -3,9 +3,9 @@ import { WelcomeView } from './components/welcome-view/welcome-view';
 import { DemoView } from './components/demo-view/demo-view';
 import { BREHomeView } from './components/bre-home-view/bre-home-view';
 
-let view = 0;
-
 function App() {
+    let view = 0;
+
     function toggleView(nextView: number) {
         view = nextView;
     }
@@ -17,7 +17,9 @@ function App() {
         case 1: {
             return <DemoView toggleView={toggleView} />;
         }
-        default:
+        default: {
+            return <WelcomeView toggleView={toggleView} />;
+        }
     }
 }
 
