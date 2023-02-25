@@ -3,5 +3,5 @@ import { TableDataView } from '../../../components/table-data-view/table-data-vi
 
 export default createBoard({
     name: 'TableDataView',
-    Board: () => <TableDataView />,
+    Board: () => <TableDataView getData={()=>[]}/>,
 });

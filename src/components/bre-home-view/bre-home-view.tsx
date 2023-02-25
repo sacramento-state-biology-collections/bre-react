@@ -52,7 +52,7 @@ export const BREHomeView = ({ className, children = 'BREHomeView' }: BREHomeView
     
     return (
         <div className={classNames(styles.root, className)}>
-            <Header />
+            <Header clicked={()=>{}}/>
             <Intro toggleAnimalBool={toggleAnimalBool} toggleBirdBool={toggleBirdBool} togglefishBool={togglefishBool} toggleInvertBool={toggleInvertBool} toggleMammalBool={toggleMammalBool} togglePlantBool={togglePlantBool} toggleReptileBool={toggleReptileBool} animalBool={animalBool} birdBool={birdBool} fishBool={fishBool} invertBool={invertBool} mammalBool={mammalBool} plantBool={plantBool} reptileBool={reptileBool}/>
         </div>
     );
