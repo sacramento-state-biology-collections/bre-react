@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 export interface TableDataViewProps {
     className?: string;
     children?: React.ReactNode;
-    props?: any;
+    getData: () => any[];
 }
 
 /**
@@ -13,7 +13,7 @@ export interface TableDataViewProps {
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-table-data-views-and-templates
  */
 
-export const TableDataView = ({ className, props }: TableDataViewProps) => {
+export const TableDataView = ({ className, getData }: TableDataViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <table className={styles.TableMainClass}>
@@ -23,14 +23,11 @@ export const TableDataView = ({ className, props }: TableDataViewProps) => {
                 <li className={styles.PlaceholderItems}>Drawer #</li>
                 <li className={styles.PlaceholderItems}> </li>
             </table>
-            {
-                
-            }
         </div>
     );
 };
 
-{
+// {
     /* <tr className={styles.TableRow}>
     <li className={styles.TableRowItem}>Item</li>
     <li className={styles.TableRowItem}>Item</li>
@@ -40,4 +37,4 @@ export const TableDataView = ({ className, props }: TableDataViewProps) => {
         <button className={styles.PreviewButtonStyles}>Preview</button>
     </li>
 </tr>; */
-}
+// }

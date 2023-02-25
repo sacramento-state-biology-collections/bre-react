@@ -19,37 +19,50 @@ export interface TableData {
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-table-views-and-templates
  */
 export const TableView = ({ className, children = 'TableView' }: TableViewProps) => {
-    const [data, setData] = useState<TableData>({ row_data: [] });
-    const get_request = {
-        method: 'GET',
-        url: 'http://50.116.3.37:9001/api/all',
-        headers: {
-            'Access-Control-Allow-Origin': 'http://50.116.3.37:9001/',
-            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-            'Access-Control-Allow-Credentials': 'true',
-        },
-    };
+    const [data, setData] = useState<TableData | any>({ row_data: [] });
 
-    const getTable = async () => {
-        try {
-            const response = await axios.request(get_request);
-            console.log('response: ' + response.data);
-            setData(response.data);
-            console.log('data: ' + data);
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    function clicked() {
+        setData(
+            fetch('http://50.116.3.37:9001/api/all').then((response) => {
+                console.log('response: ' + response.json());
+                return response.json();
+            })
+        );
+    }
 
-    useEffect(() => {
-        getTable();
-    }, []);
+    // const get_request = {
+    //     method: 'GET',
+    //     url: 'http://50.116.3.37:9001/api/all',
+    //     headers: {
+    //         'Access-Control-Allow-Origin': 'http://50.116.3.37:9001/',
+    //         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+    //         'Access-Control-Allow-Credentials': 'true',
+    //     },
+    // };
 
-    
+    // const getTable = async () => {
+    //     try {
+    //         const response = await axios.request(get_request);
+    //         console.log('response: ' + response.data);
+    //         setData(response.data);
+    //         console.log('data: ' + data);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
+
+    // useEffect(() => {
+    //     getTable();
+    // }, []);
+
+    function getData() {
+        return data;
+    }
+
     return (
         <div className={classNames(styles.root, className)}>
-            <Header />
-            <TableDataView props={data} />
+            <Header clicked={clicked}/>
+            <TableDataView getData={getData} />
         </div>
     );
 };
