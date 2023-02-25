@@ -23,18 +23,19 @@ export const TableDataView = ({ className, getData }: TableDataViewProps) => {
                 <li className={styles.PlaceholderItems}>Drawer #</li>
                 <li className={styles.PlaceholderItems}> </li>
             </table>
+            {getData().map((item) => {
+                return (
+                    <tr className={styles.TableRow}>
+                        <li className={styles.TableRowItem}>{item.common_name}</li>
+                        <li className={styles.TableRowItem}>{item.scientific_name}</li>
+                        <li className={styles.TableRowItem}>{item.prep_type}</li>
+                        <li className={styles.TableRowItem}>{item.drawer_number}</li>
+                        <li className={styles.TableRowItem}>
+                            <button className={styles.PreviewButtonStyles}>Preview</button>
+                        </li>
+                    </tr>
+                );
+            })}
         </div>
     );
 };
-
-// {
-    /* <tr className={styles.TableRow}>
-    <li className={styles.TableRowItem}>Item</li>
-    <li className={styles.TableRowItem}>Item</li>
-    <li className={styles.TableRowItem}>Item</li>
-    <li className={styles.TableRowItem}>Item</li>
-    <li className={styles.TableRowItem}>
-        <button className={styles.PreviewButtonStyles}>Preview</button>
-    </li>
-</tr>; */
-// }
