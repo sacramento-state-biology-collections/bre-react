@@ -13,19 +13,6 @@ export interface TableDataViewProps {
  */
 
 export const TableDataView = ({ className }: TableDataViewProps) => {
-    const [data, setData] = useState([]);
-
-    const getTable = async () => {
-        const tableData = await fetch("50.116.3.37:9001", 
-        {method: "GET", });
-        const jsonData = await tableData.json();
-        setData(jsonData);
-        console.log(data);
-    }
-
-    useEffect(() => {
-        getTable();
-    }, []);
 
     return <div className={classNames(styles.root, className)}>
         <table className={styles.TableMainClass}>
