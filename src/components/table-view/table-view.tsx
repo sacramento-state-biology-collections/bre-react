@@ -2,10 +2,16 @@ import styles from './table-view.module.scss';
 import classNames from 'classnames';
 import { Header } from '../header/header';
 import { TableDataView } from '../table-data-view/table-data-view';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export interface TableViewProps {
     className?: string;
     children?: React.ReactNode;
+}
+
+export interface TableData {
+    row_data: string[];
 }
 
 /**
@@ -13,22 +19,37 @@ export interface TableViewProps {
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-table-views-and-templates
  */
 export const TableView = ({ className, children = 'TableView' }: TableViewProps) => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<TableData>({ row_data: [] });
+    const get_request = {
+        method: 'GET',
+        url: 'http://50.116.3.37:9001/api/all',
+        headers: {
+            'Access-Control-Allow-Origin': 'http://50.116.3.37:9001/',
+            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+            'Access-Control-Allow-Credentials': 'true',
+        },
+    };
 
     const getTable = async () => {
-        const tableData = await fetch('50.116.3.37:9001', { method: 'GET' });
-        const jsonData = await tableData.json();
-        setData(jsonData);
-        console.log(data);
+        try {
+            const response = await axios.request(get_request);
+            console.log('response: ' + response.data);
+            setData(response.data);
+            console.log('data: ' + data);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     useEffect(() => {
         getTable();
     }, []);
+
+    
     return (
         <div className={classNames(styles.root, className)}>
             <Header />
-            <TableDataView />
+            <TableDataView props={data} />
         </div>
     );
 };
