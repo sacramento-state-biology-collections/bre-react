@@ -3,23 +3,18 @@ import { WelcomeView } from './components/welcome-view/welcome-view';
 import { BREHomeView } from './components/bre-home-view/bre-home-view';
 
 function App() {
-    const [currentView, setView] = useState(0);
+    let viewMap = new Map<String, JSX.Element>([
+        ["welcome-view", <WelcomeView toggleView={toggleView} />],
+        ["bre-home-view", <BREHomeView toggleView={toggleView}/>],
+    ]);
 
-    function toggleView(nextView: number) {
-        setView(nextView);
+    const [currentView, setView] = useState(<WelcomeView toggleView={toggleView} />);
+
+    function toggleView(nextView: string) {
+        viewMap.has(nextView) ? setView(viewMap.get(nextView)) : setView(<WelcomeView toggleView={toggleView} />)
     }
 
-    switch (currentView) {
-        case 0: {
-            return <WelcomeView toggleView={toggleView} />;
-        }
-        case 1: {
-            return <BREHomeView toggleView={toggleView}/>;
-        }
-        default: {
-            return <WelcomeView toggleView={toggleView} />;
-        }
-    }
+    return currentView;
 }
 
 export default App;

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 export interface WelcomePageProps {
     className?: string;
     children?: React.ReactNode;
-    toggleView: (nextView: number) => void;
+    toggleView: (nextView: string) => void;
 }
 
 /**
@@ -13,7 +13,7 @@ export interface WelcomePageProps {
  */
 export const WelcomePage = ({ className = 'WelcomePage', toggleView }: WelcomePageProps) => {
     function toggleNextView() {
-        toggleView(1);
+        toggleView("bre-home-view");
     }
 
     return (

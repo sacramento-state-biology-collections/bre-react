@@ -7,7 +7,7 @@ import { Header } from '../header/header';
 export interface BREHomeViewProps {
     className?: string;
     children?: React.ReactNode;
-    toggleView: (nextView: number) => void;
+    toggleView: (nextView: string) => void;
 }
 
 /**

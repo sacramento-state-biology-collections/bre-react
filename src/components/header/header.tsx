@@ -4,7 +4,7 @@ import classNames from 'classnames';
 export interface HeaderProps {
     className?: string;
     children?: React.ReactNode;
-    toggleView: (nextView: number) => void;
+    toggleView: (nextView: string) => void;
 }
 
 /**
@@ -13,7 +13,7 @@ export interface HeaderProps {
  */
 export const Header = ({ className, children = 'Header', toggleView }: HeaderProps) => {
     function toggleNextView() {
-        toggleView(0);
+        toggleView("welcome-view");
     }
     
     return (

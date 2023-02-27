@@ -6,7 +6,7 @@ import { WelcomePage } from '../welcome-page/welcome-page';
 export interface WelcomeViewProps {
     className?: string;
     children?: React.ReactNode;
-    toggleView: (nextView: number) => void;
+    toggleView: (nextView: string) => void;
 }
 
 /**
