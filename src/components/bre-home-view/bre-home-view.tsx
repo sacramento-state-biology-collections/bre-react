@@ -7,13 +7,14 @@ import { Header } from '../header/header';
 export interface BREHomeViewProps {
     className?: string;
     children?: React.ReactNode;
+    toggleView: (nextView: number) => void;
 }
 
 /**
  * This component was generated using Codux's built-in Default new component template.
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-bre-home-views-and-templates
  */
-export const BREHomeView = ({ className, children = 'BREHomeView' }: BREHomeViewProps) => {
+export const BREHomeView = ({ className, children = 'BREHomeView', toggleView }: BREHomeViewProps) => {
     const [animalBool, setmyBoolanimal] = useState(true); 
     const [birdBool, setmyBoolbird] = useState(true); 
     const [fishBool, setmyBoolfish] = useState(true); 
@@ -52,7 +53,7 @@ export const BREHomeView = ({ className, children = 'BREHomeView' }: BREHomeView
     
     return (
         <div className={classNames(styles.root, className)}>
-            <Header />
+            <Header toggleView={toggleView}/>
             <Intro toggleAnimalBool={toggleAnimalBool} toggleBirdBool={toggleBirdBool} togglefishBool={togglefishBool} toggleInvertBool={toggleInvertBool} toggleMammalBool={toggleMammalBool} togglePlantBool={togglePlantBool} toggleReptileBool={toggleReptileBool} animalBool={animalBool} birdBool={birdBool} fishBool={fishBool} invertBool={invertBool} mammalBool={mammalBool} plantBool={plantBool} reptileBool={reptileBool}/>
         </div>
     );

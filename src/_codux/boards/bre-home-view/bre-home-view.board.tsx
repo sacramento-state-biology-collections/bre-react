@@ -3,7 +3,7 @@ import { BREHomeView } from '../../../components/bre-home-view/bre-home-view';
 
 export default createBoard({
     name: 'BREHomeView',
-    Board: () => <BREHomeView />,
+    Board: () => <BREHomeView toggleView={() => {}}/>,
     environmentProps: {
         windowWidth: 1024,
         windowHeight: 768,

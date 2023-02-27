@@ -5,12 +5,7 @@ import { Header } from '../../../components/header/header';
 
 export default createBoard({
     name: 'IntroView',
-    Board: () => (
-        <IntroView>
-            <Header />
-            <Intro  toggleAnimalBool={()=>{}} toggleBirdBool={()=>{}} togglefishBool={()=>{}} toggleInvertBool={()=>{}} toggleMammalBool={()=>{}} togglePlantBool={()=>{}} toggleReptileBool={()=>{}}/>
-        </IntroView>
-    ),
+    Board: () => <IntroView toggleView={() => {}} />,
     environmentProps: {
         canvasHeight: 690,
         windowWidth: 1024,

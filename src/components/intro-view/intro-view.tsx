@@ -6,6 +6,7 @@ import { Header } from '../header/header';
 export interface IntroViewProps {
     className?: string;
     children?: React.ReactNode;
+    toggleView: (nextView: number) => void;
 }
 
 /**
@@ -15,10 +16,11 @@ export interface IntroViewProps {
 export const IntroView =  ({
     className,
     children = 'IntroView',
+    toggleView: toggleView,
 }: IntroViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <Header></Header>
+            <Header toggleView={toggleView} />
             <Intro toggleAnimalBool={()=>{}} toggleBirdBool={()=>{}} togglefishBool={()=>{}} toggleInvertBool={()=>{}} toggleMammalBool={()=>{}} togglePlantBool={()=>{}} toggleReptileBool={()=>{}}/>
         </div>
     );

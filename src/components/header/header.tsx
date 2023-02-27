@@ -4,18 +4,23 @@ import classNames from 'classnames';
 export interface HeaderProps {
     className?: string;
     children?: React.ReactNode;
+    toggleView: (nextView: number) => void;
 }
 
 /**
  * This component was generated using Codux's built-in Default new component template.
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-headers-and-templates
  */
-export const Header = ({ className, children = 'Header' }: HeaderProps) => {
+export const Header = ({ className, children = 'Header', toggleView }: HeaderProps) => {
+    function toggleNextView() {
+        toggleView(0);
+    }
+    
     return (
         <div className={classNames(styles.root, className)}>
             <span className={styles.Title}>Biology Research Engine</span>
             <div className={styles.Bottom_Header}>
-                <button className={styles.Button}>
+                <button className={styles.Button} onClick={toggleNextView}>
                     <img
                         id="home-button-img"
                         src="/styles/Home_Button.svg"

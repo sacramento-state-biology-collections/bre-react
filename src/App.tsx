@@ -15,7 +15,7 @@ function App() {
             return <WelcomeView toggleView={toggleView} />;
         }
         case 1: {
-            return <IntroView />;
+            return <IntroView toggleView={toggleView}/>;
         }
         default: {
             return <WelcomeView toggleView={toggleView} />;
