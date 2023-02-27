@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { WelcomeView } from './components/welcome-view/welcome-view';
 import { BREHomeView } from './components/bre-home-view/bre-home-view';
-import { IntroView } from './components/intro-view/intro-view';
 
 function App() {
     const [currentView, setView] = useState(0);
@@ -15,7 +14,7 @@ function App() {
             return <WelcomeView toggleView={toggleView} />;
         }
         case 1: {
-            return <IntroView toggleView={toggleView}/>;
+            return <BREHomeView toggleView={toggleView}/>;
         }
         default: {
             return <WelcomeView toggleView={toggleView} />;
