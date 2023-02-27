@@ -2,11 +2,16 @@ import styles from './welcome-view.module.scss';
 import classNames from 'classnames';
 import { LoginRibbon } from '../login-ribbon/login-ribbon';
 import { WelcomePage } from '../welcome-page/welcome-page';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export interface WelcomeViewProps {
     className?: string;
     children?: React.ReactNode;
     toggleView: (nextView: string) => void;
+}
+export interface TableData {
+    row_data: string;
 }
 
 /**
