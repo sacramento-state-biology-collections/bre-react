@@ -8,7 +8,7 @@ import axios from 'axios';
 export interface WelcomeViewProps {
     className?: string;
     children?: React.ReactNode;
-    toggleBool: () => void;
+    toggleView: (nextView: string) => void;
 }
 export interface TableData {
     row_data: string;
@@ -21,12 +21,12 @@ export interface TableData {
 export const WelcomeView = ({
     className,
     children = 'WelcomeView',
-    toggleBool,
+    toggleView: toggleView,
 }: WelcomeViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <LoginRibbon></LoginRibbon>
-            <WelcomePage toggleBool={toggleBool} />
+            <WelcomePage toggleView={toggleView} />
         </div>
     );
 };

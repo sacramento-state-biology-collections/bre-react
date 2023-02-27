@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import { WelcomeView } from './components/welcome-view/welcome-view';
-import { DemoView } from './components/demo-view/demo-view';
 import { BREHomeView } from './components/bre-home-view/bre-home-view';
-import { TableDataView } from './components/table-data-view/table-data-view';
 import { TableView } from './components/table-view/table-view';
 
 function App() {
-    const [myBool, setmyBool] = useState(true);
-    const [myBool2, setmyBool2] = useState(true);
+    let viewMap = new Map<String, JSX.Element>([
+        ["welcome-view", <WelcomeView toggleView={toggleView} />],
+        ["bre-home-view", <BREHomeView toggleView={toggleView}/>],
+    ]);
 
-    function toggleBool() {
-        setmyBool(!myBool);
+    const [currentView, setView] = useState(<WelcomeView toggleView={toggleView} />);
+
+    function toggleView(nextView: string) {
+        viewMap.has(nextView) ? setView(viewMap.get(nextView)) : setView(<WelcomeView toggleView={toggleView} />)
     }
-
-    return myBool ? <WelcomeView toggleBool={toggleBool} /> : <TableView />;
+    
+    return currentView;
 }
 
 export default App;

@@ -3,7 +3,7 @@ import { Header } from '../../../components/header/header';
 
 export default createBoard({
     name: 'Header',
-    Board: () => <Header clicked={()=>{}}/>,
+    Board: () => <Header toggleView={() => {}} clicked={() => {}}/>,
     environmentProps: {
         canvasHeight: 128,
     },
