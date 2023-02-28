@@ -5,16 +5,19 @@ import { TableView } from './components/table-view/table-view';
 
 function App() {
     let viewMap = new Map<String, JSX.Element>([
-        ["welcome-view", <WelcomeView toggleView={toggleView} />],
-        ["bre-home-view", <BREHomeView toggleView={toggleView}/>],
+        ['welcome-view', <WelcomeView toggleView={toggleView} />],
+        ['bre-home-view', <BREHomeView toggleView={toggleView} />],
+        ['table-view', <TableView toggleView={toggleView} />],
     ]);
 
     const [currentView, setView] = useState(<WelcomeView toggleView={toggleView} />);
 
     function toggleView(nextView: string) {
-        viewMap.has(nextView) ? setView(viewMap.get(nextView)) : setView(<WelcomeView toggleView={toggleView} />)
+        viewMap.has(nextView)
+            ? setView(viewMap.get(nextView))
+            : setView(<WelcomeView toggleView={toggleView} />);
     }
-    
+
     return currentView;
 }
 

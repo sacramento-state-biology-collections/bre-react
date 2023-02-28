@@ -86,31 +86,58 @@ code {
 .card-div {
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  height: 100vh;
+  width: 80vw;
+  height: 80vh;
   align-items: center;
-  justify-items: end;
+  justify-items: center;
   justify-content: end;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 25px;
+  border: 1px solid #1f1e1e;
+  align-self: center;
+  align-content: start;
+  position: sticky;
+  margin-top: 0vh;
+  margin-left: 0vw;
+  margin-right: 0vw;
+  margin-bottom: 0vh;
+  bottom: 50px;
+  top: -100vh;
+  left: 10vw;
 }
 .card-image-div {
-  width: 80vh;
-  height: 80vh;
+  width: 59vw;
+  height: 60vh;
+  display: flex;
+  padding: 1px;
+  margin-left: -5vw;
+  align-items: start;
+  justify-items: start;
+  justify-content: start;
 }
 .card-img {
-  width: 80vh;
-  height: 80vh;
+  width: 60vh;
+  height: 60vh;
+  align-self: center;
+  display: flex;
 }
 .card-info-div {
   display: flex;
   flex-direction: column;
   width: 20vw;
+  margin: 0vw 0vw 0vw -23vw;
 }
 .card-content-div {
   display: flex;
-  width: 80vw;
-  height: 80vh;
+  width: 60vw;
+  height: 60vh;
   padding: 0%;
   gap: 5%;
+  margin: 0px;
+  justify-content: start;
+  align-content: start;
+  align-items: start;
+  justify-items: start;
 }
 .card-buttons-div {
   display: flex;
@@ -119,12 +146,12 @@ code {
   justify-items: stretch;
   align-content: start;
   width: 5vw;
-  padding-top: 5vh;
+  padding-top: 0vh;
   gap: 90%;
-  height: 95vh;
   margin: 0vh 0px 0px;
   padding-right: 5vh;
   padding-left: 5vh;
+  height: 75vh;
 }
 .CommonNameStyles {
   align-self: center;

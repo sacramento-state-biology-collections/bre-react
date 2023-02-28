@@ -1,17 +1,17 @@
 .root {
   width: 100vw;
-  height: 15vh;
+  height: 17vh;
   display: grid;
   flex-direction: row;
   align-items: center;
   justify-items: center;
   justify-content: center;
-  background-color: #309e3a;
+  background-color: #117433;
 }
 .Title {
   text-align: center;
-  font-size: 5vw;
   color: white;
+  font-size: 7vh;
 }
 .Bottom_Header {
   margin: 0px;
@@ -41,6 +41,6 @@
 }
 .Drop_list {
   display: flex;
-  background-color: #36b636;
+  background-color: #2b932b;
   width: 12vw;
 }

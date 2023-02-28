@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 export interface TableDataViewProps {
     className?: string;
     children?: React.ReactNode;
+    toggleView: (nextView: string) => void;
     getData: () => any[];
 }
 

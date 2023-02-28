@@ -2,6 +2,7 @@ import styles from './table-view.module.scss';
 import classNames from 'classnames';
 import { Header } from '../header/header';
 import { TableDataView } from '../table-data-view/table-data-view';
+import { CardView } from '../card-view/card-view';
 import { useEffect, useState } from 'react';
 
 export interface TableViewProps {
@@ -40,8 +41,11 @@ export const TableView = ({
 
     return (
         <div className={classNames(styles.root, className)}>
-            <Header toggleView={toggleView} clicked={clicked} />
-            <TableDataView getData={getData} />
+            <div>
+                <Header toggleView={toggleView} clicked={clicked} />
+                <TableDataView toggleView={toggleView} getData={getData} />
+            </div>
+            <CardView toggleView={toggleView} />
         </div>
     );
 };
