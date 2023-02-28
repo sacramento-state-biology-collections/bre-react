@@ -3,5 +3,5 @@ import { TableView } from '../../../components/table-view/table-view';
 
 export default createBoard({
     name: 'TableView',
-    Board: () => <TableView />
+    Board: () => <TableView toggleView={() => {}} />,
 });

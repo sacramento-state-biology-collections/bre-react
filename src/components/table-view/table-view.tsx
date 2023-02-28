@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 export interface TableViewProps {
     className?: string;
     children?: React.ReactNode;
+    toggleView: (nextView: string) => void;
 }
 
 /**
@@ -14,7 +15,11 @@ export interface TableViewProps {
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-table-views-and-templates
  */
 
-export const TableView = ({ className, children = 'TableView' }: TableViewProps) => {
+export const TableView = ({
+    className,
+    children = 'TableView',
+    toggleView: toggleView,
+}: TableViewProps) => {
     const [data, setData] = useState([]);
 
     function clicked() {
@@ -23,7 +28,7 @@ export const TableView = ({ className, children = 'TableView' }: TableViewProps)
             .then((Data) => {
                 setData(Data);
             });
-    };
+    }
 
     useEffect(() => {
         console.log(data);
@@ -35,7 +40,7 @@ export const TableView = ({ className, children = 'TableView' }: TableViewProps)
 
     return (
         <div className={classNames(styles.root, className)}>
-            <Header clicked={clicked}/>
+            <Header toggleView={toggleView} clicked={clicked} />
             <TableDataView getData={getData} />
         </div>
     );
