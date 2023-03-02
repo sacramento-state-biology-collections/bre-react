@@ -7,8 +7,7 @@ export default createBoard({
         <TableDataView
             toggleView={() => {}}
             getData={() => []}
-            togglePopupBoolean={() => {}}
-            popupBool
+            toggleCardBool={() => {}}
         />
     ),
 });

@@ -22,10 +22,10 @@ export const TableView = ({
     toggleView: toggleView,
 }: TableViewProps) => {
     const [data, setData] = useState([]);
-    const [popupBool, setmyBoolpopup] = useState(true);
+    const [cardBool, setmyCardBool] = useState(true);
 
-    function togglePopupBoolean() {
-        setmyBoolpopup(!popupBool);
+    function toggleCardBool() {
+        setmyCardBool(!cardBool);
     }
 
     function clicked() {
@@ -47,12 +47,8 @@ export const TableView = ({
     return (
         <div className={classNames(styles.root, className)}>
             <Header toggleView={toggleView} clicked={clicked} />
-            <TableDataView
-                toggleView={toggleView}
-                getData={getData}
-                togglePopupBoolean={togglePopupBoolean}
-                popupBool={popupBool}
-            />
+            <TableDataView toggleView={toggleView} getData={getData} toggleCardBool={toggleCardBool}/>
+            <div hidden={cardBool}><CardView /></div>
         </div>
     );
 };
