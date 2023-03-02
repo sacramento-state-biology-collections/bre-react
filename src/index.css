@@ -40,3 +40,33 @@ code {
   position: sticky;
   height: 0px;
 }
+.header-style {
+  display: flex;
+  align-items: center;
+  gap: 123vmin;
+  border: 3px solid black;
+  border-radius: 0px;
+  background-color: #54b423;
+  opacity: 0.9;
+  height: 140px;
+  align-self: center;
+}
+.button-head {
+  flex-grow: 0;
+  margin: 5px;
+  padding: 7px;
+  text-align: center;
+  align-self: start;
+}
+.text-style {
+  padding: 3px;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 50px;
+}
+.button-color {
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: #e0e0a1;
+}
