@@ -22,10 +22,10 @@ export const TableView = ({
     toggleView: toggleView,
 }: TableViewProps) => {
     const [data, setData] = useState([]);
-    const [popupBool, setmyPopupBool] = useState(true);
+    const [popupBool, setmyBoolpopup] = useState(true);
 
     function togglePopupBoolean() {
-        setmyPopupBool(!popupBool);
+        setmyBoolpopup(!popupBool);
     }
 
     function clicked() {
@@ -51,10 +51,8 @@ export const TableView = ({
                 toggleView={toggleView}
                 getData={getData}
                 togglePopupBoolean={togglePopupBoolean}
+                popupBool={popupBool}
             />
-            <div className="card-div" hidden={popupBool}>
-                <CardView />
-            </div>
         </div>
     );
 };

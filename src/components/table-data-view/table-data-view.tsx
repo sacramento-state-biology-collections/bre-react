@@ -1,10 +1,12 @@
 import styles from './table-data-view.module.scss';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
+import { CardView } from '../card-view/card-view';
 
 export interface TableDataViewProps {
     className?: string;
     children?: React.ReactNode;
+    popupBool?: boolean;
     toggleView: (nextView: string) => void;
     togglePopupBoolean: () => void;
     getData: () => any[];
@@ -15,7 +17,12 @@ export interface TableDataViewProps {
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-table-data-views-and-templates
  */
 
-export const TableDataView = ({ className, getData, togglePopupBoolean }: TableDataViewProps) => {
+export const TableDataView = ({
+    className,
+    getData,
+    togglePopupBoolean,
+    popupBool,
+}: TableDataViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <table className={styles.TableMainClass}>
@@ -43,6 +50,9 @@ export const TableDataView = ({ className, getData, togglePopupBoolean }: TableD
                     </tr>
                 );
             })}
+            <div className="card-div" hidden={popupBool}>
+                <CardView />
+            </div>
         </div>
     );
 };
