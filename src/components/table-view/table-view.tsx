@@ -2,11 +2,13 @@ import styles from './table-view.module.scss';
 import classNames from 'classnames';
 import { Header } from '../header/header';
 import { TableDataView } from '../table-data-view/table-data-view';
+import { CardView } from '../card-view/card-view';
 import { useEffect, useState } from 'react';
 
 export interface TableViewProps {
     className?: string;
     children?: React.ReactNode;
+    toggleView: (nextView: string) => void;
 }
 
 /**
@@ -14,8 +16,17 @@ export interface TableViewProps {
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-table-views-and-templates
  */
 
-export const TableView = ({ className, children = 'TableView' }: TableViewProps) => {
+export const TableView = ({
+    className,
+    children = 'TableView',
+    toggleView: toggleView,
+}: TableViewProps) => {
     const [data, setData] = useState([]);
+    const [cardBool, setmyCardBool] = useState(true);
+
+    function toggleCardBool() {
+        setmyCardBool(!cardBool);
+    }
 
     function clicked() {
         fetch('http://50.116.3.37:9001/api/all')
@@ -23,7 +34,7 @@ export const TableView = ({ className, children = 'TableView' }: TableViewProps)
             .then((Data) => {
                 setData(Data);
             });
-    };
+    }
 
     useEffect(() => {
         console.log(data);
@@ -35,8 +46,15 @@ export const TableView = ({ className, children = 'TableView' }: TableViewProps)
 
     return (
         <div className={classNames(styles.root, className)}>
-            <Header clicked={clicked}/>
-            <TableDataView getData={getData} />
+            <Header toggleView={toggleView} clicked={clicked} />
+            <div hidden={cardBool}>
+                <CardView />
+            </div>
+            <TableDataView
+                toggleView={toggleView}
+                getData={getData}
+                toggleCardBool={toggleCardBool}
+            />
         </div>
     );
 };

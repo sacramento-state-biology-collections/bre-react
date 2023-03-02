@@ -13,19 +13,23 @@ export interface HeaderProps {
  * This component was generated using Codux's built-in Default new component template.
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-headers-and-templates
  */
- 
+
 export const Header = ({ className, children = 'Header', toggleView, clicked }: HeaderProps) => {
-    function toggleNextView() {
-        toggleView("welcome-view");
+    function toggleHomeView() {
+        toggleView('welcome-view');
+    }
+    function toggleTableView() {
+        clicked();
+        toggleView('table-view');
     }
     return (
         <div className={classNames(styles.root, className)}>
             <span className={styles.Title}>Biology Research Engine</span>
             <div className={styles.Bottom_Header}>
-                <button className={styles.Button} onClick={toggleNextView}>
+                <button className={styles.Button} onClick={toggleHomeView}>
                     <img
                         id="home-button-img"
-                        src="/styles/Home_Button.svg"
+                        src="../styles/Home_Button.svg"
                         alt="Home"
                         className={styles.Home_Img}
                     />
@@ -39,13 +43,12 @@ export const Header = ({ className, children = 'Header', toggleView, clicked }: 
                     <option>Amphibians</option>
                     <option>Fish</option>
                 </select>
-                <button className={styles.Button}>
+                <button className={styles.Button} onClick={toggleTableView}>
                     <img
                         id="search-button-img"
-                        src="/styles/Search_Button.svg"
+                        src="../styles/Search_Button.svg"
                         alt="Search"
                         className={styles.Home_Img}
-                        onClick={clicked}
                     />
                 </button>
             </div>

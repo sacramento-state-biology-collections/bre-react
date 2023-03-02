@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { LoginRibbon } from '../login-ribbon/login-ribbon';
 import { WelcomePage } from '../welcome-page/welcome-page';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 
 export interface WelcomeViewProps {
     className?: string;

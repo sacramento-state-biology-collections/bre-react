@@ -11,5 +11,32 @@ export interface CardViewProps {
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-card-views-and-templates
  */
 export const CardView = ({ className, children = 'CardView' }: CardViewProps) => {
-    return <div className={classNames(styles.root, className)}>{children}</div>;
+    return (
+        <div className="card-div">
+            <div className="card-content-div">
+                <div>
+                    <img src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg" />
+                </div>
+                <div>
+                    <h1>Heading 1</h1>
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </div>
+            </div>
+            <div className={styles['button-div']}>
+                <button
+                    className={classNames(
+                        styles['exit-preview-button'],
+                        styles['exit-preview-button']
+                    )}
+                >
+                    X
+                </button>
+                <button className={styles['more-info-button']}>All Info</button>
+            </div>
+        </div>
+    );
 };

@@ -84,33 +84,38 @@ code {
   right: 750px;
 }
 .card-div {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  height: 100vh;
-  align-items: center;
-  justify-items: end;
-  justify-content: end;
+  width: 90vw;
+  border-radius: 25px;
+  border: 1px solid #1f1e1e;
+  align-self: center;
+  position: fixed;
+  margin-top: 0vh;
+  margin-right: 0vw;
+  margin-bottom: 0vh;
+  background-color: rgb(255, 255, 255);
+  height: 70vh;
+  top: 20vh;
+  left: 5vw;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr;
 }
 .card-image-div {
-  width: 80vh;
-  height: 80vh;
+  grid-auto-flow: column;
 }
 .card-img {
-  width: 80vh;
-  height: 80vh;
+  width: 60vh;
+  height: 60vh;
+  align-self: center;
 }
 .card-info-div {
-  display: flex;
   flex-direction: column;
-  width: 20vw;
 }
 .card-content-div {
-  display: flex;
-  width: 80vw;
-  height: 80vh;
-  padding: 0%;
-  gap: 5%;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-items: center;
 }
 .card-buttons-div {
   display: flex;
@@ -118,13 +123,6 @@ code {
   align-items: stretch;
   justify-items: stretch;
   align-content: start;
-  width: 5vw;
-  padding-top: 5vh;
-  gap: 90%;
-  height: 95vh;
-  margin: 0vh 0px 0px;
-  padding-right: 5vh;
-  padding-left: 5vh;
 }
 .CommonNameStyles {
   align-self: center;
