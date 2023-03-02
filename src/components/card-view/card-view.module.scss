@@ -12,8 +12,15 @@
   border: 1px solid #f51717;
 }
 .more-info-button {
-  margin-left: 0vw;
   width: 6vw;
   background-color: #20d349;
   text-align: center;
+}
+.button-div {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 1fr;
+  margin-top: 2vh;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
 }

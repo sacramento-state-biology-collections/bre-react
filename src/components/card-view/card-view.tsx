@@ -14,13 +14,10 @@ export const CardView = ({ className, children = 'CardView' }: CardViewProps) =>
     return (
         <div className="card-div">
             <div className="card-content-div">
-                <div className="card-image-div">
-                    <img
-                        src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
-                        className="card-img"
-                    />
+                <div>
+                    <img src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg" />
                 </div>
-                <div className="card-info-div">
+                <div>
                     <h1>Heading 1</h1>
                     <ul>
                         <li>Coffee</li>
@@ -29,7 +26,7 @@ export const CardView = ({ className, children = 'CardView' }: CardViewProps) =>
                     </ul>
                 </div>
             </div>
-            <div className="card-buttons-div">
+            <div className={styles['button-div']}>
                 <button
                     className={classNames(
                         styles['exit-preview-button'],
