@@ -6,6 +6,7 @@ export interface TableDataViewProps {
     className?: string;
     children?: React.ReactNode;
     toggleView: (nextView: string) => void;
+    togglePopupBoolean: () => void;
     getData: () => any[];
 }
 
@@ -14,7 +15,7 @@ export interface TableDataViewProps {
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-table-data-views-and-templates
  */
 
-export const TableDataView = ({ className, getData }: TableDataViewProps) => {
+export const TableDataView = ({ className, getData, togglePopupBoolean }: TableDataViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <table className={styles.TableMainClass}>
@@ -32,7 +33,12 @@ export const TableDataView = ({ className, getData }: TableDataViewProps) => {
                         <li className={styles.TableRowItem}>{item.prep_type}</li>
                         <li className={styles.TableRowItem}>{item.drawer_number}</li>
                         <li className={styles.TableRowItem}>
-                            <button className={styles.PreviewButtonStyles}>Preview</button>
+                            <button
+                                className={styles.PreviewButtonStyles}
+                                onClick={togglePopupBoolean}
+                            >
+                                Preview
+                            </button>
                         </li>
                     </tr>
                 );

@@ -22,6 +22,11 @@ export const TableView = ({
     toggleView: toggleView,
 }: TableViewProps) => {
     const [data, setData] = useState([]);
+    const [popupBool, setmyPopupBool] = useState(true);
+
+    function togglePopupBoolean() {
+        setmyPopupBool(!popupBool);
+    }
 
     function clicked() {
         fetch('http://50.116.3.37:9001/api/all')
@@ -41,11 +46,15 @@ export const TableView = ({
 
     return (
         <div className={classNames(styles.root, className)}>
-            <div>
-                <Header toggleView={toggleView} clicked={clicked} />
-                <TableDataView toggleView={toggleView} getData={getData} />
+            <Header toggleView={toggleView} clicked={clicked} />
+            <TableDataView
+                toggleView={toggleView}
+                getData={getData}
+                togglePopupBoolean={togglePopupBoolean}
+            />
+            <div className="card-div" hidden={popupBool}>
+                <CardView />
             </div>
-            <CardView toggleView={toggleView} />
         </div>
     );
 };

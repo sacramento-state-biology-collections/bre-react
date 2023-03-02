@@ -4,7 +4,6 @@ import classNames from 'classnames';
 export interface CardViewProps {
     className?: string;
     children?: React.ReactNode;
-    toggleView: (nextView: string) => void;
 }
 
 /**

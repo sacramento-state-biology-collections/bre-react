@@ -3,5 +3,7 @@ import { TableDataView } from '../../../components/table-data-view/table-data-vi
 
 export default createBoard({
     name: 'TableDataView',
-    Board: () => <TableDataView toggleView={() => {}} getData={() => []} />,
+    Board: () => (
+        <TableDataView toggleView={() => {}} getData={() => []} togglePopupBoolean={() => {}} />
+    ),
 });

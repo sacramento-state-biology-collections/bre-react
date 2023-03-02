@@ -3,7 +3,7 @@ import { CardView } from '../../../components/card-view/card-view';
 
 export default createBoard({
     name: 'CardView',
-    Board: () => <CardView toggleView={() => {}} />,
+    Board: () => <CardView />,
     environmentProps: {
         windowWidth: 1052,
     },
