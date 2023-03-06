@@ -51,7 +51,6 @@ export const TableView = ({
                 <CardView toggleCardBool={toggleCardBool}/>
             </div>
             <TableDataView
-                toggleView={toggleView}
                 getData={getData}
                 toggleCardBool={toggleCardBool}
             />

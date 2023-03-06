@@ -2,8 +2,6 @@ import styles from './welcome-view.module.scss';
 import classNames from 'classnames';
 import { LoginRibbon } from '../login-ribbon/login-ribbon';
 import { WelcomePage } from '../welcome-page/welcome-page';
-import { useEffect, useState } from 'react';
-//import axios from 'axios';
 
 export interface WelcomeViewProps {
     className?: string;
@@ -21,7 +19,7 @@ export interface TableData {
 export const WelcomeView = ({
     className,
     children = 'WelcomeView',
-    toggleView: toggleView,
+    toggleView,
 }: WelcomeViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
