@@ -15,6 +15,25 @@ function App() {
     const [bool_AdminPanelView, set_AdminPanelView] = useState(true);
     const [bool_AdminCollectionView, set_AdminCollectionView] = useState(true);
 
+    function toggle_WelcomeView() {
+        set_WelcomeView(!bool_WelcomeView);
+    }
+    function toggle_SearchEngineView() {
+        set_SearchEngineView(!bool_SearchEngineView);
+    }
+    function toggle_TableEngineView() {
+        set_TableEngineView(!bool_TableEngineView);
+    }
+    function toggle_AdminLoginView() {
+        set_AdminLoginView(!bool_AdminLoginView);
+    }
+    function toggle_AdminPanelView() {
+        set_AdminPanelView(!bool_AdminPanelView);
+    }    
+    function toggle_AdminCollectionView() {
+        set_AdminCollectionView(!bool_AdminCollectionView);
+    }
+
     function handleVisibleContent() {
         return(
             <div>
