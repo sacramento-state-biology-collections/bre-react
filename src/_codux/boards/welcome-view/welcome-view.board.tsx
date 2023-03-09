@@ -3,5 +3,5 @@ import { WelcomeView } from '../../../components/welcome-view/welcome-view';
 
 export default createBoard({
     name: 'WelcomeView',
-    Board: () => <WelcomeView toggleView={() => {}} />,
+    Board: () => <WelcomeView />
 });

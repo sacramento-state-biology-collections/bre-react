@@ -1,24 +1,22 @@
-import { useState } from 'react';
+import styles from './App.module.scss';
 import { WelcomeView } from './components/welcome-view/welcome-view';
-import { BREHomeView } from './components/bre-home-view/bre-home-view';
-import { TableView } from './components/table-view/table-view';
+import { SearchEngineView } from './components/search-engine-view/search-engine-view';
+import { TableEngineView } from './components/table-engine-view/table-engine-view';
+import { AdminLoginView } from './components/admin-login-view/admin-login-view';
+import { AdminPanelView } from './components/admin-panel-view/admin-panel-view';
+import { AdminCollectionView } from './components/admin-collection-view/admin-collection-view';
 
 function App() {
-    let viewMap = new Map<String, JSX.Element>([
-        ['welcome-view', <WelcomeView toggleView={toggleView} />],
-        ['bre-home-view', <BREHomeView toggleView={toggleView} />],
-        ['table-view', <TableView toggleView={toggleView} />],
-    ]);
-
-    const [currentView, setView] = useState(<WelcomeView toggleView={toggleView} />);
-
-    function toggleView(nextView: string) {
-        viewMap.has(nextView)
-            ? setView(viewMap.get(nextView))
-            : setView(<WelcomeView toggleView={toggleView} />);
-    }
-
-    return currentView;
+    return (
+        <div>
+            <WelcomeView />
+            <SearchEngineView />
+            <TableEngineView />
+            <AdminLoginView />
+            <AdminPanelView />
+            <AdminCollectionView />
+        </div>
+    );
 }
 
 export default App;

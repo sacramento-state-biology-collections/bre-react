@@ -1,0 +1,23 @@
+.root {
+}
+.div-welcomeHeaderPart-style {
+  display: grid;
+  grid-auto-flow: column;
+  width: 100vw;
+  height: 15vh;
+  color: #ffffff;
+  background-color: #043124;
+  justify-content: space-between;
+}
+.h1-welcomeHeaderPart-style {
+  margin: 20px;
+  align-self: center;
+  font-size: 4vw;
+}
+.button-welcomeHeaderPart-style {
+  color: #000000;
+  background-color: #fde89b;
+  font-size: 4vh;
+  margin: 4vh;
+  width: 15vw;
+}

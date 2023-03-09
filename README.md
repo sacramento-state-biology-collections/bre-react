@@ -1,12 +1,21 @@
-# Blank Scss Boilerplate for Codux
+<div align="center">  
+    <img height="50"src="./src/assets/codux.svg">  
+    <h1>React App template for Codux</h1>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### A Visual IDE for React Projects
+
+Codux is an all-in-one visual development environment. Whether you’re starting a new app, creating components, or editing an existing project, every visual change you make reflects instantly in the code and vice versa. To learn more about Codux, visit our website - [https://www.codux.com/](https://www.codux.com/)
+
+This project was bootstrapped with [`create-react-app`](https://github.com/facebook/create-react-app).
 
 It includes a single React component to start your project with, a sample [`codux.config.json`](codux.config.json) with preconfigured keys, a `package.json` file to describe the project's packages and dependencies, and a folder and component structure to put everything neatly in its place.
 
-This project includes Sass support for writing nested rules, style variables, imports, etc.
+- Edit, render and compose apps that make use of **`React`**-based components.
+- Create components with **`TypeScript`**, **`SCSS`** and **`CSS Modules`** support.
+- Visually edit in real-time and in an isolated environment.
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
@@ -43,7 +52,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 

@@ -1,0 +1,41 @@
+.root {
+}
+.div0-welcomeBodyPart-style {
+  display: grid;
+  grid-auto-flow: column;
+  width: 100vw;
+  height: 85vh;
+  background-color: #004e38;
+  grid-template-columns: 1fr;
+}
+.div1-welcomeBodyPart-style {
+  display: inline-block;
+  margin: 4vw 0vw 4vw 4vw;
+  flex-direction: column;
+  justify-items: start;
+  align-items: start;
+  align-self: center;
+  color: #ffffff;
+}
+.div2-welcomeBodyPart-styles {
+  align-self: center;
+  margin: 4vw;
+}
+.h1-welcomeBodyPart-style {
+  font-size: 8vw;
+  font-style: italic;
+  font-weight: 100;
+  line-height: 0vw;
+}
+.p-welcomeBodyPart-style {
+  font-size: 2vw;
+}
+.button-welcomeBodyPart-style {
+  background-color: #fde89b;
+  font-size: 2vw;
+  padding: 1vw;
+  font-weight: 700;
+}
+.img-welcomeBodyPart-style {
+  width: 40vw;
+}

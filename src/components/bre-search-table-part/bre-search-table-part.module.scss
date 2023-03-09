@@ -1,0 +1,18 @@
+.root {
+}
+.div-breSearchTablePart-style {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100vw;
+  height: 85vh;
+}
+.table-breSearchTablePart-style {
+  grid-auto-flow: row;
+  width: 100vw;
+  height: 85vh;
+}
+.tr-breSearchTablePart-style {
+  display: grid;
+  grid-auto-flow: column;
+  border: 1px solid black;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
