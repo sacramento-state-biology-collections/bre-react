@@ -4,13 +4,14 @@ import classNames from 'classnames';
 export interface CardViewProps {
     className?: string;
     children?: React.ReactNode;
+    toggleCardBool: () => void;
 }
 
 /**
  * This component was generated using Codux's built-in Default new component template.
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-card-views-and-templates
  */
-export const CardView = ({ className, children = 'CardView' }: CardViewProps) => {
+export const CardView = ({ className, children = 'CardView', toggleCardBool }: CardViewProps) => {
     return (
         <div className="card-div">
             <div className="card-content-div">
@@ -30,8 +31,9 @@ export const CardView = ({ className, children = 'CardView' }: CardViewProps) =>
                 <button
                     className={classNames(
                         styles['exit-preview-button'],
-                        styles['exit-preview-button']
+                        styles['exit-preview-button'],
                     )}
+                    onClick={toggleCardBool}
                 >
                     X
                 </button>

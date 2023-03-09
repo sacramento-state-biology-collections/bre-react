@@ -5,7 +5,6 @@ export default createBoard({
     name: 'TableDataView',
     Board: () => (
         <TableDataView
-            toggleView={() => {}}
             getData={() => []}
             toggleCardBool={() => {}}
         />

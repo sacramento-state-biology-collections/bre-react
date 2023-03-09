@@ -48,10 +48,9 @@ export const TableView = ({
         <div className={classNames(styles.root, className)}>
             <Header toggleView={toggleView} clicked={clicked} />
             <div hidden={cardBool}>
-                <CardView />
+                <CardView toggleCardBool={toggleCardBool}/>
             </div>
             <TableDataView
-                toggleView={toggleView}
                 getData={getData}
                 toggleCardBool={toggleCardBool}
             />

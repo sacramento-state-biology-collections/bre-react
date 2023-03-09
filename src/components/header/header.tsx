@@ -1,6 +1,5 @@
 import styles from './header.module.scss';
 import classNames from 'classnames';
-import { useState } from 'react';
 
 export interface HeaderProps {
     className?: string;
