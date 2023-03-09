@@ -208,3 +208,40 @@ code {
   border-radius: 4px;
   background-color: #e0e0a1;
 }
+.table_admin_component {
+  display: flex;
+  background-color: #c4b581;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-items: start;
+  align-content: start;
+  justify-content: space-evenly;
+  width: 200px;
+  height: 250px;
+  margin: 15px;
+  border-radius: 20px;
+  box-shadow: 2.83px 2.83px 14px -3px black;
+}
+.admin_body {
+  position: fixed;
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+.table_tab_buttons {
+  overflow: auto;
+  display: grid;
+  padding: 2px;
+}
+.table_button {
+  height: 50px;
+  width: 150px;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 0px;
+  margin-bottom: 4px;
+}
