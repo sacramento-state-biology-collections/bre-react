@@ -3,10 +3,11 @@
 .div1-breSearchBodyPart-style {
   display: grid;
   grid-auto-flow: column;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
   flex-direction: row;
   flex-wrap: wrap;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  height: 53vh;
 }
 .div0-breSearchBodyPart-style {
   display: grid;

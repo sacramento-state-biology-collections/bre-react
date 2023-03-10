@@ -3,5 +3,5 @@ import { TableEngineView } from '../../../components/table-engine-view/table-eng
 
 export default createBoard({
     name: 'TableEngineView',
-    Board: () => <TableEngineView />
+    Board: () => <TableEngineView toggle_WelcomeView={()=>{}} toggle_TableEngineView={()=>{}}/>
 });

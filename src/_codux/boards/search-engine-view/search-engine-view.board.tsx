@@ -3,7 +3,7 @@ import { SearchEngineView } from '../../../components/search-engine-view/search-
 
 export default createBoard({
     name: 'SearchEngineView',
-    Board: () => <SearchEngineView />,
+    Board: () => <SearchEngineView toggle_WelcomeView={()=>{}} toggle_TableEngineView={()=>{}} />,
     environmentProps: {
         windowWidth: 1920,
         windowHeight: 1080,

@@ -15,4 +15,6 @@
   grid-auto-flow: column;
   border: 1px solid black;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  padding: 5px;
 }

@@ -17,15 +17,26 @@ function App() {
 
     function toggle_WelcomeView() {
         set_WelcomeView(!bool_WelcomeView);
+        if (bool_SearchEngineView === false) {
+            set_SearchEngineView(!bool_SearchEngineView);
+        }
+        if (bool_TableEngineView === false) {
+            set_TableEngineView(!bool_TableEngineView);
+        }
     }
     function toggle_SearchEngineView() {
         set_SearchEngineView(!bool_SearchEngineView);
+        set_WelcomeView(!bool_WelcomeView);
     }
     function toggle_TableEngineView() {
-        set_TableEngineView(!bool_TableEngineView);
+        if (bool_SearchEngineView === false) {
+            set_TableEngineView(!bool_TableEngineView);
+            set_SearchEngineView(!bool_SearchEngineView);
+        }
     }
     function toggle_AdminLoginView() {
         set_AdminLoginView(!bool_AdminLoginView);
+        set_WelcomeView(!bool_WelcomeView);
     }
     function toggle_AdminPanelView() {
         set_AdminPanelView(!bool_AdminPanelView);
@@ -37,9 +48,9 @@ function App() {
     function handleVisibleContent() {
         return(
             <div>
-                <div hidden={bool_WelcomeView}><WelcomeView /></div>
-                <div hidden={bool_SearchEngineView}><SearchEngineView /></div>
-                <div hidden={bool_TableEngineView}><TableEngineView /></div>
+                <div hidden={bool_WelcomeView}><WelcomeView  toggle_SearchEngineView={toggle_SearchEngineView} toggle_AdminLoginView={toggle_AdminLoginView}/></div>
+                <div hidden={bool_SearchEngineView}><SearchEngineView toggle_WelcomeView={toggle_WelcomeView} toggle_TableEngineView={toggle_TableEngineView}/></div>
+                <div hidden={bool_TableEngineView}><TableEngineView toggle_WelcomeView={toggle_WelcomeView} toggle_TableEngineView={toggle_TableEngineView}/></div>
                 <div hidden={bool_AdminLoginView}><AdminLoginView /></div>
                 <div hidden={bool_AdminPanelView}><AdminPanelView /></div>
                 <div hidden={bool_AdminCollectionView}><AdminCollectionView /></div>

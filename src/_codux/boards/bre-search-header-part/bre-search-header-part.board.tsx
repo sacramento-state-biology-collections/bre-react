@@ -3,5 +3,5 @@ import { Bre_Search_Header_Part } from '../../../components/bre-search-header-pa
 
 export default createBoard({
     name: 'Bre_Search_Header_Part',
-    Board: () => <Bre_Search_Header_Part />
+    Board: () => <Bre_Search_Header_Part toggle_WelcomeView={()=>{}} toggle_TableEngineView={()=>{}}/>
 });

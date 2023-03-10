@@ -3,13 +3,14 @@ import classNames from 'classnames';
 
 export interface Bre_Search_Table_PartProps {
     className?: string;
+    toggle_SearchCardPart: () => void;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-bre-search-table-parts-and-templates
  */
-export const Bre_Search_Table_Part = ({ className }: Bre_Search_Table_PartProps) => {
+export const Bre_Search_Table_Part = ({ className, toggle_SearchCardPart }: Bre_Search_Table_PartProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <table className={styles['table-breSearchTablePart-style']}>
@@ -27,7 +28,7 @@ export const Bre_Search_Table_Part = ({ className }: Bre_Search_Table_PartProps)
                         <td>test</td>
                         <td>test</td>
                         <td>
-                            <button>Button</button>
+                            <button onClick={toggle_SearchCardPart}>Button</button>
                         </td>
                     </tr>
                 </tbody>

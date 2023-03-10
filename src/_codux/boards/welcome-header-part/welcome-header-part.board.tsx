@@ -3,5 +3,5 @@ import { Welcome_Header_Part } from '../../../components/welcome-header-part/wel
 
 export default createBoard({
     name: 'Welcome_Header_Part',
-    Board: () => <Welcome_Header_Part />
+    Board: () => <Welcome_Header_Part toggle_AdminLoginView={()=>{}}/>
 });
