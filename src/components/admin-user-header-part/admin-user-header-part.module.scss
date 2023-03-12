@@ -1,2 +1,33 @@
 .root {
+  height: 15vh;
+  width: 100vw;
+}
+.div0-AdminUserHeaderPart-style {
+  width: 100vw;
+  height: 13vh;
+  background-color: #0d3623;
+}
+.div1-AdminUserHeaderPart-style {
+  width: 100vw;
+  height: 2vh;
+  background-color: #c0b385;
+}
+.span-AdminUserHeaderPart-style {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.h1-AdminUserHeaderPart-style {
+  margin: 2vw;
+  color: #ffffff;
+}
+.button-AdminUserHeaderPart-style {
+  color: #ffffff;
+  margin: 1vw 2vw 1vw 1vw;
+  background-color: #0d3623;
+}
+.span1-AdminUserHeaderPart-style {
+  color: #ffffff;
+  margin-right: 2vw;
+  font-size: 2vw;
 }
