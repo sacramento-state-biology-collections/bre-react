@@ -3,5 +3,5 @@ import { Admin_User_Header_Part } from '../../../components/admin-user-header-pa
 
 export default createBoard({
     name: 'Admin_User_Header_Part',
-    Board: () => <Admin_User_Header_Part />
+    Board: () => <Admin_User_Header_Part toggle_WelcomeView={()=>{}}/>
 });

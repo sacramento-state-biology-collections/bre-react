@@ -17,7 +17,8 @@ function App() {
     const [string_SearchCriteria, set_SearchCriteria] = useState('');
 
     function toggle_WelcomeView() {
-        set_TableEngineView(!bool_TableEngineView);
+        if (bool_AdminPanelView === false){set_AdminPanelView(!bool_AdminPanelView);}
+        if (bool_TableEngineView === false){set_TableEngineView(!bool_TableEngineView);}
         set_WelcomeView(!bool_WelcomeView);
     }
 
@@ -27,11 +28,12 @@ function App() {
     }
 
     function toggle_AdminLoginView() {
-        set_AdminLoginView(!bool_AdminLoginView);
         set_WelcomeView(!bool_WelcomeView);
+        set_AdminLoginView(!bool_AdminLoginView);
     }
 
     function toggle_AdminPanelView() {
+        set_AdminLoginView(!bool_AdminLoginView);
         set_AdminPanelView(!bool_AdminPanelView);
     }
 
@@ -73,10 +75,14 @@ function App() {
                     />
                 </div>
                 <div hidden={bool_AdminLoginView}>
-                    <AdminLoginView />
+                    <AdminLoginView 
+                        toggle_AdminPanelView={toggle_AdminPanelView}
+                    />
                 </div>
                 <div hidden={bool_AdminPanelView}>
-                    <AdminPanelView />
+                    <AdminPanelView 
+                        toggle_WelcomeView={toggle_WelcomeView}
+                    />
                 </div>
                 <div hidden={bool_AdminCollectionView}>
                     <AdminCollectionView />

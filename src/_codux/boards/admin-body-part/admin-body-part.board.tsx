@@ -3,5 +3,5 @@ import { Admin_Body_Part } from '../../../components/admin-body-part/admin-body-
 
 export default createBoard({
     name: 'Admin_Body_Part',
-    Board: () => <Admin_Body_Part />
+    Board: () => <Admin_Body_Part toggle_AdminPanelView={()=>{}}/>
 });
