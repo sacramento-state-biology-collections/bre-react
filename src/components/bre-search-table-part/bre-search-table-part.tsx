@@ -16,8 +16,20 @@ export const Bre_Search_Table_Part = ({
     toggle_SearchCardPart,
     object_CollectionData,
 }: Bre_Search_Table_PartProps) => {
-    function get_Data(): Array<any> {
-        return object_CollectionData;
+    function get_Data() {
+        return object_CollectionData.map((item: any, index: number) => {
+            return (
+                <tr className={styles['tr-breSearchTablePart-style']} key={index}>
+                    <td>{item.common_name}</td>
+                    <td>{item.scientific_name}</td>
+                    <td>{item.prep_type}</td>
+                    <td>{item.drawer}</td>
+                    <td>
+                        <button onClick={toggle_SearchCardPart}>Button</button>
+                    </td>
+                </tr>
+            );
+        });
     }
 
     return (
@@ -31,19 +43,9 @@ export const Bre_Search_Table_Part = ({
                         <th>Drawer #</th>
                         <th>View More</th>
                     </tr>
-                    {get_Data().map((item: any, index: number) => {
-                        return (
-                            <tr className={styles['tr-breSearchTablePart-style']} key={item.catalog}>
-                                <td>{item.common_name}</td>
-                                <td>{item.scientific_name}</td>
-                                <td>{item.prep_type}</td>
-                                <td>{item.drawer}</td>
-                                <td>
-                                    <button onClick={toggle_SearchCardPart}>Button</button>
-                                </td>
-                            </tr>
-                        );
-                    })}
+                    {
+                        get_Data()
+                    }
                 </tbody>
             </table>
         </div>

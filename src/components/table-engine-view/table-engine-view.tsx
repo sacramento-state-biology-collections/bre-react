@@ -34,6 +34,7 @@ export const TableEngineView = ({
     string_CollectionName,
     string_SearchCriteria,
 }: TableEngineViewProps) => {
+    const [bool_BreSearchHeaderPart, set_BreSearchHeaderPart] = useState(false);
     const [bool_BreSearchBodyPart, set_BreSearchBodyPart] = useState(false);
     const [bool_SearchTablePart, set_SearchTablePart] = useState(true);
     const [bool_SearchCardPart, set_SearchCardPart] = useState(true);
@@ -46,7 +47,17 @@ export const TableEngineView = ({
         set_SearchCardPart(!bool_SearchCardPart);
     }
     function toggle_SearchPagePart() {
-        set_SearchPagePart(!bool_SearchPagePart);
+        if (bool_SearchPagePart === true) {
+            set_SearchPagePart(!bool_SearchPagePart);
+            set_SearchCardPart(!bool_SearchCardPart);
+            set_SearchTablePart(!bool_SearchTablePart);
+            set_BreSearchHeaderPart(!bool_BreSearchHeaderPart);
+        } else {
+            set_SearchPagePart(!bool_SearchPagePart);
+            set_SearchCardPart(!bool_SearchCardPart);
+            set_SearchTablePart(!bool_SearchTablePart);
+            set_BreSearchHeaderPart(!bool_BreSearchHeaderPart);
+        }
     }
 
     function clicked() {
@@ -69,14 +80,16 @@ export const TableEngineView = ({
 
     return (
         <div className={classNames(styles.root, className)}>
-            <Bre_Search_Header_Part
-                toggle_WelcomeView={toggle_WelcomeView}
-                toggle_BreSearchBodyPart={toggle_BreSearchBodyPart}
-                bool_BreSearchBodyPart={bool_BreSearchBodyPart}
-                clicked={clicked}
-                update_CollectionName={update_CollectionName}
-                update_SearchCriteria={update_SearchCriteria}
-            />
+            <div hidden={bool_BreSearchHeaderPart}>
+                <Bre_Search_Header_Part
+                    toggle_WelcomeView={toggle_WelcomeView}
+                    toggle_BreSearchBodyPart={toggle_BreSearchBodyPart}
+                    bool_BreSearchBodyPart={bool_BreSearchBodyPart}
+                    clicked={clicked}
+                    update_CollectionName={update_CollectionName}
+                    update_SearchCriteria={update_SearchCriteria}
+                />
+            </div>
             <div hidden={bool_BreSearchBodyPart}>
                 <Bre_Search_Body_Part />
             </div>

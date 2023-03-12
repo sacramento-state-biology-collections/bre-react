@@ -10,5 +10,5 @@ export interface Admin_Body_PartProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-admin-body-parts-and-templates
  */
 export const Admin_Body_Part = ({ className }: Admin_Body_PartProps) => {
-    return <div className={classNames(styles.root, className)}>Admin_Body_Part</div>;
+    return <div className={classNames(styles.root, className)}></div>;
 };
