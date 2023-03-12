@@ -4,14 +4,25 @@ import classNames from 'classnames';
 export interface Bre_Search_Header_PartProps {
     className?: string;
     toggle_WelcomeView: () => void;
-    toggle_TableEngineView: () => void;
+    toggle_BreSearchBodyPart: () => void;
+    bool_BreSearchBodyPart: boolean;
+    clicked: () => void;
+    update_CollectionName: (CollectionName: string) => void;
+    update_SearchCriteria: (SearchCriteria: string) => void;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-bre-search-header-parts-and-templates
  */
-export const Bre_Search_Header_Part = ({ className, toggle_WelcomeView, toggle_TableEngineView }: Bre_Search_Header_PartProps) => {
+export const Bre_Search_Header_Part = ({className, toggle_WelcomeView, toggle_BreSearchBodyPart, bool_BreSearchBodyPart, clicked, update_CollectionName, update_SearchCriteria }: Bre_Search_Header_PartProps) => {
+    function run_HeaderEvent() {
+        if(bool_BreSearchBodyPart === false) {toggle_BreSearchBodyPart();}
+        update_CollectionName((document.getElementsByName('collection')[0] as HTMLSelectElement).value);
+        update_SearchCriteria((document.getElementsByName('searchInput')[0] as HTMLInputElement).value);
+        clicked();
+    }
+    
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-breSearchHeaderPart-style']}>
@@ -19,19 +30,24 @@ export const Bre_Search_Header_Part = ({ className, toggle_WelcomeView, toggle_T
                     Biology Research Engine
                 </span>
                 <div className={styles['div1-breSearchHeaderPart-style']}>
-                    <button className={styles['button-breSearchHeaderPart-style']} onClick={toggle_WelcomeView}>
+                    <button
+                        title='Home'
+                        className={styles['button-breSearchHeaderPart-style']}
+                        onClick={toggle_WelcomeView}
+                    >
                         <img
-                            alt='Home Button'
+                            alt=""
                             // src="../styles/Home_Button.svg"
                             src="Home_Button.svg"
                             className={styles['img-breSearchHeaderPart-style']}
                         />
                     </button>
                     <input
+                        name='searchInput'
                         className={styles['input-breSearchHeaderPart-style']}
                         placeholder="Search All"
                     />
-                    <select className={styles['select-breSearchHeaderPart-style']}>
+                    <select name='collection' className={styles['select-breSearchHeaderPart-style']}>
                         <option>All</option>
                         <option>Arboretum</option>
                         <option>Fish</option>
@@ -42,9 +58,13 @@ export const Bre_Search_Header_Part = ({ className, toggle_WelcomeView, toggle_T
                         <option>Mammals</option>
                         <option>Vivarium</option>
                     </select>
-                    <button className={styles['button-breSearchHeaderPart-style']} onClick={toggle_TableEngineView}>
+                    <button
+                        title='Search'
+                        className={styles['button-breSearchHeaderPart-style']}
+                        onClick={run_HeaderEvent}
+                    >
                         <img
-                            alt='Search Button'
+                            alt=""
                             src="Search_Button.svg"
                             className={styles['img-breSearchHeaderPart-style']}
                         />

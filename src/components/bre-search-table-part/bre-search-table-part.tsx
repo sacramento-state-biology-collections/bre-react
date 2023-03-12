@@ -4,13 +4,22 @@ import classNames from 'classnames';
 export interface Bre_Search_Table_PartProps {
     className?: string;
     toggle_SearchCardPart: () => void;
+    object_CollectionData: any;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-bre-search-table-parts-and-templates
  */
-export const Bre_Search_Table_Part = ({ className, toggle_SearchCardPart }: Bre_Search_Table_PartProps) => {
+export const Bre_Search_Table_Part = ({
+    className,
+    toggle_SearchCardPart,
+    object_CollectionData,
+}: Bre_Search_Table_PartProps) => {
+    function get_Data(): Array<any> {
+        return object_CollectionData;
+    }
+
     return (
         <div className={classNames(styles.root, className)}>
             <table className={styles['table-breSearchTablePart-style']}>
@@ -22,15 +31,19 @@ export const Bre_Search_Table_Part = ({ className, toggle_SearchCardPart }: Bre_
                         <th>Drawer #</th>
                         <th>View More</th>
                     </tr>
-                    <tr className={styles['tr-breSearchTablePart-style']}>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>
-                            <button onClick={toggle_SearchCardPart}>Button</button>
-                        </td>
-                    </tr>
+                    {get_Data().map((item: any, index: number) => {
+                        return (
+                            <tr className={styles['tr-breSearchTablePart-style']} key={item.catalog}>
+                                <td>{item.common_name}</td>
+                                <td>{item.scientific_name}</td>
+                                <td>{item.prep_type}</td>
+                                <td>{item.drawer}</td>
+                                <td>
+                                    <button onClick={toggle_SearchCardPart}>Button</button>
+                                </td>
+                            </tr>
+                        );
+                    })}
                 </tbody>
             </table>
         </div>

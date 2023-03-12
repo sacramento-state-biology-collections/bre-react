@@ -3,14 +3,14 @@ import classNames from 'classnames';
 
 export interface Welcome_Body_PartProps {
     className?: string;
-    toggle_SearchEngineView: () => void;
+    toggle_TableEngineView: () => void;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-welcome-body-parts-and-templates
  */
-export const Welcome_Body_Part = ({ className, toggle_SearchEngineView }: Welcome_Body_PartProps) => {
+export const Welcome_Body_Part = ({ className, toggle_TableEngineView }: Welcome_Body_PartProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-welcomeBodyPart-style']}>
@@ -24,7 +24,7 @@ export const Welcome_Body_Part = ({ className, toggle_SearchEngineView }: Welcom
                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
                         non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
-                    <button className={styles['button-welcomeBodyPart-style']} onClick={toggle_SearchEngineView}>
+                    <button className={styles['button-welcomeBodyPart-style']} onClick={toggle_TableEngineView}>
                         BRE Search Engine
                     </button>
                 </div>
