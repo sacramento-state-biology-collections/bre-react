@@ -1,0 +1,26 @@
+.root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  top: 0px;
+  left: 0px;
+}
+.div0-breSearchPagePart-style {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr;
+  top: 0px;
+  left: 0px;
+}
+.div1-breSearchPage-style {
+  font-size: 3vh;
+  padding: 2vh;
+}
+.button-breSearchPagePart-style {
+  width: 4vw;
+  height: 5vh;
+  border: 1px solid #ff0000;
+  background-color: #ff0000;
+  border-radius: 10px;
+  margin: 2vw;
+}

@@ -1,0 +1,47 @@
+.root {
+  position: fixed;
+  top: 0px;
+}
+.div0-breSearchHeaderPart-style {
+  width: 100vw;
+  height: 15vh;
+  background-color: #117433;
+  color: #ffffff;
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  align-content: start;
+}
+.span-breSearchHeaderPart-style {
+  font-size: 7vh;
+}
+.div1-breSearchHeaderPart-style {
+  display: flex;
+  margin: 1vh;
+  height: 3.5vh;
+}
+.button-breSearchHeaderPart-style {
+  background-image: linear-gradient(180deg, #000000 0%, rgba(255, 255, 255, 0) 0%);
+  background-color: transparent;
+  background-position: 0%;
+  background-size: auto;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-origin: padding-box;
+  background-clip: border-box;
+  border: 1px solid;
+  border-image: linear-gradient(180deg, #000000 0%, rgba(255, 255, 255, 0) 0%) 1 / 1px stretch;
+  border-width: 1px;
+}
+.img-breSearchHeaderPart-style {
+  width: 100%;
+  height: 100%;
+}
+.input-breSearchHeaderPart-style {
+  width: 50vw;
+}
+.select-breSearchHeaderPart-style {
+  background-color: #2b932b;
+  width: 10vw;
+}
