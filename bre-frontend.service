@@ -1,0 +1,12 @@
+[Unit]
+Description=Service for bre-react-app build
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=npm -prefix /home/grem/bre-react-app run prod
+User=grem
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
