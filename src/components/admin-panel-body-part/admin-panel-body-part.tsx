@@ -17,15 +17,13 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
         element.click();
     }
     function upload_FishFile() {
-        let element: HTMLElement = document.querySelector(
+        let element: HTMLInputElement = document.querySelector(
             'input[title="fishUpload"]'
-        ) as HTMLElement;
+        ) as HTMLInputElement;
         element.click();
-        element.onchange = () => {
-            let form: HTMLFormElement = document.querySelector(
-                'form[title="fishForm"]'
-            ) as HTMLFormElement;
-            form.submit();
+        element.onchange = (file) => {
+            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
+            console.log(file);
         };
     }
 
@@ -100,14 +98,12 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
                             onClick={upload_FishFile}
                         >
                             Upload
-                            <form title="fishForm" method="post" encType="http://50.116.3.37:9001/api/postxlsx/fish">
-                                <input
-                                    title="fishUpload"
-                                    type="file"
-                                    accept=".xlsx"
-                                    hidden={true}
-                                />
-                            </form>
+                            <input
+                                title="fishUpload"
+                                type="file"
+                                accept=".xlsx"
+                                hidden={true}
+                            />
                         </button>
                     </div>
                 </div>
