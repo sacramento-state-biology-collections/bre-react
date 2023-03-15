@@ -17,13 +17,13 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
         element.click();
     }
     function upload_FishFile() {
-        let element: HTMLInputElement = document.querySelector(
+        let element: HTMLElement = document.querySelector(
             'input[title="fishUpload"]'
-        ) as HTMLInputElement;
+        ) as HTMLElement;
         element.click();
-        element.onchange = (file) => {
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            console.log(file);
+        element.onchange = () => {
+            // @ts-ignore: Object is possibly 'null'.
+            let file = (element as HTMLInputElement).files[0];
         };
     }
 
