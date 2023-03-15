@@ -65,17 +65,13 @@ export const TableEngineView = ({
             set_BreSearchBodyPart(true);
             set_SearchTablePart(false);
         }
-        fetch('http://50.116.3.37:9001/api/all')
+        fetch(
+            `http://50.116.3.37:9001/api/${string_CollectionName}_collection/common_name/${string_SearchCriteria}`
+        )
             .then((response) => response.json())
             .then((Data) => {
                 update_CollectionData(Data);
             });
-    }
-    useEffect(() => {
-        console.log(object_CollectionData);
-    }, [object_CollectionData]);
-    function getData() {
-        return object_CollectionData;
     }
 
     return (
