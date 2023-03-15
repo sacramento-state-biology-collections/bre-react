@@ -7,7 +7,7 @@ export default createBoard({
         <Bre_Search_Card_Part toggle_SearchCardPart={() => {}} toggle_SearchPagePart={() => {}} />
     ),
     environmentProps: {
-        windowWidth: 1920,
-        windowHeight: 1080,
+        windowWidth: 1024,
+        windowHeight: 768,
     },
 });

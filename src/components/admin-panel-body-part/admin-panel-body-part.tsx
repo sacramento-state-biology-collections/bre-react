@@ -3,19 +3,26 @@ import classNames from 'classnames';
 
 export interface Admin_Panel_Body_PartProps {
     className?: string;
+    toggle_LoadingTrue: () => void;
+    toggle_LoadingFalse: () => void;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-admin-panel-body-parts-and-templates
  */
-export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps) => {
+export const Admin_Panel_Body_Part = ({
+    className,
+    toggle_LoadingTrue,
+    toggle_LoadingFalse,
+}: Admin_Panel_Body_PartProps) => {
     function upload_MammalsFile() {
         let element: HTMLElement = document.querySelector(
             'input[title="mammalsUpload"]'
         ) as HTMLElement;
         element.click();
         element.onchange = () => {
+            toggle_LoadingFalse();
             // @ts-ignore: Object is possibly 'null'.
             let file = (element as HTMLInputElement).files[0];
             // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
@@ -24,7 +31,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
             fetch('http://50.116.3.37:9001/api/postxlsx/mammals', {
                 method: 'POST',
                 body: formData,
-            });
+            }).then((response) => toggle_LoadingTrue());
         };
     }
     function upload_InsectFile() {
@@ -33,6 +40,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
         ) as HTMLElement;
         element.click();
         element.onchange = () => {
+            toggle_LoadingFalse();
             // @ts-ignore: Object is possibly 'null'.
             let file = (element as HTMLInputElement).files[0];
             // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
@@ -41,7 +49,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
             fetch('http://50.116.3.37:9001/api/postxlsx/insects', {
                 method: 'POST',
                 body: formData,
-            });
+            }).then((response) => toggle_LoadingTrue());
         };
     }
     function upload_FishFile() {
@@ -50,6 +58,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
         ) as HTMLElement;
         element.click();
         element.onchange = () => {
+            toggle_LoadingFalse();
             // @ts-ignore: Object is possibly 'null'.
             let file = (element as HTMLInputElement).files[0];
             // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
@@ -58,7 +67,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
             fetch('http://50.116.3.37:9001/api/postxlsx/fish', {
                 method: 'POST',
                 body: formData,
-            });
+            }).then((response) => toggle_LoadingTrue());
         };
     }
     function upload_ArboretumFile() {
@@ -67,6 +76,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
         ) as HTMLElement;
         element.click();
         element.onchange = () => {
+            toggle_LoadingFalse();
             // @ts-ignore: Object is possibly 'null'.
             let file = (element as HTMLInputElement).files[0];
             // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
@@ -75,7 +85,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
             fetch('http://50.116.3.37:9001/api/postxlsx/arboretum', {
                 method: 'POST',
                 body: formData,
-            });
+            }).then((response) => toggle_LoadingTrue());
         };
     }
     function upload_VivariumFile() {
@@ -84,6 +94,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
         ) as HTMLElement;
         element.click();
         element.onchange = () => {
+            toggle_LoadingFalse();
             // @ts-ignore: Object is possibly 'null'.
             let file = (element as HTMLInputElement).files[0];
             // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
@@ -92,7 +103,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
             fetch('http://50.116.3.37:9001/api/postxlsx/vivarium', {
                 method: 'POST',
                 body: formData,
-            });
+            }).then((response) => toggle_LoadingTrue());
         };
     }
     function upload_GreenHouseFile() {
@@ -101,6 +112,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
         ) as HTMLElement;
         element.click();
         element.onchange = () => {
+            toggle_LoadingFalse();
             // @ts-ignore: Object is possibly 'null'.
             let file = (element as HTMLInputElement).files[0];
             // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
@@ -109,7 +121,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
             fetch('http://50.116.3.37:9001/api/postxlsx/green_house', {
                 method: 'POST',
                 body: formData,
-            });
+            }).then((response) => toggle_LoadingTrue());
         };
     }
     function upload_HerbariumFile() {
@@ -118,6 +130,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
         ) as HTMLElement;
         element.click();
         element.onchange = () => {
+            toggle_LoadingFalse();
             // @ts-ignore: Object is possibly 'null'.
             let file = (element as HTMLInputElement).files[0];
             // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
@@ -126,7 +139,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
             fetch('http://50.116.3.37:9001/api/postxlsx/herbarium', {
                 method: 'POST',
                 body: formData,
-            });
+            }).then((response) => toggle_LoadingTrue());
         };
     }
     function upload_HerpsFile() {
@@ -135,6 +148,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
         ) as HTMLElement;
         element.click();
         element.onchange = () => {
+            toggle_LoadingFalse();
             // @ts-ignore: Object is possibly 'null'.
             let file = (element as HTMLInputElement).files[0];
             // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
@@ -143,7 +157,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
             fetch('http://50.116.3.37:9001/api/postxlsx/herps', {
                 method: 'POST',
                 body: formData,
-            });
+            }).then((response) => toggle_LoadingTrue());
         };
     }
 
