@@ -14,7 +14,7 @@ export interface AdminLoginViewProps {
 export const AdminLoginView = ({ className, toggle_AdminPanelView }: AdminLoginViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <Admin_Body_Part toggle_AdminPanelView={toggle_AdminPanelView}/>
+            <Admin_Body_Part toggle_AdminPanelView={toggle_AdminPanelView} />
         </div>
     );
 };

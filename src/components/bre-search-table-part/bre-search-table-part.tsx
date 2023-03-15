@@ -43,9 +43,7 @@ export const Bre_Search_Table_Part = ({
                         <th>Drawer #</th>
                         <th>View More</th>
                     </tr>
-                    {
-                        get_Data()
-                    }
+                    {get_Data()}
                 </tbody>
             </table>
         </div>

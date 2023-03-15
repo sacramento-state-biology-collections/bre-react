@@ -10,7 +10,10 @@ export interface Bre_Search_Page_PartProps {
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-bre-search-page-parts-and-templates
  */
-export const Bre_Search_Page_Part = ({ className, toggle_SearchPagePart }: Bre_Search_Page_PartProps) => {
+export const Bre_Search_Page_Part = ({
+    className,
+    toggle_SearchPagePart,
+}: Bre_Search_Page_PartProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-breSearchPagePart-style']}>
@@ -21,7 +24,12 @@ export const Bre_Search_Page_Part = ({ className, toggle_SearchPagePart }: Bre_S
                     </ul>
                 </div>
                 <div>
-                    <button className={styles['button-breSearchPagePart-style']} onClick={toggle_SearchPagePart}>Back</button>
+                    <button
+                        className={styles['button-breSearchPagePart-style']}
+                        onClick={toggle_SearchPagePart}
+                    >
+                        Back
+                    </button>
                 </div>
             </div>
         </div>

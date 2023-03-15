@@ -15,7 +15,7 @@ export interface AdminPanelViewProps {
 export const AdminPanelView = ({ className, toggle_WelcomeView }: AdminPanelViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <Admin_User_Header_Part toggle_WelcomeView={toggle_WelcomeView}/>
+            <Admin_User_Header_Part toggle_WelcomeView={toggle_WelcomeView} />
             <Admin_Panel_Body_Part />
         </div>
     );
