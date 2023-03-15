@@ -28,7 +28,7 @@ export const Bre_Search_Page_Part = ({
                         className={styles['button-breSearchPagePart-style']}
                         onClick={toggle_SearchPagePart}
                     >
-                        Back
+                        X
                     </button>
                 </div>
             </div>

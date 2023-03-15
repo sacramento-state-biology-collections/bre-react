@@ -20,12 +20,9 @@ export const Welcome_Body_Part = ({
                 <div className={styles['div1-welcomeBodyPart-style']}>
                     <h1 className={styles['h1-welcomeBodyPart-style']}>Welcome</h1>
                     <p className={styles['p-welcomeBodyPart-style']}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        The BRE Search Engine is a tool that allows users to easily search and access the vast collection of tables and databases held by the Biology department at Sacramento State. 
+                        With this tool, students, professors, and kids alike can quickly find the information they need, whether it's for research, studying, or personal interest.
+                        So go ahead and dive in – you never know what awaits you!
                     </p>
                     <button
                         className={styles['button-welcomeBodyPart-style']}
