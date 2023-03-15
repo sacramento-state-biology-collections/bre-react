@@ -21,6 +21,12 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
             'input[title="fishUpload"]'
         ) as HTMLElement;
         element.click();
+        element.onchange = () => {
+            let form: HTMLFormElement = document.querySelector(
+                'form[title="fishForm"]'
+            ) as HTMLFormElement;
+            form.submit();
+        };
     }
 
     return (
@@ -94,7 +100,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
                             onClick={upload_FishFile}
                         >
                             Upload
-                            <form method="post" encType="http://50.116.3.37:9001/api/postxlsx/fish">
+                            <form title="fishForm" method="post" encType="http://50.116.3.37:9001/api/postxlsx/fish">
                                 <input
                                     title="fishUpload"
                                     type="file"
