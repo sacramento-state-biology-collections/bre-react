@@ -30,16 +30,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
             fetch('http://50.116.3.37:9001/api/postxlsx/fish', {
                 method: 'POST',
                 body: formData,
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('Success:', data);
-                }
-                )
-                .catch((error) => {
-                    console.error('Error:', error);
-                }
-                );
+            });
         };
     }
 
