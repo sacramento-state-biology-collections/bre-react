@@ -10,11 +10,39 @@ export interface Admin_Panel_Body_PartProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-admin-panel-body-parts-and-templates
  */
 export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps) => {
-    function upload_MammalFile() {
+    function upload_MammalsFile() {
         let element: HTMLElement = document.querySelector(
             'input[title="mammalsUpload"]'
         ) as HTMLElement;
         element.click();
+        element.onchange = () => {
+            // @ts-ignore: Object is possibly 'null'.
+            let file = (element as HTMLInputElement).files[0];
+            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
+            let formData = new FormData();
+            formData.append('file', file);
+            fetch('http://50.116.3.37:9001/api/postxlsx/mammals', {
+                method: 'POST',
+                body: formData,
+            });
+        };
+    }
+    function upload_InsectFile() {
+        let element: HTMLElement = document.querySelector(
+            'input[title="insectUpload"]'
+        ) as HTMLElement;
+        element.click();
+        element.onchange = () => {
+            // @ts-ignore: Object is possibly 'null'.
+            let file = (element as HTMLInputElement).files[0];
+            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
+            let formData = new FormData();
+            formData.append('file', file);
+            fetch('http://50.116.3.37:9001/api/postxlsx/insects', {
+                method: 'POST',
+                body: formData,
+            });
+        };
     }
     function upload_FishFile() {
         let element: HTMLElement = document.querySelector(
@@ -28,6 +56,91 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
             let formData = new FormData();
             formData.append('file', file);
             fetch('http://50.116.3.37:9001/api/postxlsx/fish', {
+                method: 'POST',
+                body: formData,
+            });
+        };
+    }
+    function upload_ArboretumFile() {
+        let element: HTMLElement = document.querySelector(
+            'input[title="arboretumUpload"]'
+        ) as HTMLElement;
+        element.click();
+        element.onchange = () => {
+            // @ts-ignore: Object is possibly 'null'.
+            let file = (element as HTMLInputElement).files[0];
+            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
+            let formData = new FormData();
+            formData.append('file', file);
+            fetch('http://50.116.3.37:9001/api/postxlsx/arboretum', {
+                method: 'POST',
+                body: formData,
+            });
+        };
+    }
+    function upload_VivariumFile() {
+        let element: HTMLElement = document.querySelector(
+            'input[title="vivariumUpload"]'
+        ) as HTMLElement;
+        element.click();
+        element.onchange = () => {
+            // @ts-ignore: Object is possibly 'null'.
+            let file = (element as HTMLInputElement).files[0];
+            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
+            let formData = new FormData();
+            formData.append('file', file);
+            fetch('http://50.116.3.37:9001/api/postxlsx/vivarium', {
+                method: 'POST',
+                body: formData,
+            });
+        };
+    }
+    function upload_GreenHouseFile() {
+        let element: HTMLElement = document.querySelector(
+            'input[title="green_houseUpload"]'
+        ) as HTMLElement;
+        element.click();
+        element.onchange = () => {
+            // @ts-ignore: Object is possibly 'null'.
+            let file = (element as HTMLInputElement).files[0];
+            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
+            let formData = new FormData();
+            formData.append('file', file);
+            fetch('http://50.116.3.37:9001/api/postxlsx/green_house', {
+                method: 'POST',
+                body: formData,
+            });
+        };
+    }
+    function upload_HerbariumFile() {
+        let element: HTMLElement = document.querySelector(
+            'input[title="herbariumUpload"]'
+        ) as HTMLElement;
+        element.click();
+        element.onchange = () => {
+            // @ts-ignore: Object is possibly 'null'.
+            let file = (element as HTMLInputElement).files[0];
+            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
+            let formData = new FormData();
+            formData.append('file', file);
+            fetch('http://50.116.3.37:9001/api/postxlsx/herbarium', {
+                method: 'POST',
+                body: formData,
+            });
+        };
+    }
+    function upload_HerpsFile() {
+        let element: HTMLElement = document.querySelector(
+            'input[title="herpsUpload"]'
+        ) as HTMLElement;
+        element.click();
+        element.onchange = () => {
+            // @ts-ignore: Object is possibly 'null'.
+            let file = (element as HTMLInputElement).files[0];
+            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
+            let formData = new FormData();
+            formData.append('file', file);
+            fetch('http://50.116.3.37:9001/api/postxlsx/herps', {
                 method: 'POST',
                 body: formData,
             });
@@ -53,7 +166,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
                         </a>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_MammalFile}
+                            onClick={upload_MammalsFile}
                         >
                             Upload
                             <form
@@ -84,8 +197,12 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
                                 Download
                             </button>
                         </a>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={upload_InsectFile}
+                        >
                             Upload
+                            <input title="insectUpload" type="file" accept=".xlsx" hidden={true} />
                         </button>
                     </div>
                 </div>
@@ -105,12 +222,7 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
                             onClick={upload_FishFile}
                         >
                             Upload
-                            <input
-                                title="fishUpload"
-                                type="file"
-                                accept=".xlsx"
-                                hidden={true}
-                            />
+                            <input title="fishUpload" type="file" accept=".xlsx" hidden={true} />
                         </button>
                     </div>
                 </div>
@@ -128,8 +240,17 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
                                 Download
                             </button>
                         </a>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={upload_ArboretumFile}
+                        >
                             Upload
+                            <input
+                                title="arboretumUpload"
+                                type="file"
+                                accept=".xlsx"
+                                hidden={true}
+                            />
                         </button>
                     </div>
                 </div>
@@ -147,8 +268,17 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
                                 Download
                             </button>
                         </a>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={upload_VivariumFile}
+                        >
                             Upload
+                            <input
+                                title="vivariumUpload"
+                                type="file"
+                                accept=".xlsx"
+                                hidden={true}
+                            />
                         </button>
                     </div>
                 </div>
@@ -166,8 +296,17 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
                                 Download
                             </button>
                         </a>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={upload_GreenHouseFile}
+                        >
                             Upload
+                            <input
+                                title="green_houseUpload"
+                                type="file"
+                                accept=".xlsx"
+                                hidden={true}
+                            />
                         </button>
                     </div>
                 </div>
@@ -185,8 +324,17 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
                                 Download
                             </button>
                         </a>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={upload_HerbariumFile}
+                        >
                             Upload
+                            <input
+                                title="herbariumUpload"
+                                type="file"
+                                accept=".xlsx"
+                                hidden={true}
+                            />
                         </button>
                     </div>
                 </div>
@@ -201,8 +349,12 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
                                 Download
                             </button>
                         </a>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={upload_HerpsFile}
+                        >
                             Upload
+                            <input title="herpsUpload" type="file" accept=".xlsx" hidden={true} />
                         </button>
                     </div>
                 </div>
