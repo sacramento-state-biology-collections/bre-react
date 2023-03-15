@@ -24,6 +24,22 @@ export const Admin_Panel_Body_Part = ({ className }: Admin_Panel_Body_PartProps)
         element.onchange = () => {
             // @ts-ignore: Object is possibly 'null'.
             let file = (element as HTMLInputElement).files[0];
+            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
+            let formData = new FormData();
+            formData.append('file', file);
+            fetch('http://50.116.3.37:9001/api/postxlsx/fish', {
+                method: 'POST',
+                body: formData,
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Success:', data);
+                }
+                )
+                .catch((error) => {
+                    console.error('Error:', error);
+                }
+                );
         };
     }
 
