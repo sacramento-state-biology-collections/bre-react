@@ -3,5 +3,9 @@ import { Bre_Search_Body_Part } from '../../../components/bre-search-body-part/b
 
 export default createBoard({
     name: 'Bre_Search_Body_Part',
-    Board: () => <Bre_Search_Body_Part />
+    Board: () => <Bre_Search_Body_Part />,
+    environmentProps: {
+        windowWidth: 1024,
+        windowHeight: 768,
+    },
 });
