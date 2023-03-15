@@ -61,21 +61,17 @@ export const TableEngineView = ({
     }
 
     function clicked() {
-        if(bool_BreSearchBodyPart === false) {
+        if (bool_BreSearchBodyPart === false) {
             set_BreSearchBodyPart(true);
             set_SearchTablePart(false);
         }
-        fetch('http://50.116.3.37:9001/api/all')
+        fetch(
+            `http://50.116.3.37:9001/api/${string_CollectionName}_collection/common_name/${string_SearchCriteria}`
+        )
             .then((response) => response.json())
             .then((Data) => {
                 update_CollectionData(Data);
             });
-    }
-    useEffect(() => {
-        console.log(object_CollectionData);
-    }, [object_CollectionData]);
-    function getData() {
-        return object_CollectionData;
     }
 
     return (
@@ -94,7 +90,7 @@ export const TableEngineView = ({
                 <Bre_Search_Body_Part />
             </div>
             <div hidden={bool_SearchTablePart}>
-                <Bre_Search_Table_Part 
+                <Bre_Search_Table_Part
                     toggle_SearchCardPart={toggle_SearchCardPart}
                     object_CollectionData={object_CollectionData}
                 />
@@ -106,9 +102,7 @@ export const TableEngineView = ({
                 />
             </div>
             <div hidden={bool_SearchPagePart}>
-                <Bre_Search_Page_Part 
-                    toggle_SearchPagePart={toggle_SearchPagePart} 
-                />
+                <Bre_Search_Page_Part toggle_SearchPagePart={toggle_SearchPagePart} />
             </div>
         </div>
     );

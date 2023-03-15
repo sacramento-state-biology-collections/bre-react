@@ -3,7 +3,9 @@ import { Bre_Search_Card_Part } from '../../../components/bre-search-card-part/b
 
 export default createBoard({
     name: 'Bre_Search_Card_Part',
-    Board: () => <Bre_Search_Card_Part toggle_SearchCardPart={()=>{}} toggle_SearchPagePart={()=>{}}/>,
+    Board: () => (
+        <Bre_Search_Card_Part toggle_SearchCardPart={() => {}} toggle_SearchPagePart={() => {}} />
+    ),
     environmentProps: {
         windowWidth: 1024,
         windowHeight: 768,
