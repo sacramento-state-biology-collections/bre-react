@@ -1,2 +1,42 @@
 .root {
 }
+.style1 {
+  width: 100vw;
+  height: 13vh;
+  padding-right: 8px;
+  padding-top: 1px;
+  padding-bottom: 20px;
+  padding-left: 8px;
+  background-color: #0d3623;
+  position: static;
+}
+.style2 {
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  width: 100vw;
+  height: 2vh;
+  background-color: #c0b385;
+}
+.HistoryPage {
+  color: #ffffff;
+  border: 20px solid black;
+  border-top: 0px solid black;
+  border-right: 10px solid #0d3623;
+  border-bottom: 10px solid #0d3623;
+  background-color: #0d3623;
+  border-left: 20px solid #0d3623;
+}
+.padding {
+  padding-left: 370px;
+  margin: 0px 0px 0px 9px;
+}
+.setting {
+  margin: 0px 0px 0px 25px;
+  color: #fbf5f5;
+  background-color: #0d3623;
+}
+.user {
+  font-size: 2.5vh;
+  padding-left: 12px;
+}
