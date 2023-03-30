@@ -7,7 +7,7 @@ export interface Bre_Search_Header_PartProps {
     toggle_WelcomeView: () => void;
     toggle_BreSearchBodyPart: () => void;
     bool_BreSearchBodyPart: boolean;
-    clicked: () => void;
+    table_Clicked: () => void;
     update_CollectionName: (CollectionName: string) => void;
     update_SearchCriteria: (SearchCriteria: string) => void;
 }
@@ -21,7 +21,7 @@ export const Bre_Search_Header_Part = ({
     toggle_WelcomeView,
     toggle_BreSearchBodyPart,
     bool_BreSearchBodyPart,
-    clicked,
+    table_Clicked,
     update_CollectionName,
     update_SearchCriteria,
 }: Bre_Search_Header_PartProps) => {
@@ -30,7 +30,7 @@ export const Bre_Search_Header_Part = ({
             toggle_BreSearchBodyPart();
         }
         update_Props();
-        clicked();
+        table_Clicked();
     }
 
     function update_Props() {

@@ -12,9 +12,11 @@ export interface TableEngineViewProps {
     toggle_WelcomeView: () => void;
     toggle_TableEngineView: () => void;
     update_CollectionData: (CollectionData: any) => void;
+    update_CardData: (CardData: any) => void;
     update_CollectionName: (CollectionName: string) => void;
     update_SearchCriteria: (SearchCriteria: string) => void;
     object_CollectionData?: any;
+    object_CardData?: any;
     string_CollectionName?: string;
     string_SearchCriteria?: string;
 }
@@ -28,9 +30,11 @@ export const TableEngineView = ({
     toggle_WelcomeView,
     toggle_TableEngineView,
     update_CollectionData,
+    update_CardData,
     update_CollectionName,
     update_SearchCriteria,
     object_CollectionData,
+    object_CardData,
     string_CollectionName,
     string_SearchCriteria,
 }: TableEngineViewProps) => {
@@ -60,7 +64,7 @@ export const TableEngineView = ({
         }
     }
 
-    function clicked() {
+    function table_Clicked() {
         if (bool_BreSearchBodyPart === false) {
             set_BreSearchBodyPart(true);
             set_SearchTablePart(false);
@@ -74,6 +78,18 @@ export const TableEngineView = ({
             });
     }
 
+    function card_Clicked() {
+        set_SearchCardPart(true);
+
+        fetch(
+            `http://50.116.3.37:9001/api/${string_CollectionName}_collection/common_name/${string_SearchCriteria}`
+        )
+            .then((response) => response.json())
+            .then((Data) => {
+                update_CardData(Data);
+            });
+    }
+
     return (
         <div className={classNames(styles.root, className)}>
             <div hidden={bool_BreSearchHeaderPart}>
@@ -81,7 +97,7 @@ export const TableEngineView = ({
                     toggle_WelcomeView={toggle_WelcomeView}
                     toggle_BreSearchBodyPart={toggle_BreSearchBodyPart}
                     bool_BreSearchBodyPart={bool_BreSearchBodyPart}
-                    clicked={clicked}
+                    table_Clicked={table_Clicked}
                     update_CollectionName={update_CollectionName}
                     update_SearchCriteria={update_SearchCriteria}
                 />
@@ -92,6 +108,7 @@ export const TableEngineView = ({
             <div hidden={bool_SearchTablePart}>
                 <Bre_Search_Table_Part
                     toggle_SearchCardPart={toggle_SearchCardPart}
+                    card_Clicked={card_Clicked}
                     object_CollectionData={object_CollectionData}
                 />
             </div>
@@ -99,6 +116,7 @@ export const TableEngineView = ({
                 <Bre_Search_Card_Part
                     toggle_SearchCardPart={toggle_SearchCardPart}
                     toggle_SearchPagePart={toggle_SearchPagePart}
+                    object_CardData={object_CardData}
                 />
             </div>
             <div hidden={bool_SearchPagePart}>

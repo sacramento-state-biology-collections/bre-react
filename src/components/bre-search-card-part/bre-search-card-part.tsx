@@ -5,6 +5,7 @@ export interface Bre_Search_Card_PartProps {
     className?: string;
     toggle_SearchCardPart: () => void;
     toggle_SearchPagePart: () => void;
+    object_CardData: any;
 }
 
 /**
@@ -15,6 +16,7 @@ export const Bre_Search_Card_Part = ({
     className,
     toggle_SearchCardPart,
     toggle_SearchPagePart,
+    object_CardData,
 }: Bre_Search_Card_PartProps) => {
     return (
         <div className={classNames(styles.root, className)}>
