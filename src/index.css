@@ -206,3 +206,41 @@ code {
   border-radius: 4px;
   background-color: #e0e0a1;
 }
+.upload-date {
+  border: 5px solid black;
+  border-left: 0px solid black;
+  border-right: 0px solid black;
+  border-top: 0px solid black;
+  border-bottom: 0px solid black;
+  margin-top: 0vh;
+  margin-bottom: 60vh;
+  margin-left: 0px;
+  margin-right: 0vw;
+  font-size: 200%;
+  padding: 0vw;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.file-uploads {
+  padding: 0em 70vw 0em 0em;
+  margin: 0vh;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+  font-size: 70%;
+  display: block;
+  align-self: start;
+}
+.size-image {
+  width: 5vh;
+}
+.padding {
+  padding: 0px;
+  margin: 20px;
+}
+.File {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 10px 0px 0px;
+}
