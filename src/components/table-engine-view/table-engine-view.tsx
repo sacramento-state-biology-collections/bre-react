@@ -78,16 +78,10 @@ export const TableEngineView = ({
             });
     }
 
-    function card_Clicked() {
-        set_SearchCardPart(true);
+    function card_Clicked(item: any) {
+        set_SearchCardPart(false);
 
-        fetch(
-            `http://50.116.3.37:9001/api/${string_CollectionName}_collection/common_name/${string_SearchCriteria}`
-        )
-            .then((response) => response.json())
-            .then((Data) => {
-                update_CardData(Data);
-            });
+        update_CardData(item);
     }
 
     return (

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 export interface Bre_Search_Table_PartProps {
     className?: string;
     toggle_SearchCardPart: () => void;
-    card_Clicked: () => void;
+    card_Clicked: (index: number) => void;
     object_CollectionData: any;
 }
 
@@ -27,7 +27,7 @@ export const Bre_Search_Table_Part = ({
                     <td>{item.prep_type}</td>
                     <td>{item.drawer}</td>
                     <td>
-                        <button onClick={card_Clicked}>Button</button>
+                        <button onClick={() => card_Clicked(item)}>Button</button>
                     </td>
                 </tr>
             );
