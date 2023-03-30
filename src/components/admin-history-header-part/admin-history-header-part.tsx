@@ -20,9 +20,15 @@ export const Admin_History_Header_Part = ({ className }: Admin_History_Header_Pa
                             Back
                         </button>
                         <select className={styles['select-AdminHistoryHeaderPart-style']}>
-                            <option>Apple</option>
-                            <option>Banana</option>
-                            <option>Watermelon</option>
+                            <option>Settings</option>
+                            <option>Mammals</option>
+                            <option>Insects</option>
+                            <option>Fish</option>
+                            <option>Arboretum</option>
+                            <option>Vivarium</option>
+                            <option>Green House</option>
+                            <option>Herbarium</option>
+                            <option>Herps</option>
                         </select>
                         <span className={styles['span1-AdminHistoryHeaderPart-style']}>
                             LASTNAME, FIRSTNAME
