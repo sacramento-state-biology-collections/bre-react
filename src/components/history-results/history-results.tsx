@@ -1,9 +1,18 @@
-import { createBoard } from '@wixc3/react-board';
+import styles from './history-results.module.scss';
+import classNames from 'classnames';
 
-export default createBoard({
-    name: 'HistoryResult',
-    Board: () => (
-        <div>
+export interface HistoryResultsProps {
+    className?: string;
+    children?: React.ReactNode;
+}
+
+/**
+ * This component was generated using Codux's built-in Default new component template.
+ * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-history-resultss-and-templates
+ */
+export const HistoryResults = ({ className, children = 'HistoryResults' }: HistoryResultsProps) => {
+    return (
+        <div className={classNames(styles.root, className)}>
             <div className="upload-date">
                 Date
                 <div className="file-uploads">
@@ -23,8 +32,5 @@ export default createBoard({
                 </div>
             </div>
         </div>
-    ),
-    environmentProps: {
-        windowWidth: 1022,
-    },
-});
+    );
+};

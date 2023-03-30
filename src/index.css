@@ -213,16 +213,17 @@ code {
   border-top: 0px solid black;
   border-bottom: 0px solid black;
   margin-top: 0vh;
-  margin-bottom: 60vh;
+  margin-bottom: 0vh;
   margin-left: 0px;
   margin-right: 0vw;
   font-size: 200%;
-  padding: 0vw;
+  padding: 3vh 0vw 0vw 7vw;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+  width: 85vw;
 }
 .file-uploads {
-  padding: 0em 70vw 0em 0em;
+  padding: 0em 0px 0em 0vw;
   margin: 0vh;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -230,6 +231,7 @@ code {
   font-size: 70%;
   display: block;
   align-self: start;
+  width: auto;
 }
 .size-image {
   width: 5vh;

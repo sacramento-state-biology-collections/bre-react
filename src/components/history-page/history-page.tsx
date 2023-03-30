@@ -1,6 +1,5 @@
 import styles from './history-page.module.scss';
 import classNames from 'classnames';
-import { Settings } from '../settings/settings';
 
 export interface HistoryPageProps {
     className?: string;
@@ -12,10 +11,5 @@ export interface HistoryPageProps {
  * For details on how to create custom new component templates, see https://help.codux.com/kb/en/article/configuration-for-history-pages-and-templates
  */
 export const HistoryPage = ({ className, children = 'HistoryPage' }: HistoryPageProps) => {
-    return (
-        <div className={classNames(styles.root, className)}>
-            <Settings className={styles.HistoryHeader} />
-            <div />
-        </div>
-    );
+    return <div className={classNames(styles.root, className)}>{children}</div>;
 };
