@@ -7,7 +7,7 @@ export default createBoard({
         <Bre_Search_Card_Part
             toggle_SearchCardPart={() => {}}
             toggle_SearchPagePart={() => {}}
-            object_CardData={[]}
+            object_SpecimenData={[]}
         />
     ),
     environmentProps: {

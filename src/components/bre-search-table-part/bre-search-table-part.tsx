@@ -4,7 +4,7 @@ import classNames from 'classnames';
 export interface Bre_Search_Table_PartProps {
     className?: string;
     toggle_SearchCardPart: () => void;
-    card_Clicked: (index: number) => void;
+    card_Clicked: (item: any) => void;
     object_CollectionData: any;
 }
 

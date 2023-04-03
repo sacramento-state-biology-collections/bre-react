@@ -12,11 +12,11 @@ export interface TableEngineViewProps {
     toggle_WelcomeView: () => void;
     toggle_TableEngineView: () => void;
     update_CollectionData: (CollectionData: any) => void;
-    update_CardData: (CardData: any) => void;
+    update_SpecimenData: (SpecimenData: any) => void;
     update_CollectionName: (CollectionName: string) => void;
     update_SearchCriteria: (SearchCriteria: string) => void;
     object_CollectionData?: any;
-    object_CardData?: any;
+    object_SpecimenData?: any;
     string_CollectionName?: string;
     string_SearchCriteria?: string;
 }
@@ -30,11 +30,11 @@ export const TableEngineView = ({
     toggle_WelcomeView,
     toggle_TableEngineView,
     update_CollectionData,
-    update_CardData,
+    update_SpecimenData,
     update_CollectionName,
     update_SearchCriteria,
     object_CollectionData,
-    object_CardData,
+    object_SpecimenData,
     string_CollectionName,
     string_SearchCriteria,
 }: TableEngineViewProps) => {
@@ -81,7 +81,7 @@ export const TableEngineView = ({
     function card_Clicked(item: any) {
         set_SearchCardPart(false);
 
-        update_CardData(item);
+        update_SpecimenData(item);
     }
 
     return (
@@ -110,11 +110,14 @@ export const TableEngineView = ({
                 <Bre_Search_Card_Part
                     toggle_SearchCardPart={toggle_SearchCardPart}
                     toggle_SearchPagePart={toggle_SearchPagePart}
-                    object_CardData={object_CardData}
+                    object_SpecimenData={object_SpecimenData}
                 />
             </div>
             <div hidden={bool_SearchPagePart}>
-                <Bre_Search_Page_Part toggle_SearchPagePart={toggle_SearchPagePart} />
+                <Bre_Search_Page_Part
+                    toggle_SearchPagePart={toggle_SearchPagePart}
+                    object_SpecimenData={object_SpecimenData}
+                />
             </div>
         </div>
     );
