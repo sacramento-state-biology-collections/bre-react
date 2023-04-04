@@ -3,5 +3,5 @@ import { AdminEditView } from '../../../components/admin-edit-view/admin-edit-vi
 
 export default createBoard({
     name: 'AdminEditView',
-    Board: () => <AdminEditView />,
+    Board: () => <AdminEditView toggle_AdminEditView={() => {}} />,
 });
