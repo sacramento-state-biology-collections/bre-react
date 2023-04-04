@@ -11,7 +11,7 @@ export interface Admin_Edit_ViewProps {
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-admin-page-edit-views-and-templates
  */
-export const Admin_Page_Edit_View = ({ className }: Admin_Edit_ViewProps) => {
+export const Admin_Edit_View = ({ className }: Admin_Edit_ViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <Admin_Edit_Body_Part />
