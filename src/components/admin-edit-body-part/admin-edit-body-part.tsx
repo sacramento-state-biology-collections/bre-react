@@ -13,7 +13,7 @@ export const Admin_Edit_Body_Part = ({ className }: Admin_Edit_Body_PartProps) =
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-AdminEditBodyPart-style']}>
-                <div className={styles['div1-AdminBodyPart-style']}>EDIT PAGE</div>
+                <div className={styles['div1-AdminEditBodyPart-style']}>EDIT PAGE</div>
                 <div className={styles['div2-AdminEditBodyPart-style']}>
                     <img />
                     <input className={styles['input-AdminEditBodyPart-Style']} />
