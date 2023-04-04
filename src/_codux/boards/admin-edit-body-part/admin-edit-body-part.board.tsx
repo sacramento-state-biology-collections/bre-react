@@ -5,6 +5,6 @@ export default createBoard({
     name: 'Admin_Edit_Body_Part',
     Board: () => <Admin_Edit_Body_Part />,
     environmentProps: {
-        canvasHeight: 710,
+        canvasHeight: 478,
     },
 });

@@ -5,6 +5,7 @@ export interface Admin_Panel_Body_PartProps {
     className?: string;
     toggle_LoadingTrue: () => void;
     toggle_LoadingFalse: () => void;
+    toggle_AdminEditView: () => void;
 }
 
 /**
@@ -15,6 +16,7 @@ export const Admin_Panel_Body_Part = ({
     className,
     toggle_LoadingTrue,
     toggle_LoadingFalse,
+    toggle_AdminEditView,
 }: Admin_Panel_Body_PartProps) => {
     function upload_MammalsFile() {
         let element: HTMLElement = document.querySelector(
@@ -169,7 +171,12 @@ export const Admin_Panel_Body_Part = ({
                         <h1>Mammals</h1>
                     </div>
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>Edit</button>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={toggle_AdminEditView}
+                        >
+                            Edit
+                        </button>
                         <a
                             href="http://50.116.3.37:9001/api/getxlsx/mammals"
                             download="mammals.xlsx"
@@ -202,7 +209,12 @@ export const Admin_Panel_Body_Part = ({
                         <h1>Insects</h1>
                     </div>
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>Edit</button>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={toggle_AdminEditView}
+                        >
+                            Edit
+                        </button>
                         <a
                             href="http://50.116.3.37:9001/api/getxlsx/insects"
                             download="insects.xlsx"
@@ -225,7 +237,12 @@ export const Admin_Panel_Body_Part = ({
                         <h1>Fish</h1>
                     </div>
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>Edit</button>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={toggle_AdminEditView}
+                        >
+                            Edit
+                        </button>
                         <a href="http://50.116.3.37:9001/api/getxlsx/fish" download="fish.xlsx">
                             <button className={styles['button-AdminPanelBodyPart-style']}>
                                 Download
@@ -245,7 +262,12 @@ export const Admin_Panel_Body_Part = ({
                         <h1>Arboretum</h1>
                     </div>
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>Edit</button>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={toggle_AdminEditView}
+                        >
+                            Edit
+                        </button>
                         <a
                             href="http://50.116.3.37:9001/api/getxlsx/arboretum"
                             download="arboretum.xlsx"
@@ -273,7 +295,12 @@ export const Admin_Panel_Body_Part = ({
                         <h1>Vivarium</h1>
                     </div>
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>Edit</button>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={toggle_AdminEditView}
+                        >
+                            Edit
+                        </button>
                         <a
                             href="http://50.116.3.37:9001/api/getxlsx/vivarium"
                             download="vivarium.xlsx"
@@ -301,7 +328,12 @@ export const Admin_Panel_Body_Part = ({
                         <h1>Green House</h1>
                     </div>
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>Edit</button>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={toggle_AdminEditView}
+                        >
+                            Edit
+                        </button>
                         <a
                             href="http://50.116.3.37:9001/api/getxlsx/green_house"
                             download="green_house.xlsx"
@@ -329,7 +361,12 @@ export const Admin_Panel_Body_Part = ({
                         <h1>Herbarium</h1>
                     </div>
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>Edit</button>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={toggle_AdminEditView}
+                        >
+                            Edit
+                        </button>
                         <a
                             href="http://50.116.3.37:9001/api/getxlsx/herbarium"
                             download="herbarium.xlsx"
@@ -357,7 +394,12 @@ export const Admin_Panel_Body_Part = ({
                         <h1>Herps</h1>
                     </div>
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button className={styles['button-AdminPanelBodyPart-style']}>Edit</button>
+                        <button
+                            className={styles['button-AdminPanelBodyPart-style']}
+                            onClick={toggle_AdminEditView}
+                        >
+                            Edit
+                        </button>
                         <a href="http://50.116.3.37:9001/api/getxlsx/herps" download="herps.xlsx">
                             <button className={styles['button-AdminPanelBodyPart-style']}>
                                 Download

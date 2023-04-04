@@ -1,34 +1,23 @@
 .root {
 }
+.div0-AdminEditHeaderPart-style {
+}
 .div0-AdminEditBodyPart-style {
+  display: grid;
   width: 1024px;
-  height: 85px;
-  background-color: #043927;
+  height: 544px;
+  align-items: start;
+  justify-items: stretch;
+  align-content: start;
 }
-.div1-AdminBodyPart-style {
-  align-self: center;
-  display: block;
-  color: #fff;
-  font-size: 35px;
-  text-align: center;
+.tr-AdminEditTableHeaderPart-style {
+  border: 5px solid black;
+  border-radius: 5px;
+  outline: initial;
 }
-.div2-AdminEditBodyPart-style {
-  align-self: center;
-  text-align: center;
-  margin: 1px;
-  padding: 1px;
-  border: 0px solid black;
+.tbody-AdminEditBodyPart-style {
+  border: 20px solid black;
 }
-.input-AdminEditBodyPart-Style {
-  width: 500px;
-  height: 25px;
-  margin: 1px 10px 1px 1px;
-  border-radius: 10px;
-}
-.btn-AdminEditBodyPart-style {
-  align-self: center;
-  width: 100px;
-  height: 30px;
-  font-size: 15px;
-  border-radius: 1px;
+.th-AdminEditBodyPart-style {
+  border: 3px solid #043927;
 }

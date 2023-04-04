@@ -1,6 +1,5 @@
 import styles from './admin-history-body-part.module.scss';
 import classNames from 'classnames';
-import AdminHistoryHeaderPart_module from '../admin-history-header-part/admin-history-header-part.module.scss';
 
 export interface Admin_History_Body_PartProps {
     className?: string;

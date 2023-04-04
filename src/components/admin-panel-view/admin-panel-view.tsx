@@ -8,13 +8,18 @@ import { Table_Loading_Img_Part } from '../table-loading-img-part/table-loading-
 export interface AdminPanelViewProps {
     className?: string;
     toggle_WelcomeView: () => void;
+    toggle_AdminEditView: () => void;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-admin-panel-views-and-templates
  */
-export const AdminPanelView = ({ className, toggle_WelcomeView }: AdminPanelViewProps) => {
+export const AdminPanelView = ({
+    className,
+    toggle_WelcomeView,
+    toggle_AdminEditView,
+}: AdminPanelViewProps) => {
     const [bool_Loading, set_Loading] = useState<boolean>(true);
 
     function toggle_LoadingTrue() {
@@ -33,6 +38,7 @@ export const AdminPanelView = ({ className, toggle_WelcomeView }: AdminPanelView
             <Admin_Panel_Body_Part
                 toggle_LoadingTrue={toggle_LoadingTrue}
                 toggle_LoadingFalse={toggle_LoadingFalse}
+                toggle_AdminEditView={toggle_AdminEditView}
             />
         </div>
     );
