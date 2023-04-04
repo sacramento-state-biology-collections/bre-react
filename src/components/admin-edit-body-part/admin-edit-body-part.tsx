@@ -1,4 +1,4 @@
-import styles from './admin-edit-body-1-part.module.scss';
+import styles from './admin-edit-body-part.module.scss';
 import classNames from 'classnames';
 
 export interface Admin_Edit_Body_PartProps {
