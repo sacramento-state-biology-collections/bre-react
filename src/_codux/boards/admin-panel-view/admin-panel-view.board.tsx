@@ -3,5 +3,5 @@ import { AdminPanelView } from '../../../components/admin-panel-view/admin-panel
 
 export default createBoard({
     name: 'AdminPanelView',
-    Board: () => <AdminPanelView toggle_WelcomeView={()=>{}}/>
+    Board: () => <AdminPanelView toggle_WelcomeView={() => {}} toggle_AdminEditView={() => {}} />,
 });

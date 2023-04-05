@@ -27,15 +27,24 @@ export const Admin_User_Header_Part = ({
                         >
                             Home
                         </button>
-                        <button className={styles['button-AdminUserHeaderPart-style']}>
-                            Settings
-                        </button>
+                        <select className={styles['select-AdminUserHeaderPart-style']}>
+                            <option>Settings</option>
+                            <option>Mammals</option>
+                            <option>Insects</option>
+                            <option>Fish</option>
+                            <option>Arboretum</option>
+                            <option>Vivarium</option>
+                            <option>Green House</option>
+                            <option>Herbarium</option>
+                            <option>Herps</option>
+                        </select>
                         <span className={styles['span1-AdminUserHeaderPart-style']}>
                             LASTNAME, FIRSTNAME
                         </span>
                     </span>
                 </span>
             </div>
+
             <div className={styles['div1-AdminUserHeaderPart-style']} />
         </div>
     );
