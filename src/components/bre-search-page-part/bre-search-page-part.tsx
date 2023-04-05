@@ -16,14 +16,15 @@ export const Bre_Search_Page_Part = ({
     toggle_SearchPagePart,
     object_SpecimenData,
 }: Bre_Search_Page_PartProps) => {
+    function get_Data() {
+        return <li>{object_SpecimenData.values()}</li>;
+    }
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-breSearchPagePart-style']}>
                 <div className={styles['div1-breSearchPage-style']}>
                     <h1>{object_SpecimenData.common_name}</h1>
-                    <ul>
-                        <li> {JSON.stringify(object_SpecimenData)} </li>;
-                    </ul>
+                    {get_Data()}
                 </div>
                 <div>
                     <button

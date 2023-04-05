@@ -83,15 +83,13 @@ export const TableEngineView = ({
     }
 
     function card_Clicked(item: any) {
-        set_SearchCardPart(false);
+        toggle_SearchCardPart();
 
         update_CardData(item);
     }
 
     function page_Clicked(catalog: number) {
-        set_SearchCardPart(true);
-        set_SearchTablePart(true);
-        set_SearchPagePart(false);
+        toggle_SearchPagePart();
 
         fetch(`http://127.0.0.1:9001/api/${string_CollectionName}_collection/${catalog}`)
             .then((response) => response.json())
