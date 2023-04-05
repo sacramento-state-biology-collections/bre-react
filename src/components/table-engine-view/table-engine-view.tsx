@@ -1,6 +1,6 @@
 import styles from './table-engine-view.module.scss';
 import classNames from 'classnames';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Bre_Search_Header_Part } from '../bre-search-header-part/bre-search-header-part';
 import { Bre_Search_Table_Part } from '../bre-search-table-part/bre-search-table-part';
 import { Bre_Search_Card_Part } from '../bre-search-card-part/bre-search-card-part';
@@ -12,10 +12,12 @@ export interface TableEngineViewProps {
     toggle_WelcomeView: () => void;
     toggle_TableEngineView: () => void;
     update_CollectionData: (CollectionData: any) => void;
-    update_SpecimenData: (SpecimenData: any) => void;
+    update_CardData: (CardData: any) => void;
+    update_SpecimenData: (Specimen: any) => void;
     update_CollectionName: (CollectionName: string) => void;
     update_SearchCriteria: (SearchCriteria: string) => void;
     object_CollectionData?: any;
+    object_CardData?: any;
     object_SpecimenData?: any;
     string_CollectionName?: string;
     string_SearchCriteria?: string;
@@ -30,10 +32,12 @@ export const TableEngineView = ({
     toggle_WelcomeView,
     toggle_TableEngineView,
     update_CollectionData,
+    update_CardData,
     update_SpecimenData,
     update_CollectionName,
     update_SearchCriteria,
     object_CollectionData,
+    object_CardData,
     object_SpecimenData,
     string_CollectionName,
     string_SearchCriteria,
@@ -81,7 +85,19 @@ export const TableEngineView = ({
     function card_Clicked(item: any) {
         set_SearchCardPart(false);
 
-        update_SpecimenData(item);
+        update_CardData(item);
+    }
+
+    function page_Clicked(catalog: number) {
+        set_SearchCardPart(true);
+        set_SearchTablePart(true);
+        set_SearchPagePart(false);
+
+        fetch(`http://127.0.0.1:9001/api/${string_CollectionName}_collection/${catalog}`)
+            .then((response) => response.json())
+            .then((Data) => {
+                update_SpecimenData(Data);
+            });
     }
 
     return (
@@ -110,7 +126,8 @@ export const TableEngineView = ({
                 <Bre_Search_Card_Part
                     toggle_SearchCardPart={toggle_SearchCardPart}
                     toggle_SearchPagePart={toggle_SearchPagePart}
-                    object_SpecimenData={object_SpecimenData}
+                    page_Clicked={page_Clicked}
+                    object_CardData={object_CardData}
                 />
             </div>
             <div hidden={bool_SearchPagePart}>

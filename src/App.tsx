@@ -13,6 +13,7 @@ function App() {
     const [bool_AdminPanelView, set_AdminPanelView] = useState(true);
     const [bool_AdminCollectionView, set_AdminCollectionView] = useState(true);
     const [object_CollectionData, set_CollectionData] = useState([]);
+    const [object_CardData, set_CardData] = useState([]);
     const [object_SpecimenData, set_SpecimenData] = useState([]);
     const [string_CollectionName, set_CollectionName] = useState('');
     const [string_SearchCriteria, set_SearchCriteria] = useState('');
@@ -50,6 +51,10 @@ function App() {
         set_CollectionData(CollectionData);
     }
 
+    function update_CardData(CardData: any) {
+        set_CardData(CardData);
+    }
+
     function update_SpecimenData(SpecimenData: any) {
         set_SpecimenData(SpecimenData);
     }
@@ -76,10 +81,12 @@ function App() {
                         toggle_WelcomeView={toggle_WelcomeView}
                         toggle_TableEngineView={toggle_TableEngineView}
                         update_CollectionData={update_CollectionData}
+                        update_CardData={update_CardData}
                         update_SpecimenData={update_SpecimenData}
                         update_CollectionName={update_CollectionName}
                         update_SearchCriteria={update_SearchCriteria}
                         object_CollectionData={object_CollectionData}
+                        object_CardData={object_CardData}
                         object_SpecimenData={object_SpecimenData}
                         string_CollectionName={string_CollectionName}
                         string_SearchCriteria={string_SearchCriteria}

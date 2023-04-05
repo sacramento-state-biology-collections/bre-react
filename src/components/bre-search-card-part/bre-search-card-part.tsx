@@ -5,7 +5,8 @@ export interface Bre_Search_Card_PartProps {
     className?: string;
     toggle_SearchCardPart: () => void;
     toggle_SearchPagePart: () => void;
-    object_SpecimenData: any;
+    page_Clicked: (catalog: number) => void;
+    object_CardData: any;
 }
 
 /**
@@ -16,16 +17,17 @@ export const Bre_Search_Card_Part = ({
     className,
     toggle_SearchCardPart,
     toggle_SearchPagePart,
-    object_SpecimenData,
+    page_Clicked,
+    object_CardData,
 }: Bre_Search_Card_PartProps) => {
     function get_Data() {
         return (
             <div>
-                <h1>{object_SpecimenData.common_name}</h1>
+                <h1>{object_CardData.common_name}</h1>
                 <ul>
-                    <li>{object_SpecimenData.scientific_name}</li>
-                    <li>{object_SpecimenData.prep_type}</li>
-                    <li>{object_SpecimenData.drawer}</li>
+                    <li>{object_CardData.scientific_name}</li>
+                    <li>{object_CardData.prep_type}</li>
+                    <li>{object_CardData.drawer}</li>
                 </ul>
             </div>
         );
@@ -51,7 +53,7 @@ export const Bre_Search_Card_Part = ({
                     </button>
                     <button
                         className={styles['button1-breSearchCardPart-style']}
-                        onClick={toggle_SearchPagePart}
+                        onClick={() => page_Clicked(object_CardData.catalog)}
                     >
                         More Info
                     </button>

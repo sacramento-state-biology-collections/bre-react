@@ -16,22 +16,15 @@ export const Bre_Search_Page_Part = ({
     toggle_SearchPagePart,
     object_SpecimenData,
 }: Bre_Search_Page_PartProps) => {
-    function get_Data() {
-        return (
-            <div>
-                <h1>{object_SpecimenData.common_name}</h1>
-                <ul>
-                    <li>{object_SpecimenData.scientific_name}</li>
-                    <li>{object_SpecimenData.prep_type}</li>
-                    <li>{object_SpecimenData.drawer}</li>
-                </ul>
-            </div>
-        );
-    }
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-breSearchPagePart-style']}>
-                <div className={styles['div1-breSearchPage-style']}>{get_Data()}</div>
+                <div className={styles['div1-breSearchPage-style']}>
+                    <h1>{object_SpecimenData.common_name}</h1>
+                    <ul>
+                        <li> {JSON.stringify(object_SpecimenData)} </li>;
+                    </ul>
+                </div>
                 <div>
                     <button
                         className={styles['button-breSearchPagePart-style']}

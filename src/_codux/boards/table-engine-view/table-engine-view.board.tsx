@@ -8,10 +8,12 @@ export default createBoard({
             toggle_WelcomeView={() => {}}
             toggle_TableEngineView={() => {}}
             update_CollectionData={([]) => {}}
+            update_CardData={([]) => {}}
             update_SpecimenData={([]) => {}}
             update_CollectionName={() => {}}
             update_SearchCriteria={() => {}}
             object_CollectionData={[]}
+            object_CardData={[]}
             object_SpecimenData={[]}
             string_CollectionName={''}
             string_SearchCriteria={''}
