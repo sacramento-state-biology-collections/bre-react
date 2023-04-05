@@ -1,5 +1,6 @@
 import styles from './admin-login-view.module.scss';
 import classNames from 'classnames';
+import { Admin_Login_Part } from '../admin-login-part/admin-login-part';
 
 export interface AdminLoginViewProps {
     className?: string;
@@ -13,15 +14,7 @@ export interface AdminLoginViewProps {
 export const AdminLoginView = ({ className, toggle_AdminPanelView }: AdminLoginViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <div className={styles['div-AdminLoginView-style']}>
-                <form className={styles['form-AdminLoginView-style']}>
-                    <label className={styles['label-AdminLoginView-style']}>Username</label>
-                    <input className={styles['input-AdminLoginView-style']} />
-                    <label className={styles['label-AdminLoginView-style']}>Password</label>
-                    <input type="password" className={styles['input-AdminLoginView-style']} />
-                    <button className={styles['button-AdminLoginView-style']}>Login</button>
-                </form>
-            </div>
+            <Admin_Login_Part />
         </div>
     );
 };

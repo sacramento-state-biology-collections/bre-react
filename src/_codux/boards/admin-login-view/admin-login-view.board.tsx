@@ -3,5 +3,9 @@ import { AdminLoginView } from '../../../components/admin-login-view/admin-login
 
 export default createBoard({
     name: 'AdminLoginView',
-    Board: () => <AdminLoginView toggle_AdminPanelView={()=>{}}/>
+    Board: () => <AdminLoginView toggle_AdminPanelView={() => {}} />,
+    environmentProps: {
+        windowWidth: 1024,
+        windowHeight: 768,
+    },
 });
