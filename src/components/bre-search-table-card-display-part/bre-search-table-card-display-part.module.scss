@@ -1,0 +1,46 @@
+.root {
+}
+.div0-BreSearchTableCardDisplay-Style {
+  width: 1024px;
+  height: 544px;
+  outline: initial;
+  display: block;
+}
+.div1-BreSearchTableCardDisplayPart-Style {
+  align-self: start;
+  margin: 1px;
+}
+.img-BreSearchTableCardDisplayPart-Style {
+  width: 250px;
+}
+.btn-BreSearchTableCardDisplayPart-style {
+  align-self: start;
+  margin: 20px;
+  border-radius: 10px;
+  border: 5px solid #ffffff;
+  padding: 8px;
+  display: inline;
+  grid-auto-flow: row;
+  width: 275px;
+}
+.div2-BreSearchTableCardDisplayPart-style {
+  align-content: start;
+  justify-content: start;
+  grid-template-columns: 1px;
+  flex-grow: 2;
+  font-weight: 500;
+  font-variant: oldstyle-nums;
+  align-self: start;
+  height: 35px;
+  width: 250px;
+}
+.div3-BreSearchTableCardDisplayPart-style {
+  display: inline;
+  align-items: start;
+  justify-items: start;
+  align-content: start;
+}
+.div4-SearchTableCardDisplayPart-Style {
+  grid-template-columns: 2fr;
+  grid-template-rows: 1fr;
+}
