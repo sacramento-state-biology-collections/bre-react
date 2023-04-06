@@ -108,7 +108,7 @@ function App() {
                     <AdminEditView toggle_AdminEditView={toggle_AdminEditView} />
                 </div>
                 <div hidden={bool_AdminHistoryView}>
-                    <AdminHistoryView />
+                    <AdminHistoryView toggle_AdminHistoryView={toggle_AdminHistoryView} />
                 </div>
             </div>
         );

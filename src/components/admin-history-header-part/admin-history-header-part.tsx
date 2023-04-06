@@ -3,20 +3,27 @@ import classNames from 'classnames';
 
 export interface Admin_History_Header_PartProps {
     className?: string;
+    toggle_AdminHistoryView: () => void;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-admin-history-header-parts-and-templates
  */
-export const Admin_History_Header_Part = ({ className }: Admin_History_Header_PartProps) => {
+export const Admin_History_Header_Part = ({
+    className,
+    toggle_AdminHistoryView,
+}: Admin_History_Header_PartProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-AdminHistoryHeaderPart-style']}>
                 <span className={styles['span-AdminHistoryHeaderPart-style']}>
                     <h1 className={styles['h1-AdminHistoryHeaderPart-style']}>History Page</h1>
                     <span className={styles['span-AdminHistoryHeaderPart-style']}>
-                        <button className={styles['button-AdminHistoryHeaderPart-style']}>
+                        <button
+                            className={styles['button-AdminHistoryHeaderPart-style']}
+                            onClick={toggle_AdminHistoryView}
+                        >
                             Back
                         </button>
                         <select className={styles['select-AdminHistoryHeaderPart-style']}>

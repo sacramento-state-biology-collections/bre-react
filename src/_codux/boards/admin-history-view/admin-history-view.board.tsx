@@ -3,7 +3,7 @@ import { AdminHistoryView } from '../../../components/admin-history-view/admin-h
 
 export default createBoard({
     name: 'AdminHistoryView',
-    Board: () => <AdminHistoryView />,
+    Board: () => <AdminHistoryView toggle_AdminHistoryView={() => {}} />,
     environmentProps: {
         windowHeight: 734,
     },

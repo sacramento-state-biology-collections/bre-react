@@ -17,7 +17,9 @@ export const Admin_History_Body_Part = ({ className }: Admin_History_Body_PartPr
                 <div className={styles['div2-AdminHistoryBodyPart-style']}>
                     <span className={styles['span-AdminHistoryBodyPart-style']}>
                         <img
-                            src={'../styles/Microsoft_Office_Excel_(2019–present).svg.png'}
+                            src={
+                                'https://logodownload.org/wp-content/uploads/2020/04/excel-logo-0.png'
+                            }
                             className={styles['img-AdminHistoryBodyPart-style']}
                         />
                         <a href="/" className={styles['a-AdminHistoryBodyPart-style']}>

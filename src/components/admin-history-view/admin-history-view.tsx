@@ -5,16 +5,17 @@ import { Admin_History_Body_Part } from '../admin-history-body-part/admin-histor
 
 export interface AdminHistoryViewProps {
     className?: string;
+    toggle_AdminHistoryView: () => void;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-admin-history-views-and-templates
  */
-export const AdminHistoryView = ({ className }: AdminHistoryViewProps) => {
+export const AdminHistoryView = ({ className, toggle_AdminHistoryView }: AdminHistoryViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <Admin_History_Header_Part />
+            <Admin_History_Header_Part toggle_AdminHistoryView={toggle_AdminHistoryView} />
             <Admin_History_Body_Part />
         </div>
     );

@@ -3,5 +3,5 @@ import { Admin_History_Header_Part } from '../../../components/admin-history-hea
 
 export default createBoard({
     name: 'Admin_History_Header_Part',
-    Board: () => <Admin_History_Header_Part />
+    Board: () => <Admin_History_Header_Part toggle_AdminHistoryView={() => {}} />,
 });
