@@ -16,15 +16,32 @@ export const Bre_Search_Page_Part = ({
     toggle_SearchPagePart,
     object_SpecimenData,
 }: Bre_Search_Page_PartProps) => {
+    // function get_Data() {
+    //     console.log(object_SpecimenData);
+    //     console.log(object_SpecimenData.values);
+    //     return <li>{object_SpecimenData.values}</li>;
+    // }
     function get_Data() {
-        return <li>{object_SpecimenData.values()}</li>;
+        const values = Object.values(object_SpecimenData);
+        const keys = Object.keys(object_SpecimenData);
+        let list = [];
+        for (let i = 0; i < values.length; i++) {
+            if (keys[i] !== 'common_name') {
+                console.log(get_Point(keys[i], values[i]));
+                list.push(<li>{get_Point(keys[i], values[i])}</li>);
+            }
+        }
+        return list;
+    }
+    function get_Point(k: any, v: any) {
+        return k + ': ' + v;
     }
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-breSearchPagePart-style']}>
                 <div className={styles['div1-breSearchPage-style']}>
                     <h1>{object_SpecimenData.common_name}</h1>
-                    {get_Data()}
+                    <ul>{get_Data()}</ul>
                 </div>
                 <div>
                     <button

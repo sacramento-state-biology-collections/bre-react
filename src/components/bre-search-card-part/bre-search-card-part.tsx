@@ -5,7 +5,7 @@ export interface Bre_Search_Card_PartProps {
     className?: string;
     toggle_SearchCardPart: () => void;
     toggle_SearchPagePart: () => void;
-    page_Clicked: (catalog: number) => void;
+    page_Clicked: () => void;
     object_CardData: any;
 }
 
@@ -53,7 +53,7 @@ export const Bre_Search_Card_Part = ({
                     </button>
                     <button
                         className={styles['button1-breSearchCardPart-style']}
-                        onClick={() => page_Clicked(object_CardData.catalog)}
+                        onClick={page_Clicked}
                     >
                         More Info
                     </button>

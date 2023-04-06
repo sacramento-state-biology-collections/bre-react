@@ -55,17 +55,10 @@ export const TableEngineView = ({
         set_SearchCardPart(!bool_SearchCardPart);
     }
     function toggle_SearchPagePart() {
-        if (bool_SearchPagePart === true) {
-            set_SearchPagePart(!bool_SearchPagePart);
-            set_SearchCardPart(!bool_SearchCardPart);
-            set_SearchTablePart(!bool_SearchTablePart);
-            set_BreSearchHeaderPart(!bool_BreSearchHeaderPart);
-        } else {
-            set_SearchPagePart(!bool_SearchPagePart);
-            set_SearchCardPart(!bool_SearchCardPart);
-            set_SearchTablePart(!bool_SearchTablePart);
-            set_BreSearchHeaderPart(!bool_BreSearchHeaderPart);
-        }
+        set_SearchPagePart(!bool_SearchPagePart);
+        set_SearchCardPart(!bool_SearchCardPart);
+        set_SearchTablePart(!bool_SearchTablePart);
+        set_BreSearchHeaderPart(!bool_BreSearchHeaderPart);
     }
 
     function table_Clicked() {
@@ -74,7 +67,7 @@ export const TableEngineView = ({
             set_SearchTablePart(false);
         }
         fetch(
-            `http://50.116.3.37:9001/api/${string_CollectionName}_collection/common_name/${string_SearchCriteria}`
+            `http://127.0.0.1:9001/api/${string_CollectionName}_collection/common_name/${string_SearchCriteria}`
         )
             .then((response) => response.json())
             .then((Data) => {
@@ -82,20 +75,31 @@ export const TableEngineView = ({
             });
     }
 
-    function card_Clicked(item: any) {
+    function card_Clicked(specimen: any) {
+        update_CardData(specimen);
+        console.log(specimen);
+
         toggle_SearchCardPart();
 
-        update_CardData(item);
+        // fetch(`http://127.0.0.1:9001/api/card/${string_CollectionName}_collection/${specimen.catalog}`)
+        //     .then((response) => response.json())
+        //     .then((Data) => {
+        //         update_CardData(Data);
+        //     });
     }
 
-    function page_Clicked(catalog: number) {
+    function page_Clicked() {
+        update_SpecimenData(object_CardData);
+
         toggle_SearchPagePart();
 
-        fetch(`http://127.0.0.1:9001/api/${string_CollectionName}_collection/${catalog}`)
-            .then((response) => response.json())
-            .then((Data) => {
-                update_SpecimenData(Data);
-            });
+        // fetch(
+        //     `http://127.0.0.1:9001/api/${string_CollectionName}_collection/${object_CardData.catalog}`
+        // )
+        //     .then((response) => response.json())
+        //     .then((Data) => {
+        //         update_SpecimenData(Data);
+        //     });
     }
 
     return (
