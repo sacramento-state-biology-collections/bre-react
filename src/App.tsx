@@ -5,6 +5,7 @@ import { AdminLoginView } from './components/admin-login-view/admin-login-view';
 import { AdminPanelView } from './components/admin-panel-view/admin-panel-view';
 import { AdminCollectionView } from './components/admin-collection-view/admin-collection-view';
 import { AdminEditView } from './components/admin-edit-view/admin-edit-view';
+import { AdminHistoryView } from './components/admin-history-view/admin-history-view';
 
 function App() {
     const [bool_WelcomeView, set_WelcomeView] = useState(false);
@@ -13,6 +14,7 @@ function App() {
     const [bool_AdminPanelView, set_AdminPanelView] = useState(true);
     const [bool_AdminCollectionView, set_AdminCollectionView] = useState(true);
     const [bool_AdminEditView, set_AdminEditView] = useState(true);
+    const [bool_AdminHistoryView, set_AdminHistoryView] = useState(true);
     const [object_CollectionData, set_CollectionData] = useState([]);
     const [string_CollectionName, set_CollectionName] = useState('');
     const [string_SearchCriteria, set_SearchCriteria] = useState('');
@@ -49,6 +51,11 @@ function App() {
     function toggle_AdminEditView() {
         set_AdminPanelView(!bool_AdminPanelView);
         set_AdminEditView(!bool_AdminEditView);
+    }
+
+    function toggle_AdminHistoryView() {
+        set_AdminPanelView(!bool_AdminPanelView);
+        set_AdminHistoryView(!bool_AdminHistoryView);
     }
 
     function update_CollectionData(CollectionData: any) {
@@ -91,6 +98,7 @@ function App() {
                     <AdminPanelView
                         toggle_WelcomeView={toggle_WelcomeView}
                         toggle_AdminEditView={toggle_AdminEditView}
+                        toggle_AdminHistoryView={toggle_AdminHistoryView}
                     />
                 </div>
                 <div hidden={bool_AdminCollectionView}>
@@ -98,6 +106,9 @@ function App() {
                 </div>
                 <div hidden={bool_AdminEditView}>
                     <AdminEditView toggle_AdminEditView={toggle_AdminEditView} />
+                </div>
+                <div hidden={bool_AdminHistoryView}>
+                    <AdminHistoryView />
                 </div>
             </div>
         );

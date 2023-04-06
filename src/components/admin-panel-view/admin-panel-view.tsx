@@ -9,6 +9,7 @@ export interface AdminPanelViewProps {
     className?: string;
     toggle_WelcomeView: () => void;
     toggle_AdminEditView: () => void;
+    toggle_AdminHistoryView: () => void;
 }
 
 /**
@@ -19,6 +20,7 @@ export const AdminPanelView = ({
     className,
     toggle_WelcomeView,
     toggle_AdminEditView,
+    toggle_AdminHistoryView,
 }: AdminPanelViewProps) => {
     const [bool_Loading, set_Loading] = useState<boolean>(true);
 
@@ -34,7 +36,10 @@ export const AdminPanelView = ({
             <div hidden={bool_Loading}>
                 <Table_Loading_Img_Part />
             </div>
-            <Admin_User_Header_Part toggle_WelcomeView={toggle_WelcomeView} />
+            <Admin_User_Header_Part
+                toggle_WelcomeView={toggle_WelcomeView}
+                toggle_AdminHistoryView={toggle_AdminHistoryView}
+            />
             <Admin_Panel_Body_Part
                 toggle_LoadingTrue={toggle_LoadingTrue}
                 toggle_LoadingFalse={toggle_LoadingFalse}
