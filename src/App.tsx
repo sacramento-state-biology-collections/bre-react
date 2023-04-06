@@ -16,6 +16,7 @@ function App() {
     const [object_CollectionData, set_CollectionData] = useState([]);
     const [string_CollectionName, set_CollectionName] = useState('');
     const [string_SearchCriteria, set_SearchCriteria] = useState('');
+    const [object_LoginData, set_LoginData] = useState({});
 
     function toggle_WelcomeView() {
         if (bool_AdminPanelView === false) {
@@ -63,6 +64,15 @@ function App() {
         set_SearchCriteria(SearchCriteria);
     }
 
+    function update_LoginData(LoginData: any): Promise<void> {
+        set_LoginData(LoginData);
+        return Promise.resolve();
+    }
+
+    function get_LoginData() {
+        return object_LoginData;
+    }
+
     function handleVisibleContent() {
         return (
             <div>
@@ -85,16 +95,17 @@ function App() {
                     />
                 </div>
                 <div hidden={bool_AdminLoginView}>
-                    <AdminLoginView toggle_AdminPanelView={toggle_AdminPanelView} />
+                    <AdminLoginView
+                        toggle_AdminPanelView={toggle_AdminPanelView}
+                        update_LoginData={update_LoginData}
+                        get_LoginData={get_LoginData}
+                    />
                 </div>
                 <div hidden={bool_AdminPanelView}>
                     <AdminPanelView
                         toggle_WelcomeView={toggle_WelcomeView}
                         toggle_AdminEditView={toggle_AdminEditView}
                     />
-                </div>
-                <div hidden={bool_AdminCollectionView}>
-                    <AdminCollectionView />
                 </div>
                 <div hidden={bool_AdminEditView}>
                     <AdminEditView toggle_AdminEditView={toggle_AdminEditView} />
