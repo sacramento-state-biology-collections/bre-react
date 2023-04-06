@@ -4,5 +4,7 @@ import { Admin_Login_Part } from '../../../components/admin-login-part/admin-log
 
 export default createBoard({
     name: 'Admin_Login_Part',
-    Board: () => <Admin_Login_Part />
+    Board: () => (
+        <Admin_Login_Part update_LoginData={({}) => Promise.resolve()} attempt_Login={() => {}} />
+    ),
 });
