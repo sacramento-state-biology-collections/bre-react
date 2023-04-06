@@ -6,7 +6,6 @@ export default createBoard({
     Board: () => (
         <Bre_Search_Card_Part
             toggle_SearchCardPart={() => {}}
-            toggle_SearchPagePart={() => {}}
             page_Clicked={() => {}}
             object_CardData={[]}
         />

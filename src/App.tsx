@@ -1,4 +1,3 @@
-import styles from './App.module.scss';
 import { useState } from 'react';
 import { WelcomeView } from './components/welcome-view/welcome-view';
 import { TableEngineView } from './components/table-engine-view/table-engine-view';
@@ -79,7 +78,6 @@ function App() {
                 <div hidden={bool_TableEngineView}>
                     <TableEngineView
                         toggle_WelcomeView={toggle_WelcomeView}
-                        toggle_TableEngineView={toggle_TableEngineView}
                         update_CollectionData={update_CollectionData}
                         update_CardData={update_CardData}
                         update_SpecimenData={update_SpecimenData}

@@ -6,7 +6,6 @@ export default createBoard({
     Board: () => (
         <TableEngineView
             toggle_WelcomeView={() => {}}
-            toggle_TableEngineView={() => {}}
             update_CollectionData={([]) => {}}
             update_CardData={([]) => {}}
             update_SpecimenData={([]) => {}}

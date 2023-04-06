@@ -3,7 +3,6 @@ import classNames from 'classnames';
 
 export interface Bre_Search_Table_PartProps {
     className?: string;
-    toggle_SearchCardPart: () => void;
     card_Clicked: (item: any) => void;
     object_CollectionData: any;
 }
@@ -14,7 +13,6 @@ export interface Bre_Search_Table_PartProps {
  */
 export const Bre_Search_Table_Part = ({
     className,
-    toggle_SearchCardPart,
     card_Clicked,
     object_CollectionData,
 }: Bre_Search_Table_PartProps) => {

@@ -16,11 +16,6 @@ export const Bre_Search_Page_Part = ({
     toggle_SearchPagePart,
     object_SpecimenData,
 }: Bre_Search_Page_PartProps) => {
-    // function get_Data() {
-    //     console.log(object_SpecimenData);
-    //     console.log(object_SpecimenData.values);
-    //     return <li>{object_SpecimenData.values}</li>;
-    // }
     function get_Data() {
         const values = Object.values(object_SpecimenData);
         const keys = Object.keys(object_SpecimenData);

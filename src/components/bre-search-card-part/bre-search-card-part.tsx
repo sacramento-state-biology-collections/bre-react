@@ -4,7 +4,6 @@ import classNames from 'classnames';
 export interface Bre_Search_Card_PartProps {
     className?: string;
     toggle_SearchCardPart: () => void;
-    toggle_SearchPagePart: () => void;
     page_Clicked: () => void;
     object_CardData: any;
 }
@@ -16,7 +15,6 @@ export interface Bre_Search_Card_PartProps {
 export const Bre_Search_Card_Part = ({
     className,
     toggle_SearchCardPart,
-    toggle_SearchPagePart,
     page_Clicked,
     object_CardData,
 }: Bre_Search_Card_PartProps) => {
