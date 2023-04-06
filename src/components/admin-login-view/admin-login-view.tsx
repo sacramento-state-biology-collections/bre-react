@@ -34,7 +34,7 @@ export const AdminLoginView = ({
         ).toString();
         delete temp_LoginData.key;
         // Do post to http://localhost:9001/api/login with temp_LoginData
-        fetch('http://localhost:9001/api/login', {
+        fetch('http://50.116.3.37:9001/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
