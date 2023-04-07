@@ -27,10 +27,32 @@ export const Admin_Login_Part = ({
     }
 
     useEffect(() => {
-        update_LoginData({
-            key: (document.getElementsByName('key')[0] as HTMLInputElement).value,
-            username: (document.getElementsByName('username')[0] as HTMLInputElement).value,
-            password: (document.getElementsByName('password')[0] as HTMLInputElement).value,
+        let key = document.getElementsByName('key')[0] as HTMLInputElement;
+        let username = document.getElementsByName('username')[0] as HTMLInputElement;
+        let password = document.getElementsByName('password')[0] as HTMLInputElement;
+        key.addEventListener('input', () => {
+            let data = {
+                key: key.value,
+                username: username.value,
+                password: password.value,
+            };
+            update_LoginData(data);
+        });
+        username.addEventListener('input', () => {
+            let data = {
+                key: key.value,
+                username: username.value,
+                password: password.value,
+            };
+            update_LoginData(data);
+        });
+        password.addEventListener('input', () => {
+            let data = {
+                key: key.value,
+                username: username.value,
+                password: password.value,
+            };
+            update_LoginData(data);
         });
     }, []);
 
