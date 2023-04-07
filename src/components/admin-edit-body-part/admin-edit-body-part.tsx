@@ -21,13 +21,9 @@ export const Admin_Edit_Body_Part = ({ className }: Admin_Edit_Body_PartProps) =
                                 styles['tr-AdminEditTableHeaderPart-style']
                             )}
                         >
+                            <th className={styles['th-AdminEditBodyPart-style']}>Catalog</th>
                             <th className={styles['th-AdminEditBodyPart-style']}>Common Name</th>
-                            <th className={styles['th-AdminEditBodyPart-style']}>
-                                Scientific Name
-                            </th>
-                            <th className={styles['th-AdminEditBodyPart-style']}>Prep Type</th>
-                            <th className={styles['th-AdminEditBodyPart-style']}>Drawer #</th>
-                            <th className={styles['th-AdminEditBodyPart-style']}>View More</th>
+                            <th className={styles['th-AdminEditBodyPart-style']}>Mod</th>
                         </tr>
                     </tbody>
                 </table>

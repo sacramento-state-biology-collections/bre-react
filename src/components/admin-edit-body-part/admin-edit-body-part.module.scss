@@ -4,11 +4,15 @@
 }
 .div0-AdminEditBodyPart-style {
   display: grid;
-  width: 1024px;
-  height: 544px;
+  width: 100vw;
   align-items: start;
   justify-items: stretch;
   align-content: start;
+  position: fixed;
+  top: 15vh;
+  left: 0px;
+  height: 85vh;
+  background-color: #ffffff;
 }
 .tr-AdminEditTableHeaderPart-style {
   border: 5px solid black;
