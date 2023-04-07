@@ -4,24 +4,24 @@
 }
 .div0-AdminEditBodyPart-style {
   display: grid;
-  width: 100vw;
   align-items: start;
   justify-items: stretch;
   align-content: start;
-  position: fixed;
+  position: absolute;
   top: 15vh;
   left: 0px;
-  height: 85vh;
   background-color: #ffffff;
 }
-.tr-AdminEditTableHeaderPart-style {
-  border: 5px solid black;
-  border-radius: 5px;
-  outline: initial;
+.table-AdminEditBodyPart-style {
+  grid-auto-flow: row;
+  width: 100vw;
+  height: 85vh;
 }
-.tbody-AdminEditBodyPart-style {
-  border: 20px solid black;
-}
-.th-AdminEditBodyPart-style {
-  border: 3px solid #043927;
+.tr-AdminEditBodyPart-style {
+  display: grid;
+  grid-auto-flow: column;
+  border: 1px solid black;
+  justify-items: center;
+  padding: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
 }

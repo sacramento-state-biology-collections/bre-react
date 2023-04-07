@@ -6,6 +6,7 @@ export interface Admin_Panel_Body_PartProps {
     toggle_LoadingTrue: () => void;
     toggle_LoadingFalse: () => void;
     toggle_AdminEditView: () => void;
+    update_AdminEditData: (AdminEditData: any) => void;
 }
 
 /**
@@ -17,6 +18,7 @@ export const Admin_Panel_Body_Part = ({
     toggle_LoadingTrue,
     toggle_LoadingFalse,
     toggle_AdminEditView,
+    update_AdminEditData,
 }: Admin_Panel_Body_PartProps) => {
     function upload_MammalsFile() {
         let element: HTMLElement = document.querySelector(
@@ -163,6 +165,71 @@ export const Admin_Panel_Body_Part = ({
         };
     }
 
+    function toggle_MammalsEditView() {
+        toggle_AdminEditView();
+        fetch('http://50.116.3.37:9001/api/mammals_collection')
+            .then((response) => response.json())
+            .then((Data) => {
+                update_AdminEditData(Data);
+            });
+    }
+    function toggle_InsectsEditView() {
+        toggle_AdminEditView();
+        fetch('http://50.116.3.37:9001/api/insects_collection')
+            .then((response) => response.json())
+            .then((Data) => {
+                update_AdminEditData(Data);
+            });
+    }
+    function toggle_FishEditView() {
+        toggle_AdminEditView();
+        fetch('http://50.116.3.37:9001/api/fish_collection')
+            .then((response) => response.json())
+            .then((Data) => {
+                update_AdminEditData(Data);
+            });
+    }
+    function toggle_ArboretumEditView() {
+        toggle_AdminEditView();
+        fetch('http://50.116.3.37:9001/api/arboretum_collection')
+            .then((response) => response.json())
+            .then((Data) => {
+                update_AdminEditData(Data);
+            });
+    }
+    function toggle_VivariumEditView() {
+        toggle_AdminEditView();
+        fetch('http://50.116.3.37:9001/api/vivarium_collection')
+            .then((response) => response.json())
+            .then((Data) => {
+                update_AdminEditData(Data);
+            });
+    }
+    function toggle_GreenHouseEditView() {
+        toggle_AdminEditView();
+        fetch('http://50.116.3.37:9001/api/green_house_collection')
+            .then((response) => response.json())
+            .then((Data) => {
+                update_AdminEditData(Data);
+            });
+    }
+    function toggle_HerbariumEditView() {
+        toggle_AdminEditView();
+        fetch('http://50.116.3.37:9001/api/herbarium_collection')
+            .then((response) => response.json())
+            .then((Data) => {
+                update_AdminEditData(Data);
+            });
+    }
+    function toggle_HerpsEditView() {
+        toggle_AdminEditView();
+        fetch('http://50.116.3.37:9001/api/herps_collection')
+            .then((response) => response.json())
+            .then((Data) => {
+                update_AdminEditData(Data);
+            });
+    }
+
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-AdminPanelBodyPart-style']}>
@@ -173,7 +240,7 @@ export const Admin_Panel_Body_Part = ({
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={toggle_AdminEditView}
+                            onClick={toggle_MammalsEditView}
                         >
                             Edit
                         </button>
@@ -211,7 +278,7 @@ export const Admin_Panel_Body_Part = ({
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={toggle_AdminEditView}
+                            onClick={toggle_InsectsEditView}
                         >
                             Edit
                         </button>
@@ -239,7 +306,7 @@ export const Admin_Panel_Body_Part = ({
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={toggle_AdminEditView}
+                            onClick={toggle_FishEditView}
                         >
                             Edit
                         </button>
@@ -264,7 +331,7 @@ export const Admin_Panel_Body_Part = ({
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={toggle_AdminEditView}
+                            onClick={toggle_ArboretumEditView}
                         >
                             Edit
                         </button>
@@ -297,7 +364,7 @@ export const Admin_Panel_Body_Part = ({
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={toggle_AdminEditView}
+                            onClick={toggle_VivariumEditView}
                         >
                             Edit
                         </button>
@@ -330,7 +397,7 @@ export const Admin_Panel_Body_Part = ({
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={toggle_AdminEditView}
+                            onClick={toggle_GreenHouseEditView}
                         >
                             Edit
                         </button>
@@ -363,7 +430,7 @@ export const Admin_Panel_Body_Part = ({
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={toggle_AdminEditView}
+                            onClick={toggle_HerbariumEditView}
                         >
                             Edit
                         </button>
@@ -396,7 +463,7 @@ export const Admin_Panel_Body_Part = ({
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={toggle_AdminEditView}
+                            onClick={toggle_HerpsEditView}
                         >
                             Edit
                         </button>

@@ -13,6 +13,9 @@ export interface AdminPanelViewProps {
     toggle_AdminEditView: () => void;
     toggle_AdminHistoryView: () => void;
     bool_AdminHistoryView: boolean;
+    bool_AdminEditView: boolean;
+    update_AdminEditData: (AdminEditData: any) => void;
+    object_AdminEditData: any;
 }
 
 /**
@@ -25,6 +28,9 @@ export const AdminPanelView = ({
     toggle_AdminEditView,
     toggle_AdminHistoryView,
     bool_AdminHistoryView,
+    bool_AdminEditView,
+    update_AdminEditData,
+    object_AdminEditData,
 }: AdminPanelViewProps) => {
     const [bool_Loading, set_Loading] = useState<boolean>(true);
 
@@ -58,12 +64,13 @@ export const AdminPanelView = ({
                 toggle_LoadingTrue={toggle_LoadingTrue}
                 toggle_LoadingFalse={toggle_LoadingFalse}
                 toggle_AdminEditView={toggle_AdminEditView}
+                update_AdminEditData={update_AdminEditData}
             />
             <div hidden={bool_AdminHistoryView}>
                 <Admin_History_Body_Part />
             </div>
-            <div hidden>
-                <Admin_Edit_Body_Part />
+            <div hidden={bool_AdminEditView}>
+                <Admin_Edit_Body_Part object_AdminEditData={object_AdminEditData} />
             </div>
         </div>
     );
