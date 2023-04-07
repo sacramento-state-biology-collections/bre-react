@@ -5,6 +5,7 @@ import AdminPanelBodyPart_module from '../admin-panel-body-part/admin-panel-body
 export interface Admin_User_Header_PartProps {
     className?: string;
     toggle_WelcomeView: () => void;
+    toggle_AdminHistoryView: () => void;
 }
 
 /**
@@ -14,6 +15,7 @@ export interface Admin_User_Header_PartProps {
 export const Admin_User_Header_Part = ({
     className,
     toggle_WelcomeView,
+    toggle_AdminHistoryView,
 }: Admin_User_Header_PartProps) => {
     return (
         <div className={classNames(styles.root, className)}>
@@ -27,7 +29,11 @@ export const Admin_User_Header_Part = ({
                         >
                             Home
                         </button>
-                        <select className={styles['select-AdminUserHeaderPart-style']}>
+                        <select
+                            className={styles['select-AdminUserHeaderPart-style']}
+                            onChange={toggle_AdminHistoryView}
+                            name="history"
+                        >
                             <option>Settings</option>
                             <option>Mammals</option>
                             <option>Insects</option>

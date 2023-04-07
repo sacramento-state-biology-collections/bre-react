@@ -13,12 +13,14 @@ export const Admin_History_Body_Part = ({ className }: Admin_History_Body_PartPr
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-AdminHistoryBodyPart-style']}>
-                <div className={styles['div1-AdminHistoryBodyPart-style']}>Date</div>
                 <div className={styles['div2-AdminHistoryBodyPart-style']}>
                     <span className={styles['span-AdminHistoryBodyPart-style']}>
                         <img
-                            src={'../styles/Microsoft_Office_Excel_(2019–present).svg.png'}
+                            src={
+                                'https://logodownload.org/wp-content/uploads/2020/04/excel-logo-0.png'
+                            }
                             className={styles['img-AdminHistoryBodyPart-style']}
+                            title={'Excel Logo'}
                         />
                         <a href="/" className={styles['a-AdminHistoryBodyPart-style']}>
                             Link

@@ -13,6 +13,7 @@ function App() {
     const [bool_AdminPanelView, set_AdminPanelView] = useState(true);
     const [bool_AdminCollectionView, set_AdminCollectionView] = useState(true);
     const [bool_AdminEditView, set_AdminEditView] = useState(true);
+    const [bool_AdminHistoryView, set_AdminHistoryView] = useState(true);
     const [object_CollectionData, set_CollectionData] = useState([]);
     const [object_CardData, set_CardData] = useState([]);
     const [object_SpecimenData, set_SpecimenData] = useState([]);
@@ -52,6 +53,15 @@ function App() {
     function toggle_AdminEditView() {
         set_AdminPanelView(!bool_AdminPanelView);
         set_AdminEditView(!bool_AdminEditView);
+    }
+
+    function toggle_AdminHistoryView() {
+        let select = document.getElementsByName('history')[0] as HTMLSelectElement;
+        if (select.value === 'Settings') {
+            set_AdminHistoryView(true);
+        } else {
+            set_AdminHistoryView(false);
+        }
     }
 
     function update_CollectionData(CollectionData: any) {
@@ -118,6 +128,8 @@ function App() {
                     <AdminPanelView
                         toggle_WelcomeView={toggle_WelcomeView}
                         toggle_AdminEditView={toggle_AdminEditView}
+                        toggle_AdminHistoryView={toggle_AdminHistoryView}
+                        bool_AdminHistoryView={bool_AdminHistoryView}
                     />
                 </div>
                 <div hidden={bool_AdminEditView}>
