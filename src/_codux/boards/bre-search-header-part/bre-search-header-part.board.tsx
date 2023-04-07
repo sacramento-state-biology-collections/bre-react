@@ -8,7 +8,7 @@ export default createBoard({
             toggle_WelcomeView={() => {}}
             toggle_BreSearchBodyPart={() => {}}
             bool_BreSearchBodyPart={false}
-            clicked={() => {}}
+            table_Clicked={() => {}}
             update_CollectionName={() => {}}
             update_SearchCriteria={() => {}}
         />
