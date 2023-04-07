@@ -32,6 +32,7 @@ export const Admin_User_Header_Part = ({
                         <select
                             className={styles['select-AdminUserHeaderPart-style']}
                             onChange={toggle_AdminHistoryView}
+                            name="history"
                         >
                             <option>Settings</option>
                             <option>Mammals</option>

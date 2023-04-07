@@ -1,15 +1,17 @@
 import styles from './admin-panel-view.module.scss';
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Admin_User_Header_Part } from '../admin-user-header-part/admin-user-header-part';
 import { Admin_Panel_Body_Part } from '../admin-panel-body-part/admin-panel-body-part';
 import { Table_Loading_Img_Part } from '../table-loading-img-part/table-loading-img-part';
+import { Admin_History_Body_Part } from '../admin-history-body-part/admin-history-body-part';
 
 export interface AdminPanelViewProps {
     className?: string;
     toggle_WelcomeView: () => void;
     toggle_AdminEditView: () => void;
     toggle_AdminHistoryView: () => void;
+    bool_AdminHistoryView: boolean;
 }
 
 /**
@@ -21,6 +23,7 @@ export const AdminPanelView = ({
     toggle_WelcomeView,
     toggle_AdminEditView,
     toggle_AdminHistoryView,
+    bool_AdminHistoryView,
 }: AdminPanelViewProps) => {
     const [bool_Loading, set_Loading] = useState<boolean>(true);
 
@@ -30,6 +33,16 @@ export const AdminPanelView = ({
     function toggle_LoadingFalse() {
         set_Loading(false);
     }
+
+    function toggle_HistoryView() {
+        toggle_AdminHistoryView();
+    }
+
+    // write a useeffect to toggle history view when ever the select tag changes
+    useEffect(() => {
+        let select = document.getElementsByName('history')[0] as HTMLSelectElement;
+        select.addEventListener('change', toggle_HistoryView);
+    }, []);
 
     return (
         <div className={classNames(styles.root, className)}>
@@ -45,6 +58,9 @@ export const AdminPanelView = ({
                 toggle_LoadingFalse={toggle_LoadingFalse}
                 toggle_AdminEditView={toggle_AdminEditView}
             />
+            <div hidden={bool_AdminHistoryView}>
+                <Admin_History_Body_Part />
+            </div>
         </div>
     );
 };

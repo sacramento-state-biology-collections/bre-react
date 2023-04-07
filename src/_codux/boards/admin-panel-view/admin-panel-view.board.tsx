@@ -8,6 +8,7 @@ export default createBoard({
             toggle_WelcomeView={() => {}}
             toggle_AdminEditView={() => {}}
             toggle_AdminHistoryView={() => {}}
+            bool_AdminHistoryView={true}
         />
     ),
 });

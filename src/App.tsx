@@ -5,7 +5,6 @@ import { AdminLoginView } from './components/admin-login-view/admin-login-view';
 import { AdminPanelView } from './components/admin-panel-view/admin-panel-view';
 import { AdminCollectionView } from './components/admin-collection-view/admin-collection-view';
 import { AdminEditView } from './components/admin-edit-view/admin-edit-view';
-import { AdminHistoryView } from './components/admin-history-view/admin-history-view';
 
 function App() {
     const [bool_WelcomeView, set_WelcomeView] = useState(false);
@@ -57,8 +56,12 @@ function App() {
     }
 
     function toggle_AdminHistoryView() {
-        set_AdminPanelView(!bool_AdminPanelView);
-        set_AdminHistoryView(!bool_AdminHistoryView);
+        let select = document.getElementsByName('history')[0] as HTMLSelectElement;
+        if (select.value === 'Settings') {
+            set_AdminHistoryView(true);
+        } else {
+            set_AdminHistoryView(false);
+        }
     }
 
     function update_CollectionData(CollectionData: any) {
@@ -126,13 +129,11 @@ function App() {
                         toggle_WelcomeView={toggle_WelcomeView}
                         toggle_AdminEditView={toggle_AdminEditView}
                         toggle_AdminHistoryView={toggle_AdminHistoryView}
+                        bool_AdminHistoryView={bool_AdminHistoryView}
                     />
                 </div>
                 <div hidden={bool_AdminEditView}>
                     <AdminEditView toggle_AdminEditView={toggle_AdminEditView} />
-                </div>
-                <div hidden={bool_AdminHistoryView}>
-                    <AdminHistoryView toggle_AdminHistoryView={toggle_AdminHistoryView} />
                 </div>
             </div>
         );
