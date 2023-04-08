@@ -15,23 +15,57 @@ export interface Bre_Search_Header_PartProps {
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-bre-search-header-parts-and-templates
  */
-export const Bre_Search_Header_Part = ({className, toggle_WelcomeView, toggle_BreSearchBodyPart, bool_BreSearchBodyPart, clicked, update_CollectionName, update_SearchCriteria }: Bre_Search_Header_PartProps) => {
+export const Bre_Search_Header_Part = ({
+    className,
+    toggle_WelcomeView,
+    toggle_BreSearchBodyPart,
+    bool_BreSearchBodyPart,
+    clicked,
+    update_CollectionName,
+    update_SearchCriteria,
+}: Bre_Search_Header_PartProps) => {
     function run_HeaderEvent() {
-        if(bool_BreSearchBodyPart === false) {toggle_BreSearchBodyPart();}
-        update_CollectionName((document.getElementsByName('collection')[0] as HTMLSelectElement).value);
-        update_SearchCriteria((document.getElementsByName('searchInput')[0] as HTMLInputElement).value);
+        if (bool_BreSearchBodyPart === false) {
+            toggle_BreSearchBodyPart();
+        }
+        update_CollectionName(
+            (document.getElementsByName('collection')[0] as HTMLSelectElement).value
+        );
+        update_SearchCriteria(
+            (document.getElementsByName('searchInput')[0] as HTMLInputElement).value
+        );
         clicked();
     }
-    
+
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-breSearchHeaderPart-style']}>
+                <div className={styles['div2-breSearchHeaderPart-Toggle']}>
+                    Change Views
+                    <button>
+                        <img
+                            src="https://static.thenounproject.com/png/1055380-200.png"
+                            alt="buttonpng"
+                            className={classNames(
+                                styles['button-breSearchHeader-viewChange'],
+                                styles['image-BreSearch-changeView']
+                            )}
+                        />
+                    </button>
+                    <button>
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/512/58/58477.png"
+                            alt="buttonpng"
+                            className={styles['button-breSearchHeader-viewChange']}
+                        />
+                    </button>
+                </div>
                 <span className={styles['span-breSearchHeaderPart-style']}>
                     Biology Research Engine
                 </span>
                 <div className={styles['div1-breSearchHeaderPart-style']}>
                     <button
-                        title='Home'
+                        title="Home"
                         className={styles['button-breSearchHeaderPart-style']}
                         onClick={toggle_WelcomeView}
                     >
@@ -43,11 +77,14 @@ export const Bre_Search_Header_Part = ({className, toggle_WelcomeView, toggle_Br
                         />
                     </button>
                     <input
-                        name='searchInput'
+                        name="searchInput"
                         className={styles['input-breSearchHeaderPart-style']}
                         placeholder="Search All"
                     />
-                    <select name='collection' className={styles['select-breSearchHeaderPart-style']}>
+                    <select
+                        name="collection"
+                        className={styles['select-breSearchHeaderPart-style']}
+                    >
                         <option>All</option>
                         <option>Arboretum</option>
                         <option>Fish</option>
@@ -59,7 +96,7 @@ export const Bre_Search_Header_Part = ({className, toggle_WelcomeView, toggle_Br
                         <option>Vivarium</option>
                     </select>
                     <button
-                        title='Search'
+                        title="Search"
                         className={styles['button-breSearchHeaderPart-style']}
                         onClick={run_HeaderEvent}
                     >
