@@ -27,21 +27,21 @@
 }
 .div2-breSearchCardPart-style {
   display: grid;
-  margin: 2vh;
+  margin: 2vh 4vh 2vh 2vh;
   grid-template-rows: 1fr;
   grid-auto-flow: row;
-  justify-items: end;
+  justify-items: center;
   height: 60vh;
 }
 .button0-breSearchCardPart-style {
-  width: 4vw;
-  height: 5vh;
   border: 1px solid #ff0000;
   background-color: #ff0000;
   border-radius: 10px;
+  height: 30px;
+  width: 30px;
 }
 .button1-breSearchCardPart-style {
   border: 1px solid #20d349;
   background-color: #20d349;
-  font-size: 1.5vw;
+  font-size: 1vw;
 }

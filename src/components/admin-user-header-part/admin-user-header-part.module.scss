@@ -14,20 +14,29 @@
 }
 .span-AdminUserHeaderPart-style {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
 }
 .h1-AdminUserHeaderPart-style {
   margin: 2vw;
   color: #ffffff;
+  font-size: 4vw;
 }
 .button-AdminUserHeaderPart-style {
   color: #ffffff;
-  margin: 1vw 2vw 1vw 1vw;
   background-color: #0d3623;
+  font-size: 1.25vw;
+  border: 1px solid #0d3623;
 }
 .span1-AdminUserHeaderPart-style {
   color: #ffffff;
-  margin-right: 2vw;
-  font-size: 2vw;
+  margin: 2vw;
+  font-size: 2.5vw;
+}
+.select-AdminUserHeaderPart-style {
+  font-size: 1.25vw;
+  color: #ffffff;
+  border: 0px solid black;
+  background-color: #0d3623;
+  text-align: center;
 }

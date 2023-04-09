@@ -13,11 +13,15 @@ export interface WelcomeViewProps {
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-welcome-views-and-templates
  */
-export const WelcomeView = ({ className, toggle_TableEngineView, toggle_AdminLoginView }: WelcomeViewProps) => {
+export const WelcomeView = ({
+    className,
+    toggle_TableEngineView,
+    toggle_AdminLoginView,
+}: WelcomeViewProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <Welcome_Header_Part toggle_AdminLoginView={toggle_AdminLoginView}/>
-            <Welcome_Body_Part toggle_TableEngineView={toggle_TableEngineView}/>
+            <Welcome_Header_Part toggle_AdminLoginView={toggle_AdminLoginView} />
+            <Welcome_Body_Part toggle_TableEngineView={toggle_TableEngineView} />
         </div>
     );
 };

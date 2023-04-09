@@ -1,12 +1,13 @@
 import styles from './bre-search-header-part.module.scss';
 import classNames from 'classnames';
+import { useEffect } from 'react';
 
 export interface Bre_Search_Header_PartProps {
     className?: string;
     toggle_WelcomeView: () => void;
     toggle_BreSearchBodyPart: () => void;
     bool_BreSearchBodyPart: boolean;
-    clicked: () => void;
+    table_Clicked: () => void;
     update_CollectionName: (CollectionName: string) => void;
     update_SearchCriteria: (SearchCriteria: string) => void;
 }
@@ -20,7 +21,7 @@ export const Bre_Search_Header_Part = ({
     toggle_WelcomeView,
     toggle_BreSearchBodyPart,
     bool_BreSearchBodyPart,
-    clicked,
+    table_Clicked,
     update_CollectionName,
     update_SearchCriteria,
 }: Bre_Search_Header_PartProps) => {
@@ -28,15 +29,23 @@ export const Bre_Search_Header_Part = ({
         if (bool_BreSearchBodyPart === false) {
             toggle_BreSearchBodyPart();
         }
+        update_Props();
+        table_Clicked();
+    }
+
+    function update_Props() {
         update_CollectionName(
             (document.getElementsByName('collection')[0] as HTMLSelectElement).value
         );
         update_SearchCriteria(
             (document.getElementsByName('searchInput')[0] as HTMLInputElement).value
         );
-        clicked();
     }
 
+    useEffect(() => {
+        update_Props();
+    }, []);
+    
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-breSearchHeaderPart-style']}>
@@ -71,7 +80,6 @@ export const Bre_Search_Header_Part = ({
                     >
                         <img
                             alt=""
-                            // src="../styles/Home_Button.svg"
                             src="Home_Button.svg"
                             className={styles['img-breSearchHeaderPart-style']}
                         />
@@ -80,20 +88,21 @@ export const Bre_Search_Header_Part = ({
                         name="searchInput"
                         className={styles['input-breSearchHeaderPart-style']}
                         placeholder="Search All"
+                        onInput={update_Props}
                     />
                     <select
+                        title="Collection"
                         name="collection"
                         className={styles['select-breSearchHeaderPart-style']}
                     >
-                        <option>All</option>
-                        <option>Arboretum</option>
-                        <option>Fish</option>
-                        <option>Green House</option>
-                        <option>Herbarium</option>
-                        <option>Herps</option>
-                        <option>Insects</option>
-                        <option>Mammals</option>
-                        <option>Vivarium</option>
+                        <option>mammals</option>
+                        <option>arboretum</option>
+                        <option>fish</option>
+                        <option>green_house</option>
+                        <option>herbarium</option>
+                        <option>herps</option>
+                        <option>insects</option>
+                        <option>vivarium</option>
                     </select>
                     <button
                         title="Search"
