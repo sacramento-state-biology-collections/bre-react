@@ -45,10 +45,30 @@ export const Bre_Search_Header_Part = ({
     useEffect(() => {
         update_Props();
     }, []);
-
+    
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-breSearchHeaderPart-style']}>
+                <div className={styles['div2-breSearchHeaderPart-Toggle']}>
+                    Change Views
+                    <button>
+                        <img
+                            src="https://static.thenounproject.com/png/1055380-200.png"
+                            alt="buttonpng"
+                            className={classNames(
+                                styles['button-breSearchHeader-viewChange'],
+                                styles['image-BreSearch-changeView']
+                            )}
+                        />
+                    </button>
+                    <button>
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/512/58/58477.png"
+                            alt="buttonpng"
+                            className={styles['button-breSearchHeader-viewChange']}
+                        />
+                    </button>
+                </div>
                 <span className={styles['span-breSearchHeaderPart-style']}>
                     Biology Research Engine
                 </span>
