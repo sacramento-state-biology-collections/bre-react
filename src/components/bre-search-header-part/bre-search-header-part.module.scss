@@ -45,3 +45,26 @@
   background-color: #2b932b;
   width: 10vw;
 }
+
+.div2-breSearchHeaderPart-Toggle {
+  position: absolute;
+  left: 50px;
+  font-style: italic;
+  font-weight: 500;
+  text-align: start;
+  direction: ltr;
+  bottom: 2vh;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 10px;
+  justify-items: center;
+}
+.button-breSearchHeader-viewChange {
+  text-align: center;
+  height: 20px;
+  width: 20px;
+}
+.image-BreSearch-changeView {
+  width: 20px;
+  color: #b43636;
+}
