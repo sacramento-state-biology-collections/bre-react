@@ -8,6 +8,7 @@ export default createBoard({
             toggle_LoadingTrue={() => {}}
             toggle_LoadingFalse={() => {}}
             toggle_AdminEditView={() => {}}
+            update_AdminEditData={() => {}}
         />
     ),
     environmentProps: {

@@ -3,15 +3,12 @@ import { WelcomeView } from './components/welcome-view/welcome-view';
 import { TableEngineView } from './components/table-engine-view/table-engine-view';
 import { AdminLoginView } from './components/admin-login-view/admin-login-view';
 import { AdminPanelView } from './components/admin-panel-view/admin-panel-view';
-import { AdminCollectionView } from './components/admin-collection-view/admin-collection-view';
-import { AdminEditView } from './components/admin-edit-view/admin-edit-view';
 
 function App() {
     const [bool_WelcomeView, set_WelcomeView] = useState(false);
     const [bool_TableEngineView, set_TableEngineView] = useState(true);
     const [bool_AdminLoginView, set_AdminLoginView] = useState(true);
     const [bool_AdminPanelView, set_AdminPanelView] = useState(true);
-    const [bool_AdminCollectionView, set_AdminCollectionView] = useState(true);
     const [bool_AdminEditView, set_AdminEditView] = useState(true);
     const [bool_AdminHistoryView, set_AdminHistoryView] = useState(true);
     const [object_CollectionData, set_CollectionData] = useState([]);
@@ -20,6 +17,7 @@ function App() {
     const [string_CollectionName, set_CollectionName] = useState('');
     const [string_SearchCriteria, set_SearchCriteria] = useState('');
     const [object_LoginData, set_LoginData] = useState({});
+    const [object_AdminEditData, set_AdminEditData] = useState([]);
 
     function toggle_WelcomeView() {
         if (bool_AdminPanelView === false) {
@@ -46,12 +44,7 @@ function App() {
         set_AdminPanelView(!bool_AdminPanelView);
     }
 
-    function toggle_AdminCollectionView() {
-        set_AdminCollectionView(!bool_AdminCollectionView);
-    }
-
     function toggle_AdminEditView() {
-        set_AdminPanelView(!bool_AdminPanelView);
         set_AdminEditView(!bool_AdminEditView);
     }
 
@@ -74,6 +67,10 @@ function App() {
 
     function update_SpecimenData(SpecimenData: any) {
         set_SpecimenData(SpecimenData);
+    }
+
+    function update_AdminEditData(AdminEditData: any) {
+        set_AdminEditData(AdminEditData);
     }
 
     function update_CollectionName(CollectionName: string) {
@@ -130,10 +127,10 @@ function App() {
                         toggle_AdminEditView={toggle_AdminEditView}
                         toggle_AdminHistoryView={toggle_AdminHistoryView}
                         bool_AdminHistoryView={bool_AdminHistoryView}
+                        bool_AdminEditView={bool_AdminEditView}
+                        update_AdminEditData={update_AdminEditData}
+                        object_AdminEditData={object_AdminEditData}
                     />
-                </div>
-                <div hidden={bool_AdminEditView}>
-                    <AdminEditView toggle_AdminEditView={toggle_AdminEditView} />
                 </div>
             </div>
         );

@@ -3,32 +3,42 @@ import classNames from 'classnames';
 
 export interface Admin_Edit_Body_PartProps {
     className?: string;
+    object_AdminEditData: any;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-admin-edit-header-parts-and-templates
  */
-export const Admin_Edit_Body_Part = ({ className }: Admin_Edit_Body_PartProps) => {
+export const Admin_Edit_Body_Part = ({
+    className,
+    object_AdminEditData,
+}: Admin_Edit_Body_PartProps) => {
+    function getData() {
+        return object_AdminEditData.map((item: any, index: number) => {
+            return (
+                <tr className={styles['tr-AdminEditBodyPart-style']} key={index}>
+                    <td>{item.catalog}</td>
+                    <td>{item.common_name}</td>
+                    <td>
+                        <button>Modify</button>
+                    </td>
+                </tr>
+            );
+        });
+    }
+
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-AdminEditBodyPart-style']}>
-                <table>
-                    <tbody className={styles['tbody-AdminEditBodyPart-style']}>
-                        <tr
-                            className={classNames(
-                                styles['tr-breSearchTablePart-style'],
-                                styles['tr-AdminEditTableHeaderPart-style']
-                            )}
-                        >
-                            <th className={styles['th-AdminEditBodyPart-style']}>Common Name</th>
-                            <th className={styles['th-AdminEditBodyPart-style']}>
-                                Scientific Name
-                            </th>
-                            <th className={styles['th-AdminEditBodyPart-style']}>Prep Type</th>
-                            <th className={styles['th-AdminEditBodyPart-style']}>Drawer #</th>
-                            <th className={styles['th-AdminEditBodyPart-style']}>View More</th>
+                <table className={styles['table-AdminEditBodyPart-style']}>
+                    <tbody>
+                        <tr className={styles['tr-AdminEditBodyPart-style']}>
+                            <th>Catalog</th>
+                            <th>Common Name</th>
+                            <th>Modify</th>
                         </tr>
+                        {getData()}
                     </tbody>
                 </table>
             </div>
