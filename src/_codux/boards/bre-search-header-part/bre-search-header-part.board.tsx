@@ -7,6 +7,8 @@ export default createBoard({
         <Bre_Search_Header_Part
             toggle_WelcomeView={() => {}}
             toggle_BreSearchBodyPart={() => {}}
+            toggle_SearchTablePart={() => {}}
+            toggle_SearchTableCardPart={() => {}}
             bool_BreSearchBodyPart={false}
             table_Clicked={() => {}}
             update_CollectionName={() => {}}
