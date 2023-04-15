@@ -45,7 +45,15 @@ export const Bre_Search_Header_Part = ({
     useEffect(() => {
         update_Props();
     }, []);
-    
+
+    function reset_table() {
+        if (bool_BreSearchBodyPart === true) {
+            toggle_BreSearchBodyPart();
+        }
+
+        toggle_WelcomeView();
+    }
+
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-breSearchHeaderPart-style']}>
@@ -76,7 +84,7 @@ export const Bre_Search_Header_Part = ({
                     <button
                         title="Home"
                         className={styles['button-breSearchHeaderPart-style']}
-                        onClick={toggle_WelcomeView}
+                        onClick={reset_table}
                     >
                         <img
                             alt=""
