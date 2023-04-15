@@ -50,7 +50,6 @@ export const Bre_Search_Header_Part = ({
         if (bool_BreSearchBodyPart === true) {
             toggle_BreSearchBodyPart();
         }
-
         toggle_WelcomeView();
     }
 
@@ -95,7 +94,7 @@ export const Bre_Search_Header_Part = ({
                     <input
                         name="searchInput"
                         className={styles['input-breSearchHeaderPart-style']}
-                        placeholder="Search All"
+                        placeholder="Search"
                         onInput={update_Props}
                     />
                     <select
@@ -103,14 +102,14 @@ export const Bre_Search_Header_Part = ({
                         name="collection"
                         className={styles['select-breSearchHeaderPart-style']}
                     >
-                        <option>mammals</option>
-                        <option>arboretum</option>
-                        <option>fish</option>
-                        <option>green_house</option>
-                        <option>herbarium</option>
-                        <option>herps</option>
-                        <option>insects</option>
-                        <option>vivarium</option>
+                        <option>Mammals</option>
+                        <option>Arboretum</option>
+                        <option>Fish</option>
+                        <option>Green House</option>
+                        <option>Herbarium</option>
+                        <option>Herps</option>
+                        <option>Insects</option>
+                        <option>Vivarium</option>
                     </select>
                     <button
                         title="Search"

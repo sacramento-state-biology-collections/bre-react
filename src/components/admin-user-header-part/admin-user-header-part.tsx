@@ -34,7 +34,7 @@ export const Admin_User_Header_Part = ({
                             onChange={toggle_AdminHistoryView}
                             name="history"
                         >
-                            <option>Settings</option>
+                            <option>History</option>
                             <option>Mammals</option>
                             <option>Insects</option>
                             <option>Fish</option>

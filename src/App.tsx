@@ -50,7 +50,7 @@ function App() {
 
     function toggle_AdminHistoryView() {
         let select = document.getElementsByName('history')[0] as HTMLSelectElement;
-        if (select.value === 'Settings') {
+        if (select.value === 'History') {
             set_AdminHistoryView(true);
         } else {
             set_AdminHistoryView(false);

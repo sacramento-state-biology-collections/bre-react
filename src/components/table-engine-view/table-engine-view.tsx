@@ -60,6 +60,7 @@ export const TableEngineView = ({
     }
 
     function click_QuickSearch(collection: String) {
+        update_CollectionData([]);
         if (bool_BreSearchBodyPart === false) {
             set_BreSearchBodyPart(true);
             set_SearchTablePart(false);
@@ -72,12 +73,13 @@ export const TableEngineView = ({
     }
 
     function table_Clicked() {
+        update_CollectionData([]);
         if (bool_BreSearchBodyPart === false) {
             set_BreSearchBodyPart(true);
             set_SearchTablePart(false);
         }
         fetch(
-            `http://50.116.3.37:9001/api/${string_CollectionName}_collection/common_name/${string_SearchCriteria}`
+            `http://127.0.0.1:9001/api/${string_CollectionName}_collection/${string_SearchCriteria}`
         )
             .then((response) => response.json())
             .then((Data) => {
