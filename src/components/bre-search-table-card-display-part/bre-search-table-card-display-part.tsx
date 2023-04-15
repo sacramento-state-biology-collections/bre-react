@@ -3,6 +3,8 @@ import classNames from 'classnames';
 
 export interface Bre_Search_Table_CardDisplay_PartProps {
     className?: string;
+    card_Clicked: (item: any) => void;
+    object_CollectionData: any;
 }
 
 /**
@@ -11,43 +13,52 @@ export interface Bre_Search_Table_CardDisplay_PartProps {
  */
 export const Bre_Search_Table_CardDisplay_Part = ({
     className,
+    card_Clicked,
+    object_CollectionData,
 }: Bre_Search_Table_CardDisplay_PartProps) => {
+    function get_Data() {
+        return object_CollectionData.map((item: any, index: number) => {
+            return (
+                <button
+                    className={styles['btn-BreSearchTableCardDisplayPart-style']}
+                    key={index}
+                    onClick={() => card_Clicked(item)}
+                >
+                    <div className={styles['div1-BreSearchTableCardDisplayPart-Style']}>
+                        <img
+                            src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
+                            className={styles['img-BreSearchTableCardDisplayPart-Style']}
+                        />
+                    </div>
+                    <div className={styles['div4-SearchTableCardDisplayPart-Style']}>
+                        <div className={styles['div2-BreSearchTableCardDisplayPart-style']}>
+                            Common Name: {item.common_name}
+                        </div>
+                        <div className={styles['div2-BreSearchTableCardDisplayPart-style']}>
+                            Scientific Name: {item.scientific_name}
+                        </div>
+                    </div>
+                </button>
+            );
+            // return (
+            //     <tr className={styles['tr-breSearchTablePart-style']} key={index}>
+            //         <td>{item.catalog}</td>
+            //         <td>{item.common_name}</td>
+            //         <td>{item.scientific_name}</td>
+            //         <td>{item.prep_type}</td>
+            //         <td>{item.drawer}</td>
+            //         <td>
+            //             <button onClick={() => card_Clicked(item)}>Button</button>
+            //         </td>
+            //     </tr>
+            // );
+        });
+    }
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-BreSearchTableCardDisplay-Style']}>
                 <div className={styles['div3-BreSearchTableCardDisplayPart-style']}>
-                    <button className={styles['btn-BreSearchTableCardDisplayPart-style']}>
-                        <div className={styles['div1-BreSearchTableCardDisplayPart-Style']}>
-                            <img
-                                src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
-                                className={styles['img-BreSearchTableCardDisplayPart-Style']}
-                            />
-                        </div>
-                        <div className={styles['div4-SearchTableCardDisplayPart-Style']}>
-                            <div className={styles['div2-BreSearchTableCardDisplayPart-style']}>
-                                Scientifc Name
-                            </div>
-                            <div className={styles['div2-BreSearchTableCardDisplayPart-style']}>
-                                Common Name{' '}
-                            </div>
-                        </div>
-                    </button>
-                    <button className={styles['btn-BreSearchTableCardDisplayPart-style']}>
-                        <div className={styles['div1-BreSearchTableCardDisplayPart-Style']}>
-                            <img
-                                src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
-                                className={styles['img-BreSearchTableCardDisplayPart-Style']}
-                            />
-                        </div>
-                        <div className={styles['div4-SearchTableCardDisplayPart-Style']}>
-                            <div className={styles['div2-BreSearchTableCardDisplayPart-style']}>
-                                Scientifc Name
-                            </div>
-                            <div className={styles['div2-BreSearchTableCardDisplayPart-style']}>
-                                Common Name{' '}
-                            </div>
-                        </div>
-                    </button>
+                    {get_Data()}
                 </div>
             </div>
         </div>

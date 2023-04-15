@@ -58,22 +58,27 @@ export const TableEngineView = ({
     function toggle_SearchPagePart() {
         set_SearchPagePart(!bool_SearchPagePart);
         set_SearchCardPart(!bool_SearchCardPart);
-        set_SearchTablePart(!bool_SearchTablePart);
+        if (!bool_SearchPagePart) {
+            toggle_Search();
+        } else {
+            set_SearchTableCardPart(true);
+            set_SearchTablePart(true);
+        }
         set_BreSearchHeaderPart(!bool_BreSearchHeaderPart);
     }
     function toggle_SearchTablePart() {
-        if (!bool_BreSearchBodyPart) set_CurrentSearch(true);
-        else {
+        if (bool_BreSearchBodyPart) {
             set_SearchTablePart(false);
             set_SearchTableCardPart(true);
         }
+        set_CurrentSearch(true);
     }
     function toggle_SearchTableCardPart() {
-        if (!bool_BreSearchBodyPart) set_CurrentSearch(false);
-        else {
+        if (bool_BreSearchBodyPart) {
             set_SearchTablePart(true);
             set_SearchTableCardPart(false);
         }
+        set_CurrentSearch(false);
     }
     function toggle_Search() {
         if (bool_CurrentSearch) {
@@ -149,7 +154,10 @@ export const TableEngineView = ({
                 />
             </div>
             <div hidden={bool_SearchTableCardPart}>
-                <Bre_Search_Table_CardDisplay_Part />
+                <Bre_Search_Table_CardDisplay_Part
+                    card_Clicked={card_Clicked}
+                    object_CollectionData={object_CollectionData}
+                />
             </div>
             <div hidden={bool_SearchCardPart}>
                 <Bre_Search_Card_Part
