@@ -59,6 +59,18 @@ export const TableEngineView = ({
         set_BreSearchHeaderPart(!bool_BreSearchHeaderPart);
     }
 
+    function click_QuickSearch(collection: String) {
+        if (bool_BreSearchBodyPart === false) {
+            set_BreSearchBodyPart(true);
+            set_SearchTablePart(false);
+        }
+        fetch(`http://127.0.0.1:9001/api/${collection}_collection`)
+            .then((response) => response.json())
+            .then((Data) => {
+                update_CollectionData(Data);
+            });
+    }
+
     function table_Clicked() {
         if (bool_BreSearchBodyPart === false) {
             set_BreSearchBodyPart(true);
@@ -98,7 +110,7 @@ export const TableEngineView = ({
                 />
             </div>
             <div hidden={bool_BreSearchBodyPart}>
-                <Bre_Search_Body_Part />
+                <Bre_Search_Body_Part click_QuickSearch={click_QuickSearch} />
             </div>
             <div hidden={bool_SearchTablePart}>
                 <Bre_Search_Table_Part
