@@ -23,9 +23,10 @@ export const Bre_Search_Card_Part = ({
             <div>
                 <h1>{object_CardData.common_name}</h1>
                 <ul>
-                    <li>{object_CardData.scientific_name}</li>
-                    <li>{object_CardData.prep_type}</li>
-                    <li>{object_CardData.drawer}</li>
+                    <li>Catalog: {object_CardData.catalog}</li>
+                    <li>Scientific Name: {object_CardData.scientific_name}</li>
+                    <li>Prep Type: {object_CardData.prep_type}</li>
+                    <li>Drawer: {object_CardData.drawer}</li>
                 </ul>
             </div>
         );
