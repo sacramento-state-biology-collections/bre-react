@@ -79,9 +79,20 @@ export const Admin_Login_Part = ({
                         title="password"
                         name="password"
                     />
-                    <button className={styles['button-AdminLoginView-style']} onClick={start_Login}>
-                        Login
-                    </button>
+                    <div className={styles['div1-AdminLoginView-style']}>
+                        <button
+                            className={styles['button-AdminLoginView-style']}
+                            onClick={start_Login}
+                        >
+                            Return
+                        </button>
+                        <button
+                            className={styles['button-AdminLoginView-style']}
+                            onClick={start_Login}
+                        >
+                            Login
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
