@@ -11,6 +11,7 @@ import { Bre_Search_Body_Part } from '../bre-search-body-part/bre-search-body-pa
 export interface TableEngineViewProps {
     className?: string;
     toggle_WelcomeView: () => void;
+    bool_TableEngineView?: boolean;
     update_CollectionData: (CollectionData: any) => void;
     update_CardData: (CardData: any) => void;
     update_SpecimenData: (Specimen: any) => void;
@@ -30,6 +31,7 @@ export interface TableEngineViewProps {
 export const TableEngineView = ({
     className,
     toggle_WelcomeView,
+    bool_TableEngineView,
     update_CollectionData,
     update_CardData,
     update_SpecimenData,
@@ -93,6 +95,9 @@ export const TableEngineView = ({
             set_SearchTableCardPart(false);
         }
     }
+    function can_Search() {
+        return !bool_BreSearchHeaderPart && !bool_TableEngineView;
+    }
     function refresh_View() {
         set_BreSearchBodyPart(false);
         set_SearchTablePart(true);
@@ -149,6 +154,7 @@ export const TableEngineView = ({
                     toggle_SearchTablePart={toggle_SearchTablePart}
                     toggle_SearchTableCardPart={toggle_SearchTableCardPart}
                     bool_BreSearchBodyPart={bool_BreSearchBodyPart}
+                    can_Search={can_Search}
                     table_Clicked={table_Clicked}
                     refresh_View={refresh_View}
                     update_CollectionName={update_CollectionName}

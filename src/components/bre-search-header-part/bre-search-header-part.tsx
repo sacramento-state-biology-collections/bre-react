@@ -9,6 +9,7 @@ export interface Bre_Search_Header_PartProps {
     toggle_SearchTablePart: () => void;
     toggle_SearchTableCardPart: () => void;
     bool_BreSearchBodyPart: boolean;
+    can_Search: () => boolean;
     table_Clicked: () => void;
     refresh_View: () => void;
     update_CollectionName: (CollectionName: string) => void;
@@ -26,6 +27,7 @@ export const Bre_Search_Header_Part = ({
     toggle_SearchTablePart,
     toggle_SearchTableCardPart,
     bool_BreSearchBodyPart,
+    can_Search,
     table_Clicked,
     refresh_View,
     update_CollectionName,
@@ -47,15 +49,34 @@ export const Bre_Search_Header_Part = ({
             (document.getElementsByName('searchInput')[0] as HTMLInputElement).value
         );
     }
+    function reset_table() {
+        refresh_View();
+        toggle_WelcomeView();
+    }
 
     useEffect(() => {
         update_Props();
     }, []);
 
-    function reset_table() {
-        refresh_View();
-        toggle_WelcomeView();
-    }
+    useEffect(() => {
+        const keyDownHandler = (event: KeyboardEvent) => {
+            if (event.key === 'Enter' && can_Search()) {
+                event.preventDefault();
+                if (
+                    (document.getElementsByName('searchInput')[0] as HTMLInputElement).value != ''
+                ) {
+                    run_HeaderEvent();
+                } else {
+                    refresh_View();
+                }
+            }
+        };
+        document.addEventListener('keydown', keyDownHandler);
+
+        return () => {
+            document.removeEventListener('keydown', keyDownHandler);
+        };
+    });
 
     return (
         <div className={classNames(styles.root, className)}>

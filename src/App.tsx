@@ -102,6 +102,7 @@ function App() {
                 <div hidden={bool_TableEngineView}>
                     <TableEngineView
                         toggle_WelcomeView={toggle_WelcomeView}
+                        bool_TableEngineView={bool_TableEngineView}
                         update_CollectionData={update_CollectionData}
                         update_CardData={update_CardData}
                         update_SpecimenData={update_SpecimenData}
