@@ -26,6 +26,9 @@ function App() {
         if (bool_TableEngineView === false) {
             set_TableEngineView(!bool_TableEngineView);
         }
+        if (bool_AdminLoginView === false) {
+            set_AdminLoginView(!bool_AdminLoginView);
+        }
         set_WelcomeView(!bool_WelcomeView);
     }
 
@@ -117,6 +120,7 @@ function App() {
                 </div>
                 <div hidden={bool_AdminLoginView}>
                     <AdminLoginView
+                        toggle_WelcomeView={toggle_WelcomeView}
                         toggle_AdminPanelView={toggle_AdminPanelView}
                         update_LoginData={update_LoginData}
                         get_LoginData={get_LoginData}

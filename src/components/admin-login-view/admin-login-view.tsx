@@ -5,6 +5,7 @@ import CryptoJS from 'crypto-js';
 
 export interface AdminLoginViewProps {
     className?: string;
+    toggle_WelcomeView: () => void;
     toggle_AdminPanelView: () => void;
     update_LoginData: (LoginData: any) => Promise<void>;
     get_LoginData: () => any;
@@ -16,6 +17,7 @@ export interface AdminLoginViewProps {
  */
 export const AdminLoginView = ({
     className,
+    toggle_WelcomeView,
     toggle_AdminPanelView,
     update_LoginData,
     get_LoginData,
@@ -52,7 +54,11 @@ export const AdminLoginView = ({
 
     return (
         <div className={classNames(styles.root, className)}>
-            <Admin_Login_Part update_LoginData={update_LoginData} attempt_Login={attempt_Login} />
+            <Admin_Login_Part
+                toggle_WelcomeView={toggle_WelcomeView}
+                update_LoginData={update_LoginData}
+                attempt_Login={attempt_Login}
+            />
         </div>
     );
 };
