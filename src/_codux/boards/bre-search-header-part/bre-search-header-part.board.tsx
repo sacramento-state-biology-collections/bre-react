@@ -11,6 +11,7 @@ export default createBoard({
             toggle_SearchTableCardPart={() => {}}
             bool_BreSearchBodyPart={false}
             table_Clicked={() => {}}
+            refresh_View={() => {}}
             update_CollectionName={() => {}}
             update_SearchCriteria={() => {}}
         />

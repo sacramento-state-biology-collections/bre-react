@@ -10,6 +10,7 @@ export interface Bre_Search_Header_PartProps {
     toggle_SearchTableCardPart: () => void;
     bool_BreSearchBodyPart: boolean;
     table_Clicked: () => void;
+    refresh_View: () => void;
     update_CollectionName: (CollectionName: string) => void;
     update_SearchCriteria: (SearchCriteria: string) => void;
 }
@@ -26,6 +27,7 @@ export const Bre_Search_Header_Part = ({
     toggle_SearchTableCardPart,
     bool_BreSearchBodyPart,
     table_Clicked,
+    refresh_View,
     update_CollectionName,
     update_SearchCriteria,
 }: Bre_Search_Header_PartProps) => {
@@ -51,9 +53,7 @@ export const Bre_Search_Header_Part = ({
     }, []);
 
     function reset_table() {
-        if (bool_BreSearchBodyPart === true) {
-            toggle_BreSearchBodyPart();
-        }
+        refresh_View();
         toggle_WelcomeView();
     }
 

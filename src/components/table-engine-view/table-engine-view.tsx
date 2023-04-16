@@ -51,6 +51,10 @@ export const TableEngineView = ({
 
     function toggle_BreSearchBodyPart() {
         set_BreSearchBodyPart(!bool_BreSearchBodyPart);
+        if (bool_BreSearchBodyPart) {
+            set_SearchTableCardPart(true);
+            set_SearchTableCardPart(true);
+        }
     }
     function toggle_SearchCardPart() {
         set_SearchCardPart(!bool_SearchCardPart);
@@ -88,6 +92,12 @@ export const TableEngineView = ({
             set_SearchTablePart(true);
             set_SearchTableCardPart(false);
         }
+    }
+    function refresh_View() {
+        set_BreSearchBodyPart(false);
+        set_SearchTablePart(true);
+        set_SearchTableCardPart(true);
+        set_SearchCardPart(true);
     }
 
     function click_QuickSearch(collection: String) {
@@ -140,6 +150,7 @@ export const TableEngineView = ({
                     toggle_SearchTableCardPart={toggle_SearchTableCardPart}
                     bool_BreSearchBodyPart={bool_BreSearchBodyPart}
                     table_Clicked={table_Clicked}
+                    refresh_View={refresh_View}
                     update_CollectionName={update_CollectionName}
                     update_SearchCriteria={update_SearchCriteria}
                 />
