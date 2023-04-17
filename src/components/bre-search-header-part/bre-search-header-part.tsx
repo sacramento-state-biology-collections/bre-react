@@ -57,10 +57,6 @@ export const Bre_Search_Header_Part = ({
     }
 
     useEffect(() => {
-        update_Props();
-    }, []);
-
-    useEffect(() => {
         let select = document.getElementsByName('collection')[0] as HTMLSelectElement;
         select.addEventListener('change', update_Props);
     }, []);
@@ -70,6 +66,10 @@ export const Bre_Search_Header_Part = ({
             if (event.key === 'Enter' && can_Search()) {
                 event.preventDefault();
                 run_HeaderEvent();
+            }
+            if (event.key === 'Escape' && can_Search()) {
+                event.preventDefault();
+                refresh_View();
             }
         };
         document.addEventListener('keydown', keyDownHandler);
@@ -128,13 +128,13 @@ export const Bre_Search_Header_Part = ({
                         name="collection"
                         className={styles['select-breSearchHeaderPart-style']}
                     >
-                        <option>Mammals</option>
                         <option>Arboretum</option>
                         <option>Fish</option>
                         <option>Green House</option>
                         <option>Herbarium</option>
                         <option>Herps</option>
                         <option>Insects</option>
+                        <option>Mammals</option>
                         <option>Vivarium</option>
                     </select>
                     <button
