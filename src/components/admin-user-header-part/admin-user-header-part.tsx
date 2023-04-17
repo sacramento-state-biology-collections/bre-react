@@ -6,6 +6,7 @@ export interface Admin_User_Header_PartProps {
     className?: string;
     toggle_WelcomeView: () => void;
     toggle_AdminHistoryView: () => void;
+    refresh_View: () => void;
 }
 
 /**
@@ -16,7 +17,12 @@ export const Admin_User_Header_Part = ({
     className,
     toggle_WelcomeView,
     toggle_AdminHistoryView,
+    refresh_View,
 }: Admin_User_Header_PartProps) => {
+    function return_Home() {
+        refresh_View();
+        toggle_WelcomeView();
+    }
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-AdminUserHeaderPart-style']}>
@@ -25,7 +31,7 @@ export const Admin_User_Header_Part = ({
                     <span className={styles['span-AdminUserHeaderPart-style']}>
                         <button
                             className={styles['button-AdminUserHeaderPart-style']}
-                            onClick={toggle_WelcomeView}
+                            onClick={return_Home}
                         >
                             Home
                         </button>

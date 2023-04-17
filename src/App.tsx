@@ -9,8 +9,6 @@ function App() {
     const [bool_TableEngineView, set_TableEngineView] = useState(true);
     const [bool_AdminLoginView, set_AdminLoginView] = useState(true);
     const [bool_AdminPanelView, set_AdminPanelView] = useState(true);
-    const [bool_AdminEditView, set_AdminEditView] = useState(true);
-    const [bool_AdminHistoryView, set_AdminHistoryView] = useState(true);
     const [object_CollectionData, set_CollectionData] = useState([]);
     const [object_CardData, set_CardData] = useState([]);
     const [object_SpecimenData, set_SpecimenData] = useState([]);
@@ -45,19 +43,6 @@ function App() {
     function toggle_AdminPanelView() {
         set_AdminLoginView(!bool_AdminLoginView);
         set_AdminPanelView(!bool_AdminPanelView);
-    }
-
-    function toggle_AdminEditView() {
-        set_AdminEditView(!bool_AdminEditView);
-    }
-
-    function toggle_AdminHistoryView() {
-        let select = document.getElementsByName('history')[0] as HTMLSelectElement;
-        if (select.value === 'History') {
-            set_AdminHistoryView(true);
-        } else {
-            set_AdminHistoryView(false);
-        }
     }
 
     function update_CollectionData(CollectionData: any) {
@@ -129,10 +114,6 @@ function App() {
                 <div hidden={bool_AdminPanelView}>
                     <AdminPanelView
                         toggle_WelcomeView={toggle_WelcomeView}
-                        toggle_AdminEditView={toggle_AdminEditView}
-                        toggle_AdminHistoryView={toggle_AdminHistoryView}
-                        bool_AdminHistoryView={bool_AdminHistoryView}
-                        bool_AdminEditView={bool_AdminEditView}
                         update_AdminEditData={update_AdminEditData}
                         object_AdminEditData={object_AdminEditData}
                     />

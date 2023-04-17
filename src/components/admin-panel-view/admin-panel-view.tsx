@@ -10,10 +10,6 @@ import { Admin_Edit_Body_Part } from '../admin-edit-body-part/admin-edit-body-pa
 export interface AdminPanelViewProps {
     className?: string;
     toggle_WelcomeView: () => void;
-    toggle_AdminEditView: () => void;
-    toggle_AdminHistoryView: () => void;
-    bool_AdminHistoryView: boolean;
-    bool_AdminEditView: boolean;
     update_AdminEditData: (AdminEditData: any) => void;
     object_AdminEditData: any;
 }
@@ -25,13 +21,12 @@ export interface AdminPanelViewProps {
 export const AdminPanelView = ({
     className,
     toggle_WelcomeView,
-    toggle_AdminEditView,
-    toggle_AdminHistoryView,
-    bool_AdminHistoryView,
-    bool_AdminEditView,
     update_AdminEditData,
     object_AdminEditData,
 }: AdminPanelViewProps) => {
+    const [bool_AdminPanelView, set_AdminPanelView] = useState(false);
+    const [bool_AdminEditView, set_AdminEditView] = useState(true);
+    const [bool_AdminHistoryView, set_AdminHistoryView] = useState(true);
     const [bool_Loading, set_Loading] = useState<boolean>(true);
 
     function toggle_LoadingTrue() {
@@ -40,15 +35,30 @@ export const AdminPanelView = ({
     function toggle_LoadingFalse() {
         set_Loading(false);
     }
-
-    function toggle_HistoryView() {
-        toggle_AdminHistoryView();
+    function toggle_AdminEditView() {
+        set_AdminEditView(!bool_AdminEditView);
+        set_AdminPanelView(!bool_AdminPanelView);
+    }
+    function toggle_AdminHistoryView() {
+        let select = document.getElementsByName('history')[0] as HTMLSelectElement;
+        if (select.value === 'History') {
+            set_AdminHistoryView(true);
+            set_AdminPanelView(false);
+        } else {
+            set_AdminHistoryView(false);
+            set_AdminPanelView(true);
+        }
+    }
+    function refresh_View() {
+        set_AdminPanelView(false);
+        set_AdminEditView(true);
+        set_AdminHistoryView(true);
     }
 
     // write a useeffect to toggle history view when ever the select tag changes
     useEffect(() => {
         let select = document.getElementsByName('history')[0] as HTMLSelectElement;
-        select.addEventListener('change', toggle_HistoryView);
+        select.addEventListener('change', toggle_AdminHistoryView);
     }, []);
 
     return (
@@ -56,16 +66,21 @@ export const AdminPanelView = ({
             <div hidden={bool_Loading}>
                 <Table_Loading_Img_Part />
             </div>
-            <Admin_User_Header_Part
-                toggle_WelcomeView={toggle_WelcomeView}
-                toggle_AdminHistoryView={toggle_AdminHistoryView}
-            />
-            <Admin_Panel_Body_Part
-                toggle_LoadingTrue={toggle_LoadingTrue}
-                toggle_LoadingFalse={toggle_LoadingFalse}
-                toggle_AdminEditView={toggle_AdminEditView}
-                update_AdminEditData={update_AdminEditData}
-            />
+            <div>
+                <Admin_User_Header_Part
+                    toggle_WelcomeView={toggle_WelcomeView}
+                    toggle_AdminHistoryView={toggle_AdminHistoryView}
+                    refresh_View={refresh_View}
+                />
+            </div>
+            <div hidden={bool_AdminPanelView}>
+                <Admin_Panel_Body_Part
+                    toggle_LoadingTrue={toggle_LoadingTrue}
+                    toggle_LoadingFalse={toggle_LoadingFalse}
+                    toggle_AdminEditView={toggle_AdminEditView}
+                    update_AdminEditData={update_AdminEditData}
+                />
+            </div>
             <div hidden={bool_AdminHistoryView}>
                 <Admin_History_Body_Part />
             </div>
