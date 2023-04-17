@@ -111,7 +111,7 @@ export const TableEngineView = ({
             set_BreSearchBodyPart(true);
             toggle_Search();
         }
-        fetch(`http://50.116.3.37:9001/api/${collection}_collection`)
+        fetch(`http://50.116.3.37:9001/api/${collection}_collection/`)
             .then((response) => response.json())
             .then((Data) => {
                 update_CollectionData(Data);

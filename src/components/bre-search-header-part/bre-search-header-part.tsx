@@ -44,6 +44,8 @@ export const Bre_Search_Header_Part = ({
     function update_Props() {
         update_CollectionName(
             (document.getElementsByName('collection')[0] as HTMLSelectElement).value
+                .toLowerCase()
+                .replaceAll(' ', '_')
         );
         update_SearchCriteria(
             (document.getElementsByName('searchInput')[0] as HTMLInputElement).value
@@ -59,16 +61,15 @@ export const Bre_Search_Header_Part = ({
     }, []);
 
     useEffect(() => {
+        let select = document.getElementsByName('collection')[0] as HTMLSelectElement;
+        select.addEventListener('change', update_Props);
+    }, []);
+
+    useEffect(() => {
         const keyDownHandler = (event: KeyboardEvent) => {
             if (event.key === 'Enter' && can_Search()) {
                 event.preventDefault();
-                if (
-                    (document.getElementsByName('searchInput')[0] as HTMLInputElement).value != ''
-                ) {
-                    run_HeaderEvent();
-                } else {
-                    refresh_View();
-                }
+                run_HeaderEvent();
             }
         };
         document.addEventListener('keydown', keyDownHandler);
