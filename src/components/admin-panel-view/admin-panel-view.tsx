@@ -58,8 +58,22 @@ export const AdminPanelView = ({
     // write a useeffect to toggle history view when ever the select tag changes
     useEffect(() => {
         let select = document.getElementsByName('history')[0] as HTMLSelectElement;
-        select.addEventListener('change', toggle_AdminHistoryView);
+        select.addEventListener('change', refresh_View);
     }, []);
+
+    useEffect(() => {
+        const keyDownHandler = (event: KeyboardEvent) => {
+            if (event.key === 'Escape' && bool_AdminPanelView) {
+                event.preventDefault();
+                refresh_View();
+            }
+        };
+        document.addEventListener('keydown', keyDownHandler);
+
+        return () => {
+            document.removeEventListener('keydown', keyDownHandler);
+        };
+    });
 
     return (
         <div className={classNames(styles.root, className)}>
