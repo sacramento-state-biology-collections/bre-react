@@ -62,14 +62,15 @@ export const TableEngineView = ({
         set_SearchCardPart(!bool_SearchCardPart);
     }
     function toggle_SearchPagePart() {
-        set_SearchPagePart(!bool_SearchPagePart);
-        set_SearchCardPart(!bool_SearchCardPart);
         if (!bool_SearchPagePart) {
             toggle_Search();
         } else {
             set_SearchTableCardPart(true);
             set_SearchTablePart(true);
+            window.scrollTo({ top: 0, behavior: 'auto' });
         }
+        set_SearchPagePart(!bool_SearchPagePart);
+        set_SearchCardPart(!bool_SearchCardPart);
         set_BreSearchHeaderPart(!bool_BreSearchHeaderPart);
     }
     function toggle_SearchTablePart() {
