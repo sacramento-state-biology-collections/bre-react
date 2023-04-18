@@ -1,17 +1,19 @@
 .root {
+  height: 15vh;
 }
 
 .div-welcomeHeaderPart-style {
   display: grid;
   grid-auto-flow: column;
   width: 100%;
+  height: 100%;
   color: #ffffff;
   background-color: #043124;
   justify-content: space-between;
 }
 
 .h1-welcomeHeaderPart-style {
-  margin: 1.5vh;
+  margin: 2vh;
   align-self: center;
   font-size: 4vw;
 }
