@@ -26,11 +26,12 @@
   width: 100%;
   height: 100%;
   border: 1px solid black;
+  background-color: #20d349;
   border-radius: 0.5vh; // Add a border-radius to give a better appearance
   cursor: pointer; // Change the cursor when hovering over the button
   transition: background-color 0.3s; // Add a smooth transition effect when hovering
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.215);
+    background-color: rgba(20, 151, 2, 0.215);
   }
 }

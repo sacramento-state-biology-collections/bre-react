@@ -34,14 +34,26 @@
   height: 60vh;
 }
 .button0-breSearchCardPart-style {
-  border: 1px solid #ff0000;
+  border: 1px solid black;
   background-color: #ff0000;
-  border-radius: 10px;
+  border-radius: 5px;
   height: 30px;
   width: 30px;
+  cursor: pointer; // Change the cursor when hovering over the button
+  transition: background-color 0.3s; // Add a smooth transition effect when hovering
+
+  &:hover {
+    background-color: rgba(151, 2, 2, 0.215);
+  }
 }
 .button1-breSearchCardPart-style {
-  border: 1px solid #20d349;
+  border: 1px solid black;
   background-color: #20d349;
   font-size: 1vw;
+  cursor: pointer; // Change the cursor when hovering over the button
+  transition: background-color 0.3s; // Add a smooth transition effect when hovering
+
+  &:hover {
+    background-color: rgba(20, 151, 2, 0.215);
+  }
 }
