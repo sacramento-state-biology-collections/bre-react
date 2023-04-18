@@ -20,7 +20,7 @@
   align-content: start;
   flex-wrap: nowrap;
 }
-.button0-breSearchBodyPart-style {
+.button-breSearchBodyPart-style {
   border: 3px solid black;
   border-radius: 1000px;
   width: 45vw;
@@ -28,27 +28,13 @@
   font-size: 4vh;
   margin: 1vh;
   text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
 .p-breSearchBodyPart-style {
   font-size: 4vh;
-}
-.div3-breSearchBodyPart-style {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: center;
-  grid-template-rows: 1fr 1fr;
-  position: relative;
-  top: -4vh;
-}
-.button1-breSearchBodyPart-style {
-  border: 2px solid black;
-  border-radius: 1000px;
-  height: 4vh;
-  width: 9vw;
-  margin: 0.3vh;
-  position: relative;
-  font-size: 1.25vw;
-}
-.div2-breSearchBodyPart-style {
-  margin-bottom: -8vh;
 }

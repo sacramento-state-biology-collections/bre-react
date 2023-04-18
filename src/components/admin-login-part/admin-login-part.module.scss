@@ -52,6 +52,12 @@
   color: #fff;
   width: 70%;
   height: 60%;
+  cursor: pointer; // Change the cursor when hovering over the button
+  transition: background-color 0.3s; // Add a smooth transition effect when hovering
+
+  &:hover {
+    background-color: #016a4c;
+  }
 }
 .div1-AdminLoginView-style {
   display: grid;

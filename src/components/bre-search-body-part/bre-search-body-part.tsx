@@ -1,6 +1,5 @@
 import styles from './bre-search-body-part.module.scss';
 import classNames from 'classnames';
-import { useState } from 'react';
 
 export interface Bre_Search_Body_PartProps {
     className?: string;
@@ -49,7 +48,7 @@ export const Bre_Search_Body_Part = ({
                 <div className={styles['div1-breSearchBodyPart-style']}>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
-                            className={styles['button0-breSearchBodyPart-style']}
+                            className={styles['button-breSearchBodyPart-style']}
                             onClick={toggle_Arboretum}
                         >
                             Arboretum
@@ -57,7 +56,7 @@ export const Bre_Search_Body_Part = ({
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
-                            className={styles['button0-breSearchBodyPart-style']}
+                            className={styles['button-breSearchBodyPart-style']}
                             onClick={toggle_Fish}
                         >
                             Fish
@@ -65,7 +64,7 @@ export const Bre_Search_Body_Part = ({
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
-                            className={styles['button0-breSearchBodyPart-style']}
+                            className={styles['button-breSearchBodyPart-style']}
                             onClick={toggle_GreenHouse}
                         >
                             Green House
@@ -73,7 +72,7 @@ export const Bre_Search_Body_Part = ({
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
-                            className={styles['button0-breSearchBodyPart-style']}
+                            className={styles['button-breSearchBodyPart-style']}
                             onClick={toggle_Herbarium}
                         >
                             Herbarium
@@ -81,7 +80,7 @@ export const Bre_Search_Body_Part = ({
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
-                            className={styles['button0-breSearchBodyPart-style']}
+                            className={styles['button-breSearchBodyPart-style']}
                             onClick={toggle_Herps}
                         >
                             Herps
@@ -89,7 +88,7 @@ export const Bre_Search_Body_Part = ({
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
-                            className={styles['button0-breSearchBodyPart-style']}
+                            className={styles['button-breSearchBodyPart-style']}
                             onClick={toggle_Insects}
                         >
                             Insects
@@ -97,7 +96,7 @@ export const Bre_Search_Body_Part = ({
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
-                            className={styles['button0-breSearchBodyPart-style']}
+                            className={styles['button-breSearchBodyPart-style']}
                             onClick={toggle_Mammals}
                         >
                             Mammals
@@ -105,7 +104,7 @@ export const Bre_Search_Body_Part = ({
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
-                            className={styles['button0-breSearchBodyPart-style']}
+                            className={styles['button-breSearchBodyPart-style']}
                             onClick={toggle_Vivarium}
                         >
                             Vivarium
