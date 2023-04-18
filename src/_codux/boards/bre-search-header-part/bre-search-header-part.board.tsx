@@ -9,7 +9,9 @@ export default createBoard({
             toggle_BreSearchBodyPart={() => {}}
             toggle_SearchTablePart={() => {}}
             toggle_SearchTableCardPart={() => {}}
+            toggle_Back={() => {}}
             bool_BreSearchBodyPart={false}
+            bool_Back={false}
             can_Search={() => false}
             table_Clicked={() => {}}
             refresh_View={() => {}}
