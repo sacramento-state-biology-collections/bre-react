@@ -1,23 +1,34 @@
 .root {
 }
+
 .div-welcomeHeaderPart-style {
   display: grid;
   grid-auto-flow: column;
-  width: 100vw;
-  height: 15vh;
+  width: 100%;
   color: #ffffff;
   background-color: #043124;
   justify-content: space-between;
 }
+
 .h1-welcomeHeaderPart-style {
-  margin: 20px;
+  margin: 1.5vh;
   align-self: center;
   font-size: 4vw;
 }
+
 .button-welcomeHeaderPart-style {
   color: #000000;
   background-color: #fde89b;
-  font-size: 2vh;
-  margin: 5vh;
+  font-size: 2vw;
+  margin: 2.5vh 5vw; // Adjust the margin using relative units
   width: 10vw;
+  padding: 1vh 2vw; // Add padding to maintain the button's aspect ratio
+  border: none;
+  border-radius: 0.5vh; // Add a border-radius to give a better appearance
+  cursor: pointer; // Change the cursor when hovering over the button
+  transition: background-color 0.3s; // Add a smooth transition effect when hovering
+
+  &:hover {
+    background-color: #e2c075; // Change the background-color when hovering
+  }
 }
