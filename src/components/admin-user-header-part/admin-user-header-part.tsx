@@ -1,6 +1,5 @@
 import styles from './admin-user-header-part.module.scss';
 import classNames from 'classnames';
-import AdminPanelBodyPart_module from '../admin-panel-body-part/admin-panel-body-part.module.scss';
 
 export interface Admin_User_Header_PartProps {
     className?: string;

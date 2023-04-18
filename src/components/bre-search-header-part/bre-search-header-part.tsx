@@ -63,13 +63,15 @@ export const Bre_Search_Header_Part = ({
 
     useEffect(() => {
         const keyDownHandler = (event: KeyboardEvent) => {
-            if (event.key === 'Enter' && can_Search()) {
-                event.preventDefault();
-                run_HeaderEvent();
-            }
-            if (event.key === 'Escape' && can_Search()) {
-                event.preventDefault();
-                refresh_View();
+            if (can_Search()) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    run_HeaderEvent();
+                }
+                if (event.key === 'Escape') {
+                    event.preventDefault();
+                    refresh_View();
+                }
             }
         };
         document.addEventListener('keydown', keyDownHandler);
