@@ -10,7 +10,9 @@ export default createBoard({
             toggle_SearchTablePart={() => {}}
             toggle_SearchTableCardPart={() => {}}
             bool_BreSearchBodyPart={false}
+            can_Search={() => false}
             table_Clicked={() => {}}
+            refresh_View={() => {}}
             update_CollectionName={() => {}}
             update_SearchCriteria={() => {}}
         />

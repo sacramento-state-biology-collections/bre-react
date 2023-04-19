@@ -44,12 +44,26 @@
 }
 .button-AdminLoginView-style {
   margin: 2vw;
-  width: 35%;
-  height: 50%;
   border: 1px solid;
   border-image: linear-gradient(180deg, #000000 0%, rgba(255, 255, 255, 0) 0%) 1 / 1px stretch;
   border-width: 1px;
   background-color: #004e38;
   font-size: 100%;
   color: #fff;
+  width: 70%;
+  height: 60%;
+}
+.div1-AdminLoginView-style {
+  display: grid;
+  position: relative;
+  align-self: center;
+  width: 120%;
+  top: 25%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  grid-auto-flow: column;
+  align-content: center;
+  height: auto;
 }

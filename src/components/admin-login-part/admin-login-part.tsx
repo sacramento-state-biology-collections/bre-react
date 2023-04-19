@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 export interface Admin_Login_PartProps {
     className?: string;
+    toggle_WelcomeView: () => void;
     update_LoginData: (LoginData: any) => Promise<void>;
     attempt_Login: () => void;
 }
@@ -14,6 +15,7 @@ export interface Admin_Login_PartProps {
  */
 export const Admin_Login_Part = ({
     className,
+    toggle_WelcomeView,
     update_LoginData,
     attempt_Login,
 }: Admin_Login_PartProps) => {
@@ -79,9 +81,20 @@ export const Admin_Login_Part = ({
                         title="password"
                         name="password"
                     />
-                    <button className={styles['button-AdminLoginView-style']} onClick={start_Login}>
-                        Login
-                    </button>
+                    <div className={styles['div1-AdminLoginView-style']}>
+                        <button
+                            className={styles['button-AdminLoginView-style']}
+                            onClick={toggle_WelcomeView}
+                        >
+                            Return
+                        </button>
+                        <button
+                            className={styles['button-AdminLoginView-style']}
+                            onClick={start_Login}
+                        >
+                            Login
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

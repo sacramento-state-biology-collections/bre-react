@@ -6,10 +6,6 @@ export default createBoard({
     Board: () => (
         <AdminPanelView
             toggle_WelcomeView={() => {}}
-            toggle_AdminEditView={() => {}}
-            toggle_AdminHistoryView={() => {}}
-            bool_AdminHistoryView={true}
-            bool_AdminEditView={true}
             update_AdminEditData={() => {}}
             object_AdminEditData={{}}
         />

@@ -5,6 +5,7 @@ export default createBoard({
     name: 'AdminLoginView',
     Board: () => (
         <AdminLoginView
+            toggle_WelcomeView={() => {}}
             toggle_AdminPanelView={() => {}}
             update_LoginData={({}) => Promise.resolve()}
             get_LoginData={() => {}}

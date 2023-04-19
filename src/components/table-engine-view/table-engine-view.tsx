@@ -11,6 +11,7 @@ import { Bre_Search_Body_Part } from '../bre-search-body-part/bre-search-body-pa
 export interface TableEngineViewProps {
     className?: string;
     toggle_WelcomeView: () => void;
+    bool_TableEngineView?: boolean;
     update_CollectionData: (CollectionData: any) => void;
     update_CardData: (CardData: any) => void;
     update_SpecimenData: (Specimen: any) => void;
@@ -30,6 +31,7 @@ export interface TableEngineViewProps {
 export const TableEngineView = ({
     className,
     toggle_WelcomeView,
+    bool_TableEngineView,
     update_CollectionData,
     update_CardData,
     update_SpecimenData,
@@ -51,6 +53,10 @@ export const TableEngineView = ({
 
     function toggle_BreSearchBodyPart() {
         set_BreSearchBodyPart(!bool_BreSearchBodyPart);
+        if (bool_BreSearchBodyPart) {
+            set_SearchTableCardPart(true);
+            set_SearchTableCardPart(true);
+        }
     }
     function toggle_SearchCardPart() {
         set_SearchCardPart(!bool_SearchCardPart);
@@ -89,6 +95,15 @@ export const TableEngineView = ({
             set_SearchTableCardPart(false);
         }
     }
+    function can_Search() {
+        return !bool_BreSearchHeaderPart && !bool_TableEngineView;
+    }
+    function refresh_View() {
+        set_BreSearchBodyPart(false);
+        set_SearchTablePart(true);
+        set_SearchTableCardPart(true);
+        set_SearchCardPart(true);
+    }
 
     function click_QuickSearch(collection: String) {
         update_CollectionData([]);
@@ -96,7 +111,7 @@ export const TableEngineView = ({
             set_BreSearchBodyPart(true);
             toggle_Search();
         }
-        fetch(`http://50.116.3.37:9001/api/${collection}_collection`)
+        fetch(`http://50.116.3.37:9001/api/${collection}_collection/`)
             .then((response) => response.json())
             .then((Data) => {
                 update_CollectionData(Data);
@@ -139,7 +154,9 @@ export const TableEngineView = ({
                     toggle_SearchTablePart={toggle_SearchTablePart}
                     toggle_SearchTableCardPart={toggle_SearchTableCardPart}
                     bool_BreSearchBodyPart={bool_BreSearchBodyPart}
+                    can_Search={can_Search}
                     table_Clicked={table_Clicked}
+                    refresh_View={refresh_View}
                     update_CollectionName={update_CollectionName}
                     update_SearchCriteria={update_SearchCriteria}
                 />

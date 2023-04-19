@@ -9,7 +9,9 @@ export interface Bre_Search_Header_PartProps {
     toggle_SearchTablePart: () => void;
     toggle_SearchTableCardPart: () => void;
     bool_BreSearchBodyPart: boolean;
+    can_Search: () => boolean;
     table_Clicked: () => void;
+    refresh_View: () => void;
     update_CollectionName: (CollectionName: string) => void;
     update_SearchCriteria: (SearchCriteria: string) => void;
 }
@@ -25,7 +27,9 @@ export const Bre_Search_Header_Part = ({
     toggle_SearchTablePart,
     toggle_SearchTableCardPart,
     bool_BreSearchBodyPart,
+    can_Search,
     table_Clicked,
+    refresh_View,
     update_CollectionName,
     update_SearchCriteria,
 }: Bre_Search_Header_PartProps) => {
@@ -40,22 +44,42 @@ export const Bre_Search_Header_Part = ({
     function update_Props() {
         update_CollectionName(
             (document.getElementsByName('collection')[0] as HTMLSelectElement).value
+                .toLowerCase()
+                .replaceAll(' ', '_')
         );
         update_SearchCriteria(
             (document.getElementsByName('searchInput')[0] as HTMLInputElement).value
         );
     }
-
-    useEffect(() => {
-        update_Props();
-    }, []);
-
     function reset_table() {
-        if (bool_BreSearchBodyPart === true) {
-            toggle_BreSearchBodyPart();
-        }
+        refresh_View();
         toggle_WelcomeView();
     }
+
+    useEffect(() => {
+        let select = document.getElementsByName('collection')[0] as HTMLSelectElement;
+        select.addEventListener('change', update_Props);
+    }, []);
+
+    useEffect(() => {
+        const keyDownHandler = (event: KeyboardEvent) => {
+            if (can_Search()) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    run_HeaderEvent();
+                }
+                if (event.key === 'Escape') {
+                    event.preventDefault();
+                    refresh_View();
+                }
+            }
+        };
+        document.addEventListener('keydown', keyDownHandler);
+
+        return () => {
+            document.removeEventListener('keydown', keyDownHandler);
+        };
+    });
 
     return (
         <div className={classNames(styles.root, className)}>
@@ -106,13 +130,13 @@ export const Bre_Search_Header_Part = ({
                         name="collection"
                         className={styles['select-breSearchHeaderPart-style']}
                     >
-                        <option>Mammals</option>
                         <option>Arboretum</option>
                         <option>Fish</option>
                         <option>Green House</option>
                         <option>Herbarium</option>
                         <option>Herps</option>
                         <option>Insects</option>
+                        <option>Mammals</option>
                         <option>Vivarium</option>
                     </select>
                     <button
