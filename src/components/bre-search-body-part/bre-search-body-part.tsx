@@ -4,45 +4,40 @@ import { useState } from 'react';
 
 export interface Bre_Search_Body_PartProps {
     className?: string;
+    click_QuickSearch: (Collection: string) => void;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-bre-search-body-parts-and-templates
  */
-export const Bre_Search_Body_Part = ({ className }: Bre_Search_Body_PartProps) => {
-    const [bool_Arboretum, set_Arboretum] = useState(true);
-    const [bool_Fish, set_Fish] = useState(true);
-    const [bool_GreenHouse, set_GreenHouse] = useState(true);
-    const [bool_Herbarium, set_Herbarium] = useState(true);
-    const [bool_Herps, set_Herps] = useState(true);
-    const [bool_Insects, set_Insects] = useState(true);
-    const [bool_Mammals, set_Mammals] = useState(true);
-    const [bool_Vivarium, set_Vivarium] = useState(true);
-
+export const Bre_Search_Body_Part = ({
+    className,
+    click_QuickSearch,
+}: Bre_Search_Body_PartProps) => {
     function toggle_Arboretum() {
-        set_Arboretum(!bool_Arboretum);
+        click_QuickSearch('arboretum');
     }
     function toggle_Fish() {
-        set_Fish(!bool_Fish);
+        click_QuickSearch('fish');
     }
     function toggle_GreenHouse() {
-        set_GreenHouse(!bool_GreenHouse);
+        click_QuickSearch('green_house');
     }
     function toggle_Herbarium() {
-        set_Herbarium(!bool_Herbarium);
+        click_QuickSearch('herbarium');
     }
     function toggle_Herps() {
-        set_Herps(!bool_Herps);
+        click_QuickSearch('herps');
     }
     function toggle_Insects() {
-        set_Insects(!bool_Insects);
+        click_QuickSearch('insects');
     }
     function toggle_Mammals() {
-        set_Mammals(!bool_Mammals);
+        click_QuickSearch('mammals');
     }
     function toggle_Vivarium() {
-        set_Vivarium(!bool_Vivarium);
+        click_QuickSearch('vivarium');
     }
 
     return (
@@ -59,56 +54,6 @@ export const Bre_Search_Body_Part = ({ className }: Bre_Search_Body_PartProps) =
                         >
                             Arboretum
                         </button>
-                        <div className={styles['div3-breSearchBodyPart-style']}>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Arboretum}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Arboretum}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Arboretum}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Arboretum}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Arboretum}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Arboretum}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Arboretum}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Arboretum}
-                            >
-                                Button
-                            </button>
-                        </div>
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
@@ -117,56 +62,6 @@ export const Bre_Search_Body_Part = ({ className }: Bre_Search_Body_PartProps) =
                         >
                             Fish
                         </button>
-                        <div className={styles['div3-breSearchBodyPart-style']}>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Fish}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Fish}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Fish}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Fish}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Fish}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Fish}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Fish}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Fish}
-                            >
-                                Button
-                            </button>
-                        </div>
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
@@ -175,56 +70,6 @@ export const Bre_Search_Body_Part = ({ className }: Bre_Search_Body_PartProps) =
                         >
                             Green House
                         </button>
-                        <div className={styles['div3-breSearchBodyPart-style']}>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_GreenHouse}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_GreenHouse}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_GreenHouse}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_GreenHouse}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_GreenHouse}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_GreenHouse}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_GreenHouse}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_GreenHouse}
-                            >
-                                Button
-                            </button>
-                        </div>
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
@@ -233,56 +78,6 @@ export const Bre_Search_Body_Part = ({ className }: Bre_Search_Body_PartProps) =
                         >
                             Herbarium
                         </button>
-                        <div className={styles['div3-breSearchBodyPart-style']}>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herbarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herbarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herbarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herbarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herbarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herbarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herbarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herbarium}
-                            >
-                                Button
-                            </button>
-                        </div>
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
@@ -291,56 +86,6 @@ export const Bre_Search_Body_Part = ({ className }: Bre_Search_Body_PartProps) =
                         >
                             Herps
                         </button>
-                        <div className={styles['div3-breSearchBodyPart-style']}>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herps}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herps}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herps}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herps}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herps}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herps}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herps}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Herps}
-                            >
-                                Button
-                            </button>
-                        </div>
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
@@ -349,56 +94,6 @@ export const Bre_Search_Body_Part = ({ className }: Bre_Search_Body_PartProps) =
                         >
                             Insects
                         </button>
-                        <div className={styles['div3-breSearchBodyPart-style']}>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Insects}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Insects}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Insects}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Insects}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Insects}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Insects}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Insects}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Insects}
-                            >
-                                Button
-                            </button>
-                        </div>
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
@@ -407,56 +102,6 @@ export const Bre_Search_Body_Part = ({ className }: Bre_Search_Body_PartProps) =
                         >
                             Mammals
                         </button>
-                        <div className={styles['div3-breSearchBodyPart-style']}>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Mammals}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Mammals}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Mammals}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Mammals}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Mammals}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Mammals}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Mammals}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Mammals}
-                            >
-                                Button
-                            </button>
-                        </div>
                     </div>
                     <div className={styles['div2-breSearchBodyPart-style']}>
                         <button
@@ -465,56 +110,6 @@ export const Bre_Search_Body_Part = ({ className }: Bre_Search_Body_PartProps) =
                         >
                             Vivarium
                         </button>
-                        <div className={styles['div3-breSearchBodyPart-style']}>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Vivarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Vivarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Vivarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Vivarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Vivarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Vivarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Vivarium}
-                            >
-                                Button
-                            </button>
-                            <button
-                                className={styles['button1-breSearchBodyPart-style']}
-                                hidden={bool_Vivarium}
-                            >
-                                Button
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>

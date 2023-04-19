@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import { Bre_Search_Header_Part } from '../bre-search-header-part/bre-search-header-part';
 import { Bre_Search_Table_Part } from '../bre-search-table-part/bre-search-table-part';
+import { Bre_Search_Table_CardDisplay_Part } from '../bre-search-table-card-display-part/bre-search-table-card-display-part';
 import { Bre_Search_Card_Part } from '../bre-search-card-part/bre-search-card-part';
 import { Bre_Search_Page_Part } from '../bre-search-page-part/bre-search-page-part';
 import { Bre_Search_Body_Part } from '../bre-search-body-part/bre-search-body-part';
@@ -43,8 +44,10 @@ export const TableEngineView = ({
     const [bool_BreSearchHeaderPart, set_BreSearchHeaderPart] = useState(false);
     const [bool_BreSearchBodyPart, set_BreSearchBodyPart] = useState(false);
     const [bool_SearchTablePart, set_SearchTablePart] = useState(true);
+    const [bool_SearchTableCardPart, set_SearchTableCardPart] = useState(true);
     const [bool_SearchCardPart, set_SearchCardPart] = useState(true);
     const [bool_SearchPagePart, set_SearchPagePart] = useState(true);
+    const [bool_CurrentSearch, set_CurrentSearch] = useState(true);
 
     function toggle_BreSearchBodyPart() {
         set_BreSearchBodyPart(!bool_BreSearchBodyPart);
@@ -55,17 +58,59 @@ export const TableEngineView = ({
     function toggle_SearchPagePart() {
         set_SearchPagePart(!bool_SearchPagePart);
         set_SearchCardPart(!bool_SearchCardPart);
-        set_SearchTablePart(!bool_SearchTablePart);
+        if (!bool_SearchPagePart) {
+            toggle_Search();
+        } else {
+            set_SearchTableCardPart(true);
+            set_SearchTablePart(true);
+        }
         set_BreSearchHeaderPart(!bool_BreSearchHeaderPart);
+    }
+    function toggle_SearchTablePart() {
+        if (bool_BreSearchBodyPart) {
+            set_SearchTablePart(false);
+            set_SearchTableCardPart(true);
+        }
+        set_CurrentSearch(true);
+    }
+    function toggle_SearchTableCardPart() {
+        if (bool_BreSearchBodyPart) {
+            set_SearchTablePart(true);
+            set_SearchTableCardPart(false);
+        }
+        set_CurrentSearch(false);
+    }
+    function toggle_Search() {
+        if (bool_CurrentSearch) {
+            set_SearchTablePart(false);
+            set_SearchTableCardPart(true);
+        } else {
+            set_SearchTablePart(true);
+            set_SearchTableCardPart(false);
+        }
+    }
+
+    function click_QuickSearch(collection: String) {
+        update_CollectionData([]);
+        if (bool_BreSearchBodyPart === false) {
+            set_BreSearchBodyPart(true);
+            toggle_Search();
+        }
+        fetch(`http://50.116.3.37:9001/api/${collection}_collection`)
+            .then((response) => response.json())
+            .then((Data) => {
+                update_CollectionData(Data);
+            });
     }
 
     function table_Clicked() {
+        update_CollectionData([]);
         if (bool_BreSearchBodyPart === false) {
             set_BreSearchBodyPart(true);
-            set_SearchTablePart(false);
+            toggle_Search();
         }
         fetch(
-            `http://50.116.3.37:9001/api/${string_CollectionName}_collection/common_name/${string_SearchCriteria}`
+            `http://50.116.3.37:9001/api/${string_CollectionName}_collection/${string_SearchCriteria}`
         )
             .then((response) => response.json())
             .then((Data) => {
@@ -91,6 +136,8 @@ export const TableEngineView = ({
                 <Bre_Search_Header_Part
                     toggle_WelcomeView={toggle_WelcomeView}
                     toggle_BreSearchBodyPart={toggle_BreSearchBodyPart}
+                    toggle_SearchTablePart={toggle_SearchTablePart}
+                    toggle_SearchTableCardPart={toggle_SearchTableCardPart}
                     bool_BreSearchBodyPart={bool_BreSearchBodyPart}
                     table_Clicked={table_Clicked}
                     update_CollectionName={update_CollectionName}
@@ -98,10 +145,16 @@ export const TableEngineView = ({
                 />
             </div>
             <div hidden={bool_BreSearchBodyPart}>
-                <Bre_Search_Body_Part />
+                <Bre_Search_Body_Part click_QuickSearch={click_QuickSearch} />
             </div>
             <div hidden={bool_SearchTablePart}>
                 <Bre_Search_Table_Part
+                    card_Clicked={card_Clicked}
+                    object_CollectionData={object_CollectionData}
+                />
+            </div>
+            <div hidden={bool_SearchTableCardPart}>
+                <Bre_Search_Table_CardDisplay_Part
                     card_Clicked={card_Clicked}
                     object_CollectionData={object_CollectionData}
                 />

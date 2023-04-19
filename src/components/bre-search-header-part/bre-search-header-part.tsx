@@ -6,6 +6,8 @@ export interface Bre_Search_Header_PartProps {
     className?: string;
     toggle_WelcomeView: () => void;
     toggle_BreSearchBodyPart: () => void;
+    toggle_SearchTablePart: () => void;
+    toggle_SearchTableCardPart: () => void;
     bool_BreSearchBodyPart: boolean;
     table_Clicked: () => void;
     update_CollectionName: (CollectionName: string) => void;
@@ -20,6 +22,8 @@ export const Bre_Search_Header_Part = ({
     className,
     toggle_WelcomeView,
     toggle_BreSearchBodyPart,
+    toggle_SearchTablePart,
+    toggle_SearchTableCardPart,
     bool_BreSearchBodyPart,
     table_Clicked,
     update_CollectionName,
@@ -45,13 +49,20 @@ export const Bre_Search_Header_Part = ({
     useEffect(() => {
         update_Props();
     }, []);
-    
+
+    function reset_table() {
+        if (bool_BreSearchBodyPart === true) {
+            toggle_BreSearchBodyPart();
+        }
+        toggle_WelcomeView();
+    }
+
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-breSearchHeaderPart-style']}>
                 <div className={styles['div2-breSearchHeaderPart-Toggle']}>
                     Change Views
-                    <button>
+                    <button onClick={toggle_SearchTablePart}>
                         <img
                             src="https://static.thenounproject.com/png/1055380-200.png"
                             alt="buttonpng"
@@ -61,7 +72,7 @@ export const Bre_Search_Header_Part = ({
                             )}
                         />
                     </button>
-                    <button>
+                    <button onClick={toggle_SearchTableCardPart}>
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/58/58477.png"
                             alt="buttonpng"
@@ -76,7 +87,7 @@ export const Bre_Search_Header_Part = ({
                     <button
                         title="Home"
                         className={styles['button-breSearchHeaderPart-style']}
-                        onClick={toggle_WelcomeView}
+                        onClick={reset_table}
                     >
                         <img
                             alt=""
@@ -87,7 +98,7 @@ export const Bre_Search_Header_Part = ({
                     <input
                         name="searchInput"
                         className={styles['input-breSearchHeaderPart-style']}
-                        placeholder="Search All"
+                        placeholder="Search"
                         onInput={update_Props}
                     />
                     <select
@@ -95,14 +106,14 @@ export const Bre_Search_Header_Part = ({
                         name="collection"
                         className={styles['select-breSearchHeaderPart-style']}
                     >
-                        <option>mammals</option>
-                        <option>arboretum</option>
-                        <option>fish</option>
-                        <option>green_house</option>
-                        <option>herbarium</option>
-                        <option>herps</option>
-                        <option>insects</option>
-                        <option>vivarium</option>
+                        <option>Mammals</option>
+                        <option>Arboretum</option>
+                        <option>Fish</option>
+                        <option>Green House</option>
+                        <option>Herbarium</option>
+                        <option>Herps</option>
+                        <option>Insects</option>
+                        <option>Vivarium</option>
                     </select>
                     <button
                         title="Search"

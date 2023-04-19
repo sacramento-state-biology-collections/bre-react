@@ -20,6 +20,7 @@ export const Bre_Search_Table_Part = ({
         return object_CollectionData.map((item: any, index: number) => {
             return (
                 <tr className={styles['tr-breSearchTablePart-style']} key={index}>
+                    <td>{item.catalog}</td>
                     <td>{item.common_name}</td>
                     <td>{item.scientific_name}</td>
                     <td>{item.prep_type}</td>
@@ -37,6 +38,7 @@ export const Bre_Search_Table_Part = ({
             <table className={styles['table-breSearchTablePart-style']}>
                 <tbody>
                     <tr className={styles['tr-breSearchTablePart-style']}>
+                        <th>Catalog #</th>
                         <th>Common Name</th>
                         <th>Scientific Name</th>
                         <th>Prep Type</th>
