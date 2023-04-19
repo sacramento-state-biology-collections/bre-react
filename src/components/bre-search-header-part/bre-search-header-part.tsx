@@ -40,10 +40,10 @@ export const Bre_Search_Header_Part = ({
     function run_HeaderEvent() {
         if (bool_BreSearchBodyPart === false) {
             toggle_BreSearchBodyPart();
+            toggle_Back();
         }
         update_Props();
         table_Clicked();
-        toggle_Back();
     }
 
     function update_Props() {

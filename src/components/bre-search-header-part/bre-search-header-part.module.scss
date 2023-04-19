@@ -43,15 +43,14 @@
 .button-breSearchHeaderPart-back {
   position: absolute;
   left: 15vw;
-  background-color: transparent;
-  border: none;
-  color: #ffffff;
-  font-size: 24px;
+  height: 25%;
+  background-color: #008553;
+  font-size: 20px;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: background-color 0.3s;
 
   &:hover {
-    color: #fde89b;
+    background-color: #fde89b;
   }
 }
 .img-breSearchHeaderPart-style {
