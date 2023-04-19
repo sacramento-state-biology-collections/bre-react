@@ -20,9 +20,9 @@ export const Admin_Panel_Body_Part = ({
     toggle_AdminEditView,
     update_AdminEditData,
 }: Admin_Panel_Body_PartProps) => {
-    function upload_MammalsFile() {
+    function upload_File(collection: String) {
         let element: HTMLElement = document.querySelector(
-            'input[title="mammalsUpload"]'
+            `input[title="${collection}Upload"]`
         ) as HTMLElement;
         element.click();
         element.onchange = () => {
@@ -32,133 +32,7 @@ export const Admin_Panel_Body_Part = ({
             // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
             let formData = new FormData();
             formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/mammals', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_InsectFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="insectUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/insects', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_FishFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="fishUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/fish', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_ArboretumFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="arboretumUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/arboretum', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_VivariumFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="vivariumUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/vivarium', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_GreenHouseFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="green_houseUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/green_house', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_HerbariumFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="herbariumUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/herbarium', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_HerpsFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="herpsUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/herps', {
+            fetch(`http://50.116.3.37:9001/api/postxlsx/${collection}`, {
                 method: 'POST',
                 body: formData,
             }).then((response) => toggle_LoadingTrue());
@@ -198,7 +72,7 @@ export const Admin_Panel_Body_Part = ({
                         </a>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_MammalsFile}
+                            onClick={() => upload_File('mammals')}
                         >
                             Upload
                             <form
@@ -236,7 +110,7 @@ export const Admin_Panel_Body_Part = ({
                         </a>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_InsectFile}
+                            onClick={() => upload_File('insects')}
                         >
                             Upload
                             <input title="insectUpload" type="file" accept=".xlsx" hidden={true} />
@@ -261,7 +135,7 @@ export const Admin_Panel_Body_Part = ({
                         </a>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_FishFile}
+                            onClick={() => upload_File('fish')}
                         >
                             Upload
                             <input title="fishUpload" type="file" accept=".xlsx" hidden={true} />
@@ -289,7 +163,7 @@ export const Admin_Panel_Body_Part = ({
                         </a>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_ArboretumFile}
+                            onClick={() => upload_File('arboretum')}
                         >
                             Upload
                             <input
@@ -322,7 +196,7 @@ export const Admin_Panel_Body_Part = ({
                         </a>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_VivariumFile}
+                            onClick={() => upload_File('vivarium')}
                         >
                             Upload
                             <input
@@ -355,7 +229,7 @@ export const Admin_Panel_Body_Part = ({
                         </a>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_GreenHouseFile}
+                            onClick={() => upload_File('green_house')}
                         >
                             Upload
                             <input
@@ -388,7 +262,7 @@ export const Admin_Panel_Body_Part = ({
                         </a>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_HerbariumFile}
+                            onClick={() => upload_File('herbarium')}
                         >
                             Upload
                             <input
@@ -418,7 +292,7 @@ export const Admin_Panel_Body_Part = ({
                         </a>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_HerpsFile}
+                            onClick={() => upload_File('herps')}
                         >
                             Upload
                             <input title="herpsUpload" type="file" accept=".xlsx" hidden={true} />
