@@ -2,7 +2,6 @@ version: '3.7'
 services:
   database:
     image: postgres
-    restarts: always
     environment:
       POSTGRES_PASSWORD: gulewaregremsBRE
       POSTGRES_USER: userBRE
@@ -10,8 +9,7 @@ services:
     ports:
       - '4001:4001'
   web:
-    image: BRE
-    restarts: always
+    image: bre
     depends_on:
       - database
     ports:
