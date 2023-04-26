@@ -28,6 +28,12 @@
   background-color: #0d3623;
   font-size: 1.25vw;
   border: 1px solid #0d3623;
+  cursor: pointer;
+  transition: background-color 0.3s; // Add a smooth transition effect when hovering
+
+  &:hover {
+    background-color: #145134;
+  }
 }
 .span1-AdminUserHeaderPart-style {
   color: #ffffff;

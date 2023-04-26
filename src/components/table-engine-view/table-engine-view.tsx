@@ -50,6 +50,7 @@ export const TableEngineView = ({
     const [bool_SearchCardPart, set_SearchCardPart] = useState(true);
     const [bool_SearchPagePart, set_SearchPagePart] = useState(true);
     const [bool_CurrentSearch, set_CurrentSearch] = useState(true);
+    const [bool_Back, set_Back] = useState(true);
 
     function toggle_BreSearchBodyPart() {
         set_BreSearchBodyPart(!bool_BreSearchBodyPart);
@@ -62,14 +63,15 @@ export const TableEngineView = ({
         set_SearchCardPart(!bool_SearchCardPart);
     }
     function toggle_SearchPagePart() {
-        set_SearchPagePart(!bool_SearchPagePart);
-        set_SearchCardPart(!bool_SearchCardPart);
         if (!bool_SearchPagePart) {
             toggle_Search();
         } else {
             set_SearchTableCardPart(true);
             set_SearchTablePart(true);
+            window.scrollTo({ top: 0, behavior: 'auto' });
         }
+        set_SearchPagePart(!bool_SearchPagePart);
+        set_SearchCardPart(!bool_SearchCardPart);
         set_BreSearchHeaderPart(!bool_BreSearchHeaderPart);
     }
     function toggle_SearchTablePart() {
@@ -95,6 +97,9 @@ export const TableEngineView = ({
             set_SearchTableCardPart(false);
         }
     }
+    function toggle_Back() {
+        set_Back(!bool_Back);
+    }
     function can_Search() {
         return !bool_BreSearchHeaderPart && !bool_TableEngineView;
     }
@@ -103,6 +108,7 @@ export const TableEngineView = ({
         set_SearchTablePart(true);
         set_SearchTableCardPart(true);
         set_SearchCardPart(true);
+        set_Back(true);
     }
 
     function click_QuickSearch(collection: String) {
@@ -116,6 +122,7 @@ export const TableEngineView = ({
             .then((Data) => {
                 update_CollectionData(Data);
             });
+        toggle_Back();
     }
 
     function table_Clicked() {
@@ -153,7 +160,9 @@ export const TableEngineView = ({
                     toggle_BreSearchBodyPart={toggle_BreSearchBodyPart}
                     toggle_SearchTablePart={toggle_SearchTablePart}
                     toggle_SearchTableCardPart={toggle_SearchTableCardPart}
+                    toggle_Back={toggle_Back}
                     bool_BreSearchBodyPart={bool_BreSearchBodyPart}
+                    bool_Back={bool_Back}
                     can_Search={can_Search}
                     table_Clicked={table_Clicked}
                     refresh_View={refresh_View}

@@ -8,7 +8,9 @@ export interface Bre_Search_Header_PartProps {
     toggle_BreSearchBodyPart: () => void;
     toggle_SearchTablePart: () => void;
     toggle_SearchTableCardPart: () => void;
+    toggle_Back: () => void;
     bool_BreSearchBodyPart: boolean;
+    bool_Back: boolean;
     can_Search: () => boolean;
     table_Clicked: () => void;
     refresh_View: () => void;
@@ -26,7 +28,9 @@ export const Bre_Search_Header_Part = ({
     toggle_BreSearchBodyPart,
     toggle_SearchTablePart,
     toggle_SearchTableCardPart,
+    toggle_Back,
     bool_BreSearchBodyPart,
+    bool_Back,
     can_Search,
     table_Clicked,
     refresh_View,
@@ -36,6 +40,7 @@ export const Bre_Search_Header_Part = ({
     function run_HeaderEvent() {
         if (bool_BreSearchBodyPart === false) {
             toggle_BreSearchBodyPart();
+            toggle_Back();
         }
         update_Props();
         table_Clicked();
@@ -108,6 +113,13 @@ export const Bre_Search_Header_Part = ({
                     Biology Research Engine
                 </span>
                 <div className={styles['div1-breSearchHeaderPart-style']}>
+                    <button
+                        className={styles['button-breSearchHeaderPart-back']}
+                        hidden={bool_Back}
+                        onClick={refresh_View}
+                    >
+                        Back
+                    </button>
                     <button
                         title="Home"
                         className={styles['button-breSearchHeaderPart-style']}

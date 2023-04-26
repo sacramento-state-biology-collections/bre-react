@@ -37,7 +37,7 @@ export const Welcome_Body_Part = ({
                 <div className={styles['div2-welcomeBodyPart-styles']}>
                     <img
                         alt="placeholder"
-                        src="https://raw.githubusercontent.com/sacramento-state-biology-collections/bre-flask-server/main/images/icons/manifest-icon-512.maskable.png"
+                        src="https://cdn4.iconfinder.com/data/icons/cheese-lovers/512/Cheese_final_Camambert-512.png"
                         className={styles['img-welcomeBodyPart-style']}
                     />
                 </div>

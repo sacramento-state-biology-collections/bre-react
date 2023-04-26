@@ -26,7 +26,12 @@ export const Bre_Search_Table_Part = ({
                     <td>{item.prep_type}</td>
                     <td>{item.drawer}</td>
                     <td>
-                        <button onClick={() => card_Clicked(item)}>Button</button>
+                        <button
+                            className={styles['button-breSearchTablePart-style']}
+                            onClick={() => card_Clicked(item)}
+                        >
+                            More Info
+                        </button>
                     </td>
                 </tr>
             );

@@ -1,9 +1,10 @@
 .root {
+  margin-top: 15vh;
 }
 .div0-BreSearchTableCardDisplay-Style {
-  width: 1024px;
-  height: 544px;
-  outline: initial;
+  width: 100vw;
+  height: 85vh;
+  //outline: initial;
   display: block;
 }
 .div1-BreSearchTableCardDisplayPart-Style {
@@ -22,6 +23,12 @@
   display: inline;
   grid-auto-flow: row;
   width: 275px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #dcdcdc;
+  }
 }
 .div2-BreSearchTableCardDisplayPart-style {
   align-content: start;
