@@ -35,8 +35,11 @@ export const Admin_Panel_Body_Part = ({
             fetch(`http://50.116.3.37:9001/api/postxlsx/${collection}`, {
                 method: 'POST',
                 body: formData,
-            }).then((response) => toggle_LoadingTrue());
+            })
+                .then((response) => toggle_LoadingTrue())
+                .catch((error) => console.log(error));
         };
+        (element as HTMLInputElement).value = '';
     }
 
     function toggle_EditView(collection: String) {
@@ -76,17 +79,7 @@ export const Admin_Panel_Body_Part = ({
                             onClick={() => upload_File('mammals')}
                         >
                             Upload
-                            <form
-                                method="post"
-                                encType="http://50.116.3.37:9001/api/postxlsx/mammals"
-                            >
-                                <input
-                                    title="mammalsUpload"
-                                    type="file"
-                                    accept=".xlsx"
-                                    hidden={true}
-                                />
-                            </form>
+                            <input title="mammalsUpload" type="file" accept=".xlsx" hidden={true} />
                         </button>
                     </div>
                 </div>
@@ -114,7 +107,7 @@ export const Admin_Panel_Body_Part = ({
                             onClick={() => upload_File('insects')}
                         >
                             Upload
-                            <input title="insectUpload" type="file" accept=".xlsx" hidden={true} />
+                            <input title="insectsUpload" type="file" accept=".xlsx" hidden={true} />
                         </button>
                     </div>
                 </div>
