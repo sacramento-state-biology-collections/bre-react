@@ -44,6 +44,7 @@ export const Admin_Panel_Body_Part = ({
         fetch(`http://50.116.3.37:9001/api/edit/${collection}_collection`)
             .then((response) => response.json())
             .then((Data) => {
+                Data[0]['collection'] = collection;
                 update_AdminEditData(Data);
             });
     }

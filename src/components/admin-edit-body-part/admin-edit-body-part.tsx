@@ -4,6 +4,7 @@ import classNames from 'classnames';
 export interface Admin_Edit_Body_PartProps {
     className?: string;
     object_AdminEditData: any;
+    toggle_AdminEditPage: (catalog: string) => void;
 }
 
 /**
@@ -13,6 +14,7 @@ export interface Admin_Edit_Body_PartProps {
 export const Admin_Edit_Body_Part = ({
     className,
     object_AdminEditData,
+    toggle_AdminEditPage,
 }: Admin_Edit_Body_PartProps) => {
     function getData() {
         return object_AdminEditData.map((item: any, index: number) => {
@@ -21,7 +23,7 @@ export const Admin_Edit_Body_Part = ({
                     <td>{item.catalog}</td>
                     <td>{item.common_name}</td>
                     <td>
-                        <button>Modify</button>
+                        <button onClick={() => toggle_AdminEditPage(item.catalog)}>Modify</button>
                     </td>
                 </tr>
             );
@@ -31,6 +33,7 @@ export const Admin_Edit_Body_Part = ({
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-AdminEditBodyPart-style']}>
+                <button onClick={() => toggle_AdminEditPage('hide-AdminEditBodyPart')}>back</button>
                 <table className={styles['table-AdminEditBodyPart-style']}>
                     <tbody>
                         <tr className={styles['tr-AdminEditBodyPart-style']}>
