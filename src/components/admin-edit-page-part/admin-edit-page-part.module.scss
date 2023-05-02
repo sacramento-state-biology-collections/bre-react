@@ -2,7 +2,7 @@
 }
 .div-AdminEditPagePart-style {
   width: 100vw;
-  height: 100vh;
+  height: 85vh;
   background-color: #ffffff;
   top: 0px;
   left: 0px;
@@ -12,6 +12,26 @@
   grid-template-columns: 1fr 0fr;
 }
 .button1-AdminEditPagePart-style {
+  background-color: #fde89b;
+  border: 1px solid black;
+  font-size: 2vh;
+  margin-left: 1vw;
 }
 .button2-AdminEditPagePart-style {
+  background-color: #ff0000;
+  font-size: 1.5vw;
+  margin: 1vw;
+  border: 1px solid black;
+}
+.div3-AdminEditPagePart-style {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.div4-AdminEditPagePart-style {
+  display: grid;
+  justify-items: stretch;
+  margin: 0.5vw;
+}
+.input-AdminEditPagePart-style {
+  margin: 1vw;
 }
