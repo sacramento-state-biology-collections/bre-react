@@ -64,6 +64,10 @@ export const AdminPanelView = ({
             )
                 .then((res) => res.json())
                 .then((data) => {
+                    data.push({
+                        collection: object_AdminEditData[0]['collection'],
+                        catalog1: catalog,
+                    });
                     update_AdminEditPageData(data);
                 });
         }
