@@ -1,5 +1,6 @@
 import styles from './admin-panel-view.module.scss';
 import classNames from 'classnames';
+import ip_addresses from '../../assets/ip_addresses.json';
 import React, { useEffect, useState } from 'react';
 import { Admin_User_Header_Part } from '../admin-user-header-part/admin-user-header-part';
 import { Admin_Panel_Body_Part } from '../admin-panel-body-part/admin-panel-body-part';
@@ -28,6 +29,7 @@ export const AdminPanelView = ({
     const [bool_AdminEditView, set_AdminEditView] = useState(true);
     const [bool_AdminHistoryView, set_AdminHistoryView] = useState(true);
     const [bool_Loading, set_Loading] = useState<boolean>(true);
+    const ipAddress = ip_addresses.ip;
 
     function toggle_LoadingTrue() {
         set_Loading(true);
@@ -93,6 +95,7 @@ export const AdminPanelView = ({
                     toggle_LoadingFalse={toggle_LoadingFalse}
                     toggle_AdminEditView={toggle_AdminEditView}
                     update_AdminEditData={update_AdminEditData}
+                    ipAddress={ipAddress}
                 />
             </div>
             <div hidden={bool_AdminHistoryView}>

@@ -7,6 +7,7 @@ export interface Admin_Panel_Body_PartProps {
     toggle_LoadingFalse: () => void;
     toggle_AdminEditView: () => void;
     update_AdminEditData: (AdminEditData: any) => void;
+    ipAddress: string;
 }
 
 /**
@@ -19,6 +20,7 @@ export const Admin_Panel_Body_Part = ({
     toggle_LoadingFalse,
     toggle_AdminEditView,
     update_AdminEditData,
+    ipAddress,
 }: Admin_Panel_Body_PartProps) => {
     function upload_File(collection: String) {
         let element: HTMLElement = document.querySelector(
@@ -32,7 +34,7 @@ export const Admin_Panel_Body_Part = ({
             // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
             let formData = new FormData();
             formData.append('file', file);
-            fetch(`http://50.116.3.37:9001/api/postxlsx/${collection}`, {
+            fetch(`http://${ipAddress}:9001/api/postxlsx/${collection}`, {
                 method: 'POST',
                 body: formData,
             }).then((response) => toggle_LoadingTrue());
@@ -41,7 +43,7 @@ export const Admin_Panel_Body_Part = ({
 
     function toggle_EditView(collection: String) {
         toggle_AdminEditView();
-        fetch(`http://50.116.3.37:9001/api/edit/${collection}_collection`)
+        fetch(`http://${ipAddress}:9001/api/edit/${collection}_collection`)
             .then((response) => response.json())
             .then((Data) => {
                 update_AdminEditData(Data);
@@ -74,7 +76,7 @@ export const Admin_Panel_Body_Part = ({
                             Edit
                         </button>
                         <a
-                            href={'http://50.116.3.37:9001/api/getxlsx/'.concat(collection[i])}
+                            href={`http://${ipAddress}:9001/api/getxlsx/`.concat(collection[i])}
                             download={collection[i].concat('.xlsx')}
                         >
                             <button className={styles['button-AdminPanelBodyPart-style']}>
@@ -88,7 +90,7 @@ export const Admin_Panel_Body_Part = ({
                             Upload
                             <form
                                 method="post"
-                                encType={'http://50.116.3.37:9001/api/postxlsx/'.concat(
+                                encType={`http://${ipAddress}:9001/api/postxlsx/`.concat(
                                     collection[i]
                                 )}
                             >
