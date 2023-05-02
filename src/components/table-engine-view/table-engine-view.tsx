@@ -1,5 +1,6 @@
 import styles from './table-engine-view.module.scss';
 import classNames from 'classnames';
+import ip_addresses from '../../ip_addresses.json';
 import { useState } from 'react';
 import { Bre_Search_Header_Part } from '../bre-search-header-part/bre-search-header-part';
 import { Bre_Search_Table_Part } from '../bre-search-table-part/bre-search-table-part';
@@ -51,6 +52,7 @@ export const TableEngineView = ({
     const [bool_SearchPagePart, set_SearchPagePart] = useState(true);
     const [bool_CurrentSearch, set_CurrentSearch] = useState(true);
     const [bool_Back, set_Back] = useState(true);
+    const ipAddress = ip_addresses.ip;
 
     function toggle_BreSearchBodyPart() {
         set_BreSearchBodyPart(!bool_BreSearchBodyPart);
@@ -117,7 +119,7 @@ export const TableEngineView = ({
             set_BreSearchBodyPart(true);
             toggle_Search();
         }
-        fetch(`http://50.116.3.37:9001/api/${collection}_collection/`)
+        fetch(`http://${ipAddress}:9001/api/${collection}_collection/`)
             .then((response) => response.json())
             .then((Data) => {
                 update_CollectionData(Data);
@@ -132,7 +134,7 @@ export const TableEngineView = ({
             toggle_Search();
         }
         fetch(
-            `http://50.116.3.37:9001/api/${string_CollectionName}_collection/${string_SearchCriteria}`
+            `http://${ipAddress}:9001/api/${string_CollectionName}_collection/${string_SearchCriteria}`
         )
             .then((response) => response.json())
             .then((Data) => {

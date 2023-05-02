@@ -9,6 +9,7 @@ export default createBoard({
             toggle_LoadingFalse={() => {}}
             toggle_AdminEditView={() => {}}
             update_AdminEditData={() => {}}
+            ipAddress={''}
         />
     ),
     environmentProps: {

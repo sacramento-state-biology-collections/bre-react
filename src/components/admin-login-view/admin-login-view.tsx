@@ -1,5 +1,6 @@
 import styles from './admin-login-view.module.scss';
 import classNames from 'classnames';
+import ip_addresses from '../../ip_addresses.json';
 import { Admin_Login_Part } from '../admin-login-part/admin-login-part';
 import CryptoJS from 'crypto-js';
 
@@ -22,6 +23,7 @@ export const AdminLoginView = ({
     update_LoginData,
     get_LoginData,
 }: AdminLoginViewProps) => {
+    const ipAddress = ip_addresses.ip;
     function attempt_Login() {
         let temp_LoginData = get_LoginData();
         temp_LoginData.password = CryptoJS.HmacMD5(
@@ -35,8 +37,7 @@ export const AdminLoginView = ({
             { mode: CryptoJS.mode.ECB }
         ).toString();
         delete temp_LoginData.key;
-        // Do post to http://localhost:9001/api/login with temp_LoginData
-        fetch('http://50.116.3.37:9001/api/login', {
+        fetch(`http://${ipAddress}:9001/api/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
