@@ -40,18 +40,6 @@ export const Bre_Search_Table_CardDisplay_Part = ({
                     </div>
                 </button>
             );
-            // return (
-            //     <tr className={styles['tr-breSearchTablePart-style']} key={index}>
-            //         <td>{item.catalog}</td>
-            //         <td>{item.common_name}</td>
-            //         <td>{item.scientific_name}</td>
-            //         <td>{item.prep_type}</td>
-            //         <td>{item.drawer}</td>
-            //         <td>
-            //             <button onClick={() => card_Clicked(item)}>Button</button>
-            //         </td>
-            //     </tr>
-            // );
         });
     }
     return (
