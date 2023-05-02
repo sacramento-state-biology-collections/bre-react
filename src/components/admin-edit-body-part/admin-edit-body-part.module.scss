@@ -1,7 +1,5 @@
 .root {
 }
-.div0-AdminEditHeaderPart-style {
-}
 .div0-AdminEditBodyPart-style {
   display: grid;
   align-items: start;
@@ -9,12 +7,12 @@
   align-content: start;
   top: 15vh;
   left: 0px;
+  width: 100vw;
+  height: 85vh;
   background-color: #ffffff;
 }
 .table-AdminEditBodyPart-style {
   grid-auto-flow: row;
-  width: 100vw;
-  height: 85vh;
 }
 .tr-AdminEditBodyPart-style {
   display: grid;
