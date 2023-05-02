@@ -16,6 +16,7 @@ function App() {
     const [string_SearchCriteria, set_SearchCriteria] = useState('');
     const [object_LoginData, set_LoginData] = useState({});
     const [object_AdminEditData, set_AdminEditData] = useState([]);
+    const [object_AdminEditPageData, set_AdminEditPageData] = useState([]);
 
     function toggle_WelcomeView() {
         if (bool_AdminPanelView === false) {
@@ -59,6 +60,10 @@ function App() {
 
     function update_AdminEditData(AdminEditData: any) {
         set_AdminEditData(AdminEditData);
+    }
+
+    function update_AdminEditPageData(AdminEditPageData: any) {
+        set_AdminEditPageData(AdminEditPageData);
     }
 
     function update_CollectionName(CollectionName: string) {
@@ -116,6 +121,8 @@ function App() {
                         toggle_WelcomeView={toggle_WelcomeView}
                         update_AdminEditData={update_AdminEditData}
                         object_AdminEditData={object_AdminEditData}
+                        update_AdminEditPageData={update_AdminEditPageData}
+                        object_AdminEditPageData={object_AdminEditPageData}
                     />
                 </div>
             </div>
