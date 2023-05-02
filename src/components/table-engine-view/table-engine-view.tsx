@@ -1,6 +1,6 @@
 import styles from './table-engine-view.module.scss';
 import classNames from 'classnames';
-import ip_addresses from '../../assets/ip_addresses.json';
+import ip_addresses from '../../ip_addresses.json';
 import { useState } from 'react';
 import { Bre_Search_Header_Part } from '../bre-search-header-part/bre-search-header-part';
 import { Bre_Search_Table_Part } from '../bre-search-table-part/bre-search-table-part';

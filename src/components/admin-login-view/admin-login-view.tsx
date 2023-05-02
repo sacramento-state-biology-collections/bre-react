@@ -1,6 +1,6 @@
 import styles from './admin-login-view.module.scss';
 import classNames from 'classnames';
-import ip_addresses from '../../assets/ip_addresses.json';
+import ip_addresses from '../../ip_addresses.json';
 import { Admin_Login_Part } from '../admin-login-part/admin-login-part';
 import CryptoJS from 'crypto-js';
 

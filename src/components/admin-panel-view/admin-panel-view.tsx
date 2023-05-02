@@ -1,6 +1,6 @@
 import styles from './admin-panel-view.module.scss';
 import classNames from 'classnames';
-import ip_addresses from '../../assets/ip_addresses.json';
+import ip_addresses from '../../ip_addresses.json';
 import React, { useEffect, useState } from 'react';
 import { Admin_User_Header_Part } from '../admin-user-header-part/admin-user-header-part';
 import { Admin_Panel_Body_Part } from '../admin-panel-body-part/admin-panel-body-part';
