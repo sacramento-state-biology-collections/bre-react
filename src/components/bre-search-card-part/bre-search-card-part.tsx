@@ -39,8 +39,13 @@ export const Bre_Search_Card_Part = ({
                     <div className={styles['img-container']}>
                         <img
                             className={styles['img-breSearchCardPart-style']}
-                            src={object_CardData.image}
-                            alt="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
+                            src={object_CardData.image || 'no_image_image.svg'}
+                            onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                                if (!object_CardData.image) return;
+                                const target = e.target as HTMLImageElement;
+                                target.onerror = null;
+                                target.src = 'no_image_image.svg';
+                            }}
                         />
                     </div>
                     {get_Data()}
