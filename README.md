@@ -1,59 +1,123 @@
-<div align="center">  
-    <img height="50"src="./src/assets/codux.svg">  
-    <h1>React App template for Codux</h1>
-</div>
+Team or Project Logo
 
-### A Visual IDE for React Projects
+# Biology Research Engine (BRE)
 
-Codux is an all-in-one visual development environment. Whether you’re starting a new app, creating components, or editing an existing project, every visual change you make reflects instantly in the code and vice versa. To learn more about Codux, visit our website - [https://www.codux.com/](https://www.codux.com/)
+## About
 
-This project was bootstrapped with [`create-react-app`](https://github.com/facebook/create-react-app).
+A paragraph to describe your project.
 
-It includes a single React component to start your project with, a sample [`codux.config.json`](codux.config.json) with preconfigured keys, a `package.json` file to describe the project's packages and dependencies, and a folder and component structure to put everything neatly in its place.
+## Features
 
-- Edit, render and compose apps that make use of **`React`**-based components.
-- Create components with **`TypeScript`**, **`SCSS`** and **`CSS Modules`** support.
-- Visually edit in real-time and in an isolated environment.
+What the application does
 
-### Available Scripts
+## Purpose
 
-In the project directory, you can run:
+Why the application was created
 
-### `npm start`
+## Screenshots & Example Gif's
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A screenshot of your product.
+Screen shot examples of your working project with descriptions
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Deployment
 
-### `npm test`
+1. Install git, docker, & docker-compose.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Clone both `bre-react-app` & `bre-flask-server` into a desired directory.
 
-### `npm run build`
+   ```shell
+   git clone https://github.com/sacramento-state-biology-collections/bre-react-app.git
+   git clone https://github.com/sacramento-state-biology-collections/bre-flask-server.git
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Create a compose file for the software stack called `docker-compose.yml`. (this file should be in the same directory as the cloned repository's)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```shell
+   touch docker-compose.yml
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Fill the compose file with the desired configuration. Example below:
 
-### `npm run eject`
+   ```yaml
+   version: '3.9'
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   services:
+     frontend:
+       build: bre-react-app
+       ports:
+         - '80:3000'
+       networks:
+         bre_network:
+           ipv4_address: 10.0.1.2
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+     backend:
+       build: bre-flask-server
+       ports:
+         - '9001:9001'
+       networks:
+         bre_network:
+           ipv4_address: 10.0.1.3
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+     database:
+       image: postgres:latest
+       ports:
+         - '5432:5432'
+       environment:
+         - POSTGRES_USER=postgres
+         - POSTGRES_PASSWORD=glueware@grems
+         - POSTGRES_DB=biologydb
+       volumes:
+         - ./bre-flask-server/scripts/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+         - ./bre-flask-server/scripts/insert_data.sql:/docker-entrypoint-initdb.d/insert_data.sql
+       networks:
+         bre_network:
+           ipv4_address: 10.0.1.4
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   networks:
+     bre_network:
+       ipam:
+         driver: default
+         config:
+           - subnet: 10.0.1.0/24
+   ```
 
-### Learn More
+5. Run the stack by executing the docker compose command.
+   ```shell
+   doker compose up
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Testing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. To run tests, clone `bre-react-app`.
+
+   ```shell
+   git clone https://github.com/sacramento-state-biology-collections/bre-react-app.git
+   ```
+
+2. Change Directory to the `bre-react-app` and install node dependency's.
+
+   ```shell
+   cd bre-react-app
+   npm install
+   ```
+
+3. Run the node command to run test scripts
+   ```shell
+   npm run test
+   ```
+
+## Contributions
+
+<a href="https://github.com/sacramento-state-biology-collections/bre-react-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sacramento-state-biology-collections/bre-react-app" />
+</a>
+
+- Brian Almaguer
+- Joseph May
+- Lauren Prather
+- Ivan Yuen
+- Kelly Bringino
+- Leonardo Anguiano
+- Tawheed Bayaz
+- Evan Boswell
+- Lukas Dolansky
