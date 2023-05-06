@@ -26,8 +26,9 @@ export const Bre_Search_Table_CardDisplay_Part = ({
                 >
                     <div className={styles['div1-BreSearchTableCardDisplayPart-Style']}>
                         <img
-                            src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
                             className={styles['img-BreSearchTableCardDisplayPart-Style']}
+                            src={item.image}
+                            alt="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
                         />
                     </div>
                     <div className={styles['div4-SearchTableCardDisplayPart-Style']}>
