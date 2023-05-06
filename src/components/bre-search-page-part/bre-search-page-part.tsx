@@ -22,7 +22,6 @@ export const Bre_Search_Page_Part = ({
         let list = [];
         for (let i = 0; i < values.length; i++) {
             if (keys[i] !== 'common_name') {
-                console.log(get_Point(keys[i], values[i]));
                 list.push(<li>{get_Point(keys[i], values[i])}</li>);
             }
         }
