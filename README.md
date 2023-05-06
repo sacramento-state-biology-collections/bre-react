@@ -12,11 +12,11 @@ The California State University of Sacramento's Biology Department has ~7000 col
 
 ## Features
 
-What the application does
+The application communicates with the provided specific collections of the department, giving users readability access, as well as ability to edit or delete entries of the database. However, the access for editing or deleting is only provided to those who are faculty of the department, as they are the people who can provide alter the database accurately according to the collections of the department.
 
 ## Purpose
 
-Why the application was created
+The application was created in order to provide the department of Biological Science with a cleaner, user-friendly, and straightforward database that they can manage and uphold to provide necessary information about the collections of species that the department obtains. Originally, the collections were held under an excel file which had a long list of entries, thus adding, removing, or managing the file was a challenge they always face. Our application gives them that accessbilities as well as providing them with a user-friendly application which can communicate with the database and help them manage it much more easily. 
 
 ## Screenshots & Example Gifs
 
