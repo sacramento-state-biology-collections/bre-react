@@ -1,43 +1,61 @@
 .root {
+  height: 85vh;
 }
+
 .div0-welcomeBodyPart-style {
   display: grid;
   grid-auto-flow: column;
-  width: 100vw;
-  height: 85vh;
+  width: 100%;
+  min-height: 100%;
   background-color: #004e38;
   grid-template-columns: 1fr;
 }
+
 .div1-welcomeBodyPart-style {
-  display: inline-block;
-  margin: 4vw 0vw 4vw 4vw;
+  display: flex;
   flex-direction: column;
-  justify-items: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   align-self: center;
   color: #ffffff;
+  margin-left: 2vw;
 }
+
 .div2-welcomeBodyPart-styles {
   align-self: center;
-  margin: 4vw;
 }
+
 .h1-welcomeBodyPart-style {
   font-size: 8vw;
   font-style: italic;
   font-weight: 100;
-  line-height: 0vw;
+  line-height: 1;
 }
+
 .p-welcomeBodyPart-style {
   font-size: 1.5vw;
   margin-left: 1vw;
 }
+
 .button-welcomeBodyPart-style {
   background-color: #fde89b;
   font-size: 2vw;
-  padding: 1vw;
   font-weight: 700;
+  padding: 1vw;
   margin: 1vw;
+  border: none;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #e2c075;
+  }
 }
+
 .img-welcomeBodyPart-style {
   width: 40vw;
+  max-height: 80vh; // Add a max-height constraint to prevent the image from taking up too much vertical space
+  object-fit: cover; // Ensure the image maintains its aspect ratio
+  margin-right: 1vw;
 }

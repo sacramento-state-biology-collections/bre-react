@@ -3,7 +3,9 @@ import { Admin_Edit_Body_Part } from '../../../components/admin-edit-body-part/a
 
 export default createBoard({
     name: 'Admin_Edit_Body_Part',
-    Board: () => <Admin_Edit_Body_Part object_AdminEditData={{}} />,
+    Board: () => (
+        <Admin_Edit_Body_Part object_AdminEditData={{}} toggle_AdminEditPage={({}) => {}} />
+    ),
     environmentProps: {
         canvasHeight: 478,
     },

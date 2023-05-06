@@ -7,8 +7,8 @@
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: center;
-  height: 100%;
   align-items: center;
+  height: 100%;
 }
 .div1-AdminPanelBodyPart-style {
   width: 22vw;
@@ -27,6 +27,12 @@
   border: 2px solid black;
   border-radius: 1vw;
   font-size: 3vh;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #e5d496;
+  }
 }
 .div2-AdminPanelBodyPart-style {
   display: grid;

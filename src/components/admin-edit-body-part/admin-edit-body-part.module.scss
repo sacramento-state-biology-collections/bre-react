@@ -1,21 +1,18 @@
 .root {
 }
-.div0-AdminEditHeaderPart-style {
-}
 .div0-AdminEditBodyPart-style {
   display: grid;
   align-items: start;
   justify-items: stretch;
   align-content: start;
-  position: absolute;
   top: 15vh;
   left: 0px;
+  width: 100vw;
+  height: 85vh;
   background-color: #ffffff;
 }
 .table-AdminEditBodyPart-style {
   grid-auto-flow: row;
-  width: 100vw;
-  height: 85vh;
 }
 .tr-AdminEditBodyPart-style {
   display: grid;

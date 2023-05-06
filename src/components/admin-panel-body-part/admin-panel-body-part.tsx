@@ -7,6 +7,7 @@ export interface Admin_Panel_Body_PartProps {
     toggle_LoadingFalse: () => void;
     toggle_AdminEditView: () => void;
     update_AdminEditData: (AdminEditData: any) => void;
+    ipAddress: string;
 }
 
 /**
@@ -19,178 +20,67 @@ export const Admin_Panel_Body_Part = ({
     toggle_LoadingFalse,
     toggle_AdminEditView,
     update_AdminEditData,
+    ipAddress,
 }: Admin_Panel_Body_PartProps) => {
-    function upload_MammalsFile() {
+    function upload_File(collection: String) {
         let element: HTMLElement = document.querySelector(
-            'input[title="mammalsUpload"]'
+            `input[title="${collection}Upload"]`
         ) as HTMLElement;
         element.click();
         element.onchange = () => {
             toggle_LoadingFalse();
             // @ts-ignore: Object is possibly 'null'.
             let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
             let formData = new FormData();
             formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/mammals', {
+            fetch(`http://${ipAddress}:9001/api/postxlsx/${collection}`, {
                 method: 'POST',
                 body: formData,
-            }).then((response) => toggle_LoadingTrue());
+            })
+                .then((response) => toggle_LoadingTrue())
+                .catch((error) => console.log(error));
         };
-    }
-    function upload_InsectFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="insectUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/insects', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_FishFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="fishUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/fish', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_ArboretumFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="arboretumUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/arboretum', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_VivariumFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="vivariumUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/vivarium', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_GreenHouseFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="green_houseUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/green_house', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_HerbariumFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="herbariumUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/herbarium', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
-    }
-    function upload_HerpsFile() {
-        let element: HTMLElement = document.querySelector(
-            'input[title="herpsUpload"]'
-        ) as HTMLElement;
-        element.click();
-        element.onchange = () => {
-            toggle_LoadingFalse();
-            // @ts-ignore: Object is possibly 'null'.
-            let file = (element as HTMLInputElement).files[0];
-            // post file to server here http://50.116.3.37:9001/api/postxlsx/fish
-            let formData = new FormData();
-            formData.append('file', file);
-            fetch('http://50.116.3.37:9001/api/postxlsx/herps', {
-                method: 'POST',
-                body: formData,
-            }).then((response) => toggle_LoadingTrue());
-        };
+        (element as HTMLInputElement).value = '';
     }
 
     function toggle_EditView(collection: String) {
         toggle_AdminEditView();
-        fetch(`http://50.116.3.37:9001/api/edit/${collection}_collection`)
+        fetch(`http://${ipAddress}:9001/api/edit/${collection}_collection`)
             .then((response) => response.json())
             .then((Data) => {
+                Data[0]['collection'] = collection;
                 update_AdminEditData(Data);
             });
     }
-
-    return (
-        <div className={classNames(styles.root, className)}>
-            <div className={styles['div0-AdminPanelBodyPart-style']}>
+    function generate_panels() {
+        const collections = [
+            'Mammals',
+            'Insects',
+            'Fish',
+            'Arboretum',
+            'Vivarium',
+            'Green House',
+            'Herbarium',
+            'Herps',
+        ];
+        var collection = collections.map((item) => item.replace(' ', '_').toLowerCase());
+        let list = [];
+        for (let i = 0; i < collections.length; i++) {
+            list.push(
                 <div className={styles['div1-AdminPanelBodyPart-style']}>
                     <div>
-                        <h1>Mammals</h1>
+                        <h1>{collections[i]}</h1>
                     </div>
                     <div className={styles['div2-AdminPanelBodyPart-style']}>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={() => toggle_EditView('mammals')}
+                            onClick={() => toggle_EditView(collection[i])}
                         >
                             Edit
                         </button>
                         <a
-                            href="http://50.116.3.37:9001/api/getxlsx/mammals"
-                            download="mammals.xlsx"
+                            href={`http://${ipAddress}:9001/api/getxlsx/`.concat(collection[i])}
+                            download={collection[i].concat('.xlsx')}
                         >
                             <button className={styles['button-AdminPanelBodyPart-style']}>
                                 Download
@@ -198,15 +88,17 @@ export const Admin_Panel_Body_Part = ({
                         </a>
                         <button
                             className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_MammalsFile}
+                            onClick={() => upload_File(collection[i])}
                         >
                             Upload
                             <form
                                 method="post"
-                                encType="http://50.116.3.37:9001/api/postxlsx/mammals"
+                                encType={`http://${ipAddress}:9001/api/postxlsx/`.concat(
+                                    collection[i]
+                                )}
                             >
                                 <input
-                                    title="mammalsUpload"
+                                    title={collection[i].concat('Upload')}
                                     type="file"
                                     accept=".xlsx"
                                     hidden={true}
@@ -215,217 +107,14 @@ export const Admin_Panel_Body_Part = ({
                         </button>
                     </div>
                 </div>
-                <div className={styles['div1-AdminPanelBodyPart-style']}>
-                    <div>
-                        <h1>Insects</h1>
-                    </div>
-                    <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={() => toggle_EditView('insects')}
-                        >
-                            Edit
-                        </button>
-                        <a
-                            href="http://50.116.3.37:9001/api/getxlsx/insects"
-                            download="insects.xlsx"
-                        >
-                            <button className={styles['button-AdminPanelBodyPart-style']}>
-                                Download
-                            </button>
-                        </a>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_InsectFile}
-                        >
-                            Upload
-                            <input title="insectUpload" type="file" accept=".xlsx" hidden={true} />
-                        </button>
-                    </div>
-                </div>
-                <div className={styles['div1-AdminPanelBodyPart-style']}>
-                    <div>
-                        <h1>Fish</h1>
-                    </div>
-                    <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={() => toggle_EditView('fish')}
-                        >
-                            Edit
-                        </button>
-                        <a href="http://50.116.3.37:9001/api/getxlsx/fish" download="fish.xlsx">
-                            <button className={styles['button-AdminPanelBodyPart-style']}>
-                                Download
-                            </button>
-                        </a>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_FishFile}
-                        >
-                            Upload
-                            <input title="fishUpload" type="file" accept=".xlsx" hidden={true} />
-                        </button>
-                    </div>
-                </div>
-                <div className={styles['div1-AdminPanelBodyPart-style']}>
-                    <div>
-                        <h1>Arboretum</h1>
-                    </div>
-                    <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={() => toggle_EditView('arboretum')}
-                        >
-                            Edit
-                        </button>
-                        <a
-                            href="http://50.116.3.37:9001/api/getxlsx/arboretum"
-                            download="arboretum.xlsx"
-                        >
-                            <button className={styles['button-AdminPanelBodyPart-style']}>
-                                Download
-                            </button>
-                        </a>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_ArboretumFile}
-                        >
-                            Upload
-                            <input
-                                title="arboretumUpload"
-                                type="file"
-                                accept=".xlsx"
-                                hidden={true}
-                            />
-                        </button>
-                    </div>
-                </div>
-                <div className={styles['div1-AdminPanelBodyPart-style']}>
-                    <div>
-                        <h1>Vivarium</h1>
-                    </div>
-                    <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={() => toggle_EditView('vivarium')}
-                        >
-                            Edit
-                        </button>
-                        <a
-                            href="http://50.116.3.37:9001/api/getxlsx/vivarium"
-                            download="vivarium.xlsx"
-                        >
-                            <button className={styles['button-AdminPanelBodyPart-style']}>
-                                Download
-                            </button>
-                        </a>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_VivariumFile}
-                        >
-                            Upload
-                            <input
-                                title="vivariumUpload"
-                                type="file"
-                                accept=".xlsx"
-                                hidden={true}
-                            />
-                        </button>
-                    </div>
-                </div>
-                <div className={styles['div1-AdminPanelBodyPart-style']}>
-                    <div>
-                        <h1>Green House</h1>
-                    </div>
-                    <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={() => toggle_EditView('green_house')}
-                        >
-                            Edit
-                        </button>
-                        <a
-                            href="http://50.116.3.37:9001/api/getxlsx/green_house"
-                            download="green_house.xlsx"
-                        >
-                            <button className={styles['button-AdminPanelBodyPart-style']}>
-                                Download
-                            </button>
-                        </a>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_GreenHouseFile}
-                        >
-                            Upload
-                            <input
-                                title="green_houseUpload"
-                                type="file"
-                                accept=".xlsx"
-                                hidden={true}
-                            />
-                        </button>
-                    </div>
-                </div>
-                <div className={styles['div1-AdminPanelBodyPart-style']}>
-                    <div>
-                        <h1>Herbarium</h1>
-                    </div>
-                    <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={() => toggle_EditView('herbarium')}
-                        >
-                            Edit
-                        </button>
-                        <a
-                            href="http://50.116.3.37:9001/api/getxlsx/herbarium"
-                            download="herbarium.xlsx"
-                        >
-                            <button className={styles['button-AdminPanelBodyPart-style']}>
-                                Download
-                            </button>
-                        </a>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_HerbariumFile}
-                        >
-                            Upload
-                            <input
-                                title="herbariumUpload"
-                                type="file"
-                                accept=".xlsx"
-                                hidden={true}
-                            />
-                        </button>
-                    </div>
-                </div>
-                <div className={styles['div1-AdminPanelBodyPart-style']}>
-                    <div>
-                        <h1>Herps</h1>
-                    </div>
-                    <div className={styles['div2-AdminPanelBodyPart-style']}>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={() => toggle_EditView('herps')}
-                        >
-                            Edit
-                        </button>
-                        <a href="http://50.116.3.37:9001/api/getxlsx/herps" download="herps.xlsx">
-                            <button className={styles['button-AdminPanelBodyPart-style']}>
-                                Download
-                            </button>
-                        </a>
-                        <button
-                            className={styles['button-AdminPanelBodyPart-style']}
-                            onClick={upload_HerpsFile}
-                        >
-                            Upload
-                            <input title="herpsUpload" type="file" accept=".xlsx" hidden={true} />
-                        </button>
-                    </div>
-                </div>
-            </div>
+            );
+        }
+        return list;
+    }
+
+    return (
+        <div className={classNames(styles.root, className)}>
+            <div className={styles['div0-AdminPanelBodyPart-style']}>{generate_panels()}</div>
         </div>
     );
 };

@@ -8,6 +8,8 @@ export default createBoard({
             toggle_WelcomeView={() => {}}
             update_AdminEditData={() => {}}
             object_AdminEditData={{}}
+            update_AdminEditPageData={() => {}}
+            object_AdminEditPageData={{}}
         />
     ),
 });
