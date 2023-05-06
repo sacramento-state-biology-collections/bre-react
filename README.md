@@ -1,10 +1,14 @@
-Team or Project Logo
+<p align="center">
+  <img src="public\manifest-icon-512.maskable.png" style="width: 70%; height: auto">
+</p>
+
+&nbsp;
 
 # Biology Research Engine (BRE)
 
 ## About
 
-The California State University of Sacramento's Biology Department has ~7000 collections and they want a way to manage them digitally. They asked us to create an easily accessible and reliable database software that would allow both faculty members and students of the school to edit or review the university's data collections, laboratories, and museums. We created an app where users can search through the databases and the faculty can sign in and modify the collection data. It will be a progressive web app (PWA), which means the website can be downloaded by anyone and use it offline.
+The California State University of Sacramento's Biology Department has ~7000 collections and they want a way to manage them digitally. They asked us to create an easily accessible and reliable database software that would allow both faculty members and students of the school to edit or review the university's data collections, laboratories, and museums. We created an app where users can search through the databases and the faculty can sign in and modify the collection data. It is a progressive web app (PWA), which means the website can be downloaded by anyone and use it offline.
 
 ## Features
 
@@ -94,7 +98,7 @@ Screen shot examples of your working project with descriptions
    git clone https://github.com/sacramento-state-biology-collections/bre-react-app.git
    ```
 
-2. Change Directory to the `bre-react-app` and install node dependencies.
+2. Change directory to the `bre-react-app` and install node dependencies.
 
    ```shell
    cd bre-react-app
