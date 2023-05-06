@@ -4,7 +4,7 @@ Team or Project Logo
 
 ## About
 
-A paragraph to describe your project.
+The California State University of Sacramento's Biology Department has ~7000 collections and they want a way to manage them digitally. They asked us to create an easily accessible and reliable database software that would allow both faculty members and students of the school to edit or review the university's data collections, laboratories, and museums. We created an app where users can search through the databases and the faculty can sign in and modify the collection data. It will be a progressive web app (PWA), which means the website can be downloaded by anyone and use it offline.
 
 ## Features
 
@@ -14,7 +14,7 @@ What the application does
 
 Why the application was created
 
-## Screenshots & Example Gif's
+## Screenshots & Example Gifs
 
 A screenshot of your product.
 Screen shot examples of your working project with descriptions
@@ -30,7 +30,7 @@ Screen shot examples of your working project with descriptions
    git clone https://github.com/sacramento-state-biology-collections/bre-flask-server.git
    ```
 
-3. Create a compose file for the software stack called `docker-compose.yml`. (this file should be in the same directory as the cloned repository's)
+3. Create a compose file for the software stack called `docker-compose.yml`. (this file should be in the same directory as the cloned repositories)
 
    ```shell
    touch docker-compose.yml
@@ -83,7 +83,7 @@ Screen shot examples of your working project with descriptions
 
 5. Run the stack by executing the docker compose command.
    ```shell
-   doker compose up
+   docker compose up
    ```
 
 ## Testing
@@ -94,7 +94,7 @@ Screen shot examples of your working project with descriptions
    git clone https://github.com/sacramento-state-biology-collections/bre-react-app.git
    ```
 
-2. Change Directory to the `bre-react-app` and install node dependency's.
+2. Change Directory to the `bre-react-app` and install node dependencies.
 
    ```shell
    cd bre-react-app
