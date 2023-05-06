@@ -8,7 +8,7 @@
 
 ## About
 
-The California State University of Sacramento's Biology Department has ~7000 collections and they want a way to manage them digitally. They asked us to create an easily accessible and reliable database software that would allow both faculty members and students of the school to edit or review the university's data collections, laboratories, and museums. We created an app where users can search through the databases and the faculty can sign in and modify the collection data. It is a progressive web app (PWA), which means the website can be downloaded by anyone and use it offline.
+The California State University of Sacramento's Biology Department has ~7000 collections and they wanted a way to manage them digitally. They asked us to create an easily accessible and reliable database software that would allow both faculty members and students of the school to edit or review the university's data collections, laboratories, and museums. We created an app where users can search through the databases and the faculty can sign in and modify the collection data.
 
 ## Features
 
