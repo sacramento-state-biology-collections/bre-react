@@ -33,6 +33,7 @@
   border: 1px solid;
   border-image: linear-gradient(180deg, #000000 0%, rgba(255, 255, 255, 0) 0%) 1 / 1px stretch;
   border-width: 1px;
+  min-width: 50px;
   cursor: pointer;
   transition: background-color 0.3s;
 
