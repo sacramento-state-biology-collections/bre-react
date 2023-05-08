@@ -1,6 +1,6 @@
 import styles from './bre-search-card-part.module.scss';
 import classNames from 'classnames';
-import ipAddress from '../../ip_addresses.json';
+import ip_addresses from '../../ip_addresses.json';
 
 export interface Bre_Search_Card_PartProps {
     className?: string;
@@ -19,6 +19,7 @@ export const Bre_Search_Card_Part = ({
     page_Clicked,
     object_CardData,
 }: Bre_Search_Card_PartProps) => {
+    const ipAddress = ip_addresses.ip;
     function get_Data() {
         return (
             <div>
@@ -39,7 +40,10 @@ export const Bre_Search_Card_Part = ({
                     <div className={styles['img-container']}>
                         <img
                             className={styles['img-breSearchCardPart-style']}
-                            src={object_CardData.image || 'no_image_image.svg'}
+                            src={
+                                `http://${ipAddress}:9001/${object_CardData.image}` ||
+                                'no_image_image.svg'
+                            }
                             onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                                 if (!object_CardData.image) return;
                                 const target = e.target as HTMLImageElement;

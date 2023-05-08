@@ -1,5 +1,6 @@
 import styles from './bre-search-table-card-display-part.module.scss';
 import classNames from 'classnames';
+import ip_addresses from '../../ip_addresses.json';
 
 export interface Bre_Search_Table_CardDisplay_PartProps {
     className?: string;
@@ -16,6 +17,7 @@ export const Bre_Search_Table_CardDisplay_Part = ({
     card_Clicked,
     object_CollectionData,
 }: Bre_Search_Table_CardDisplay_PartProps) => {
+    const ipAddress = ip_addresses.ip;
     function get_Data() {
         return object_CollectionData.map((item: any, index: number) => {
             return (
@@ -27,7 +29,7 @@ export const Bre_Search_Table_CardDisplay_Part = ({
                     <div className={styles['div1-BreSearchTableCardDisplayPart-Style']}>
                         <img
                             className={styles['img-BreSearchTableCardDisplayPart-Style']}
-                            src={item.image || 'no_image_image.svg'}
+                            src={`http://${ipAddress}:9001/${item.image}` || 'no_image_image.svg'}
                             onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                                 if (!item.image) return;
                                 const target = e.target as HTMLImageElement;
