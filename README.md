@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public\manifest-icon-512.maskable.png" style="width: 70%; height: auto">
+  <img src="https://github.com/sacramento-state-biology-collections/bre-react-app/blob/main/public/manifest-icon-512.maskable.png?raw=true" style="width: 70%; height: auto">
 </p>
 
 &nbsp;
@@ -151,6 +151,10 @@ This is where the user can edit the data within the app. It displays all the dat
        build: bre-react-app
        ports:
          - '80:3000'
+       volumes:
+         - ./bre-react-app/public:/app/public
+         - ./bre-react-app/src:/app/src
+         - ./bre-react-app/styles:/app/styles
        networks:
          bre_network:
            ipv4_address: 10.0.1.2
@@ -159,6 +163,10 @@ This is where the user can edit the data within the app. It displays all the dat
        build: bre-flask-server
        ports:
          - '9001:9001'
+       volumes:
+         - ./bre-flask-server/app:/app
+         - ./bre-flask-server/static:/static
+         - ./bre-flask-server/uploads:/uploads
        networks:
          bre_network:
            ipv4_address: 10.0.1.3

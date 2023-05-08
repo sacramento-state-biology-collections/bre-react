@@ -35,6 +35,8 @@ export const AdminPanelView = ({
     const [bool_AdminHistoryView, set_AdminHistoryView] = useState(true);
     const [bool_Loading, set_Loading] = useState<boolean>(true);
     const [bool_AdminEditPage, set_AdminEditPage] = useState(true);
+    const [str_History, set_History] = useState('');
+    const [arr_History, set_arrHistory] = useState<any>([]);
     const ipAddress = ip_addresses.ip;
 
     function toggle_LoadingTrue() {
@@ -52,9 +54,16 @@ export const AdminPanelView = ({
         if (select.value === 'History') {
             set_AdminHistoryView(true);
             set_AdminPanelView(false);
+            set_History('History');
         } else {
             set_AdminHistoryView(false);
             set_AdminPanelView(true);
+            set_History(select.value);
+            fetch(`http://${ipAddress}:9001/api/files/history/${select.value}`)
+                .then((res) => res.json())
+                .then((data) => {
+                    set_arrHistory(data);
+                });
         }
     }
     function toggle_AdminEditPage(catalog: string) {
@@ -131,7 +140,7 @@ export const AdminPanelView = ({
                 />
             </div>
             <div hidden={bool_AdminHistoryView}>
-                <Admin_History_Body_Part />
+                <Admin_History_Body_Part str_History={str_History} arr_History={arr_History} />
             </div>
             <div hidden={bool_AdminEditView}>
                 <Admin_Edit_Body_Part

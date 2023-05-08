@@ -3,5 +3,5 @@ import { Admin_History_Body_Part } from '../../../components/admin-history-body-
 
 export default createBoard({
     name: 'Admin_History_Body_Part',
-    Board: () => <Admin_History_Body_Part />
+    Board: () => <Admin_History_Body_Part str_History={''} arr_History={[]} />,
 });
