@@ -26,8 +26,14 @@ export const Bre_Search_Table_CardDisplay_Part = ({
                 >
                     <div className={styles['div1-BreSearchTableCardDisplayPart-Style']}>
                         <img
-                            src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
                             className={styles['img-BreSearchTableCardDisplayPart-Style']}
+                            src={item.image || 'no_image_image.svg'}
+                            onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                                if (!item.image) return;
+                                const target = e.target as HTMLImageElement;
+                                target.onerror = null;
+                                target.src = 'no_image_image.svg';
+                            }}
                         />
                     </div>
                     <div className={styles['div4-SearchTableCardDisplayPart-Style']}>

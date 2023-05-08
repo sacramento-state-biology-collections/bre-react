@@ -1,5 +1,6 @@
 import styles from './bre-search-card-part.module.scss';
 import classNames from 'classnames';
+import ipAddress from '../../ip_addresses.json';
 
 export interface Bre_Search_Card_PartProps {
     className?: string;
@@ -35,10 +36,16 @@ export const Bre_Search_Card_Part = ({
         <div className={classNames(styles.root, className)}>
             <div className={styles['div0-breSearchCardPart-style']}>
                 <div className={styles['div1-breSearchCardPart-style']}>
-                    <div>
+                    <div className={styles['img-container']}>
                         <img
-                            alt="image"
-                            src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
+                            className={styles['img-breSearchCardPart-style']}
+                            src={object_CardData.image || 'no_image_image.svg'}
+                            onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                                if (!object_CardData.image) return;
+                                const target = e.target as HTMLImageElement;
+                                target.onerror = null;
+                                target.src = 'no_image_image.svg';
+                            }}
                         />
                     </div>
                     {get_Data()}

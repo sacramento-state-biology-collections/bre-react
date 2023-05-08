@@ -21,8 +21,7 @@ export const Bre_Search_Page_Part = ({
         const keys = Object.keys(object_SpecimenData);
         let list = [];
         for (let i = 0; i < values.length; i++) {
-            if (keys[i] !== 'common_name') {
-                console.log(get_Point(keys[i], values[i]));
+            if (keys[i] !== 'common_name' && keys[i] !== 'image') {
                 list.push(<li>{get_Point(keys[i], values[i])}</li>);
             }
         }
