@@ -33,7 +33,7 @@ describe('EXCEL FILE TESTING', () => {
       {method: 'GET'})
       .then(response => { 
         assert.equal(200, response.status);
-        console.log(response);
+        // console.log(response);
         });
       });
     });
